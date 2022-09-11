@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ICDD Link Predicates (ICDDL)</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <style>
+        #pylode {
+            position: fixed;
+            top: 130px;
+            left: -60px;
+            font-size: small;
+            transform: rotate(-90deg);
+            color: grey;
+        }
+        
+        #pylode a {
+            font-size: 2em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #005A9C;
+        }
+        
+        #pylode a:hover {
+            color: #333;
+        }
+        
+        .cardinality {
+            font-style: italic;
+            color: #aa00aa;
+        }
+        
+        dt {
+            font-weight: bold;
+            padding: 5px 0 5px 0;
+        }
+        
+        ul.hlist {
+            list-style-type: none;
+            border: 1px solid navy;
+            padding: 5px;
+            background-color: #F4FFFF;
+        }
+        
+        ul.hierarchy {
+            border: 1px solid navy;
+            padding: 5px 25px 5px 25px;
+            background-color: #F4FFFF;
+        }
+        
+        ul.hlist li {
+            display: inline;
+            margin-right: 10px;
+        }
+        
+        .entity {
+            border: 1px solid navy;
+            margin: 5px 0 5px 0;
+            padding: 5px;
+        }
+        
+        .entity th {
+            width: 150px;
+            vertical-align: top;
+        }
+        
+        .entity th,
+        .entity td {
+            padding-bottom: 20px;
+        }
+        
+        .entity table th {
+            text-align: left;
+        }
+        
+        section#overview img {
+            max-width: 1000px;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            text-align: left
+        }
+        
+        h1,
+        h2,
+        h3 {
+            color: #005A9C;
+            background: white
+        }
+        
+        h1 {
+            font: 170% sans-serif;
+            line-height: 110%;
+        }
+        
+        h2 {
+            font: 140% sans-serif;
+            margin-top: 40px;
+        }
+        
+        h3 {
+            font: 120% sans-serif;
+            margin-top: 3px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid navy;
+        }
+        
+        h4 {
+            font: bold 100% sans-serif
+        }
+        
+        h5 {
+            font: italic 100% sans-serif
+        }
+        
+        h6 {
+            font: small-caps 100% sans-serif
+        }
+        
+        body {
+            padding: 2em 70px 2em 70px;
+            margin: 0;
+            font-family: sans-serif;
+            color: black;
+            background: white;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            text-align: justify;
+        }
+        
+        section {
+            max-width: 1500px;
+        }
+        
+        .figure {
+            margin-bottom: 20px;
+        }
+        
+         :link {
+            color: #00C;
+            background: transparent
+        }
+        
+         :visited {
+            color: #609;
+            background: transparent
+        }
+        
+        a:active {
+            color: #C00;
+            background: transparent
+        }
+        
+        .sup-c,
+        .sup-op,
+        .sup-fp,
+        .sup-dp,
+        .sup-ap,
+        .sup-p,
+        .sup-ni,
+        .sup-cp,
+        .sup-cl {
+            cursor: help;
+            margin-left: 3px;
+        }
+        
+        .sup-c {
+            color: orange;
+        }
+        
+        .sup-op {
+            color: navy;
+        }
+        
+        .sup-fp {
+            color: lightskyblue;
+        }
+        
+        .sup-dp {
+            color: green;
+        }
+        
+        .sup-ap {
+            color: darkred;
+        }
+        
+        .sup-p {
+            color: black;
+        }
+        
+        .sup-ni {
+            color: brown;
+        }
+        
+        .sup-cp {
+            color: orange;
+        }
+        
+        .sup-cl {
+            color: darkred;
+        }
+        
+        code {
+            font-size: large;
+            color: darkred;
+        }
+        /* less prominent links for properties */
+        
+        .proplink {
+            color: #336;
+            text-decoration: none;
+        }
+    </style>
+
+    <script type="application/ld+json">
+        [{
+            "@id": "https://philhag.github.io/icdd-shacl-validation/icddl",
+            "@type": [
+                "https://schema.org/DefinedTermSet"
+            ],
+            "https://schema.org/description": [{
+                "@value": "<p>An ontology to provide link predicates on the basis of the ICDD ontology schemes for links and extended links</p>"
+            }],
+            "https://schema.org/name": [{
+                "@value": "ICDD Link Predicates (ICDDL)"
+            }]
+        }]
+    </script>
+</head>
+
+<body>
+    <div id="pylode">made by
+        <a href="http://github.com/rdflib/pyLODE">
+            <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
+        <span style="font-size:smaller;">2.8.3</span>
+    </div>
+    <h1>ICDD Link Predicates (ICDDL)</h1>
+    <section id="metadata">
+        <h2 style="display:none;">Metadata</h2>
+        <dl>
+            <dt>URI</dt>
+            <dd><code>https://philhag.github.io/icdd-shacl-validation/icddl</code></dd>
+            <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/publisher">Publisher</a>(s)</dt>
+            <dd>
+                Chair of Computing in Engineering, Ruhr-Universität Bochum<br/>
+            </dd>
+            <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/creator">Creator</a>(s)</dt>
+            <dd>
+                Philipp Hagedorn<br/>
+            </dd>
+            <dt>Version Information</dt>
+            <dd>0.1</dd>
+            <dt>Version URI</dt>
+            <dd><a href="https://philhag.github.io/icdd-shacl-validation/icddl">https://philhag.github.io/icdd-shacl-validation/icddl</a></dd>
+            <dt>Ontology RDF</dt>
+            <dd><a href="icddl.ttl">RDF (turtle)</a></dd>
+            <dd><a href="ontology.rdf">RDF (XML)</a></dd>
+        </dl>
+        <h2>Description</h2>
+        <div id="description">
+            <p>An ontology to provide link predicates on the basis of the ICDD ontology schemes for links and extended links</p>
+        </div>
+    </section>
+    <section id="toc">
+        <h2>Table of Contents</h2>
+        <ol>
+            <li><a href="#objectproperties">Object Properties</a></li>
+            <li><a href="#namespaces">Namespaces</a></li>
+            <li><a href="#legend">Legend</a></li>
+        </ol>
+    </section>
+    <section id="objectproperties">
+        <h2>Object Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+        <ul class="hlist">
+            <li><a href="#conflictswith">conflicts with</a></li>
+            <li><a href="#controls">controls</a></li>
+            <li><a href="#elaborates">elaborates</a></li>
+            <li><a href="#hasmember">has member</a></li>
+            <li><a href="#haspart">has part</a></li>
+            <li><a href="#isalternativeto">is alternative to</a></li>
+            <li><a href="#iscontrolledby">is controlled by</a></li>
+            <li><a href="#iselaboratedby">is elaborated by</a></li>
+            <li><a href="#isidenticalto">is identical to</a></li>
+            <li><a href="#ismemberof">is member of</a></li>
+            <li><a href="#ispartof">is part of</a></li>
+            <li><a href="#isspecialisedas">is specialised as</a></li>
+            <li><a href="#issupersededby">is superseded by</a></li>
+            <li><a href="#Linked">Linked</a></li>
+            <li><a href="#linkedbinary">linked binary</a></li>
+            <li><a href="#linkeddirected">linked directed</a></li>
+            <li><a href="#linkeddirectedbinary">linked directed binary</a></li>
+            <li><a href="#linkeddirectedonetomany">linked directed one to many</a></li>
+            <li><a href="#specialises">specialises</a></li>
+            <li><a href="#supersedes">supersedes</a></li>
+        </ul>
+        <div class="entity property" id="conflictswith">
+            <h3>conflicts with<sup title="object property" class="sup-op">op</sup></h3>
+            <table>
+                <tr>
+                    <th>URI</th>
+                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#conflictsWith</code></td>
+                </tr>
+                <tr>
+                    <th>Is Defined By</th>
+                    <td>
+                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#ConflictsWith
+                    </td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>
+                        This link type relates two link elements that conflict with one another in some way. Possibly non-transitive, symmetric and being its own inverse
+                    </td>
+                </tr>
+                <tr>
+                    <th>Super-properties</th>
+                    <td>
+                        <a href="#linkeddirectedbinary">icddl:linkedDirectedBinary</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>SHACL-rules</th>
+                    <td>
+                        <a href="#blank">Infers ICDD Link predicates for els:ConflictsWith</a><sup class="sup-op" title="shacle rule">sh</sup>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="entity property" id="controls">
+            <h3>controls<sup title="object property" class="sup-op">op</sup></h3>
+            <table>
+                <tr>
+                    <th>URI</th>
+                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#controls</code></td>
+                </tr>
+                <tr>
+                    <th>Is Defined By</th>
+                    <td>
+                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#Controls
+                    </td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>
+                        This link type relates one link element to one or more other link elements over which it exercises some type of control. Possibly transitive, non-symmetric and inverse of IsControlledBy
+                    </td>
+                </tr>
+                <tr>
+                    <th>Super-properties</th>
+                    <td>
+                        <a href="#linkeddirectedonetomany">icddl:linkedDirectedOneToMany</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Inverse properties</th>
+                    <td>
+                        <a href="#iscontrolledby">icddl:isControlledBy</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>SHACL-rules</th>
+                    <td>
+                        <a href="#blank">Infers ICDD Link predicates for els:Controls</a><sup class="sup-op" title="shacle rule">sh</sup>,
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="entity property" id="elaborates">
+            <h3>elaborates<sup title="object property" class="sup-op">op</sup></h3>
+            <table>
+                <tr>
+                    <th>URI</th>
+                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#elaborates</code></td>
+                </tr>
+                <tr>
+                    <th>Is Defined By</th>
+                    <td>
+                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#Elaborates
+                    </td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>
+                        Possibly transitive, non-symmetric and inverse of IsElaboratedBy
+                    </td>
+                </tr>
+                <tr>
+                    <th>Super-properties</th>
+                    <td>
+                        <a href="#linkeddirectedonetomany">icddl:linkedDirectedOneToMany</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Inverse properties</th>
+                    <td>
+                        <a href="#iselaboratedby">icddl:isElaboratedBy</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>SHACL-rules</th>
+                    <td>
+                        <a href="#blank">Infers ICDD Link predicates for els:Elaborates</a><sup class="sup-op" title="shacle rule">sh</sup>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="entity property" id="hasmember">
+            <h3>has member<sup title="object property" class="sup-op">op</sup></h3>
+            <table>
+                <tr>
+                    <th>URI</th>
+                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#hasMember</code></td>
+                </tr>
+                <tr>
+                    <th>Is Defined By</th>
+                    <td>
+                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#HasMember
+                    </td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>
+                        This link type relates one link element to one or more other link elements to form a grouping based on some consistent criteria. Possibly non-transitive, non-symmetric and inverse of IsMemberOf
+                    </td>
+                </tr>
+                <tr>
+                    <th>Super-properties</th>
+                    <td>
+                        <a href="#linkeddirectedonetomany">icddl:linkedDirectedOneToMany</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Inverse properties</th>
+                    <td>
+                        <a href="#ismemberof">icddl:isMemberOf</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>SHACL-rules</th>
+                    <td>
+                        <a href="#blank">Infers ICDD Link predicates for els:HasMember</a><sup class="sup-op" title="shacle rule">sh</sup>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="entity property" id="haspart">
+            <h3>has part<sup title="object property" class="sup-op">op</sup></h3>
+            <table>
+                <tr>
+                    <th>URI</th>
+                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#hasPart</code></td>
+                </tr>
+                <tr>
+                    <th>Is Defined By</th>
+                    <td>
+                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#HasPart
+                    </td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>
+                        This link type relates one link element to one or more other link elements to form an assembly of parts where those parts exist independently. Possibly transitive, non-symmetric and inverse of IsPartOf
+                    </td>
+                </tr>
+                <tr>
+                    <th>Super-properties</th>
+                    <td>
+                        <a href="#linkeddirectedonetomany">icddl:linkedDirectedOneToMany</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Inverse properties</th>
+                    <td>
+                        <a href="#ispartof">icddl:isPartOf</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>SHACL-rules</th>
+                    <td>
+                        <a href="#blank">Infers ICDD Link predicates for els:HasPart</a><sup class="sup-op" title="shacle rule">sh</sup>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="entity property" id="isalternativeto">
+            <h3>is alternative to<sup title="object property" class="sup-op">op</sup></h3>
+            <table>
+                <tr>
+                    <th>URI</th>
+                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#isAlternativeTo</code></td>
+                </tr>
+                <tr>
+                    <th>Is Defined By</th>
+                    <td>
+                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsAlternativeTo
+                    </td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>
+                        This link type relates two link elements where one is an alternative to the other. Possibly transitive, symmetric and being its own inverse
+                    </td>
+                </tr>
+                <tr>
+                    <th>Super-properties</th>
+                    <td>
+                        <a href="#linkeddirectedbinary">icddl:linkedDirectedBinary</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>SHACL-rules</th>
+                    <td>
+                        <a href="#blank">Infers ICDD Link predicates for els:IsAlternativeTo</a><sup class="sup-op" title="shacle rule">sh</sup>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="entity property" id="iscontrolledby">
+            <h3>is controlled by<sup title="object property" class="sup-op">op</sup></h3>
+            <table>
+                <tr>
+                    <th>URI</th>
+                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#isControlledBy</code></td>
+                </tr>
+                <tr>
+                    <th>Is Defined By</th>
+                    <td>
+                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsControlledBy
+                    </td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>
+                        Possibly transitive, non-symmetric and inverse of Controls
+                    </td>
+                </tr>
+                <tr>
+                    <th>Super-properties</th>
+                    <td>
+                        <a href="#linkeddirectedonetomany">icddl:linkedDirectedOneToMany</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Inverse properties</th>
+                    <td>
+                        <a href="#controls">icddl:controls</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>SHACL-rules</th>
+                    <td>
+                        <a href="#blank">Infers ICDD Link predicates for els:IsControlledBy</a><sup class="sup-op" title="shacle rule">sh</sup>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="entity property" id="iselaboratedby">
+            <h3>is elaborated by<sup title="object property" class="sup-op">op</sup></h3>
+            <table>
+                <tr>
+                    <th>URI</th>
+                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#isElaboratedBy</code></td>
+                </tr>
+                <tr>
+                    <th>Is Defined By</th>
+                    <td>
+                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsElaboratedBy
+                    </td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>
+                        This link type relates one link element to one or more other link elements where they provide further explanation, reasoning, derivation, information or usage. Possibly transitive, non-symmetric and inverse of IsElaboratedBy
+                    </td>
+                </tr>
+                <tr>
+                    <th>Super-properties</th>
+                    <td>
+                        <a href="#linkeddirectedonetomany">icddl:linkedDirectedOneToMany</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Inverse properties</th>
+                    <td>
+                        <a href="#elaborates">icddl:elaborates</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>SHACL-rules</th>
+                    <td>
+                        <a href="#blank">Infers ICDD Link predicates for els:IsElaboratedBy</a><sup class="sup-op" title="shacle rule">sh</sup>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="entity property" id="isidenticalto">
+            <h3>is identical to<sup title="object property" class="sup-op">op</sup></h3>
+            <table>
+                <tr>
+                    <th>URI</th>
+                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#isIdenticalTo</code></td>
+                </tr>
+                <tr>
+                    <th>Is Defined By</th>
+                    <td>
+                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsIdenticalTo
+                    </td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>
+                        This link type relates two link elements that are identical but may be represented in different ways. Possibly transitive, symmetric and being its own inverse
+                    </td>
+                </tr>
+                <tr>
+                    <th>Super-properties</th>
+                    <td>
+                        <a href="#linkeddirectedbinary">icddl:linkedDirectedBinary</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>SHACL-rules</th>
+                    <td>
+                        <a href="#blank">Infers ICDD Link predicates for els:IsIdenticalTo</a><sup class="sup-op" title="shacle rule">sh</sup>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="entity property" id="ismemberof">
+            <h3>is member of<sup title="object property" class="sup-op">op</sup></h3>
+            <table>
+                <tr>
+                    <th>URI</th>
+                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#isMemberOf</code></td>
+                </tr>
+                <tr>
+                    <th>Is Defined By</th>
+                    <td>
+                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsMemberOf
+                    </td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>
+                        Possibly non-transitive, non-symmetric and inverse of HasMember
+                    </td>
+                </tr>
+                <tr>
+                    <th>Super-properties</th>
+                    <td>
+                        <a href="#linkeddirectedonetomany">icddl:linkedDirectedOneToMany</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Inverse properties</th>
+                    <td>
+                        <a href="#hasmember">icddl:hasMember</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>SHACL-rules</th>
+                    <td>
+                        <a href="#blank">Infers ICDD Link predicates for els:IsMemberOf</a><sup class="sup-op" title="shacle rule">sh</sup>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="entity property" id="ispartof">
+            <h3>is part of<sup title="object property" class="sup-op">op</sup></h3>
+            <table>
+                <tr>
+                    <th>URI</th>
+                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#isPartOf</code></td>
+                </tr>
+                <tr>
+                    <th>Is Defined By</th>
+                    <td>
+                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsPartOf
+                    </td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>
+                        Possibly transitive, non-symmetric and inverse of HasPart
+                    </td>
+                </tr>
+                <tr>
+                    <th>Super-properties</th>
+                    <td>
+                        <a href="#linkeddirectedonetomany">icddl:linkedDirectedOneToMany</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Inverse properties</th>
+                    <td>
+                        <a href="#haspart">icddl:hasPart</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>SHACL-rules</th>
+                    <td>
+                        <a href="#blank">Infers ICDD Link predicates for els:IsPartOf</a><sup class="sup-op" title="shacle rule">sh</sup>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="entity property" id="isspecialisedas">
+            <h3>is specialised as<sup title="object property" class="sup-op">op</sup></h3>
+            <table>
+                <tr>
+                    <th>URI</th>
+                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#isSpecialisedAs</code></td>
+                </tr>
+                <tr>
+                    <th>Is Defined By</th>
+                    <td>
+                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsSpecialisedAs
+                    </td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>
+                        This link type relates one link element to one or more other link elements that are specializations or sub-classes. Possibly transitive, non-symmetric and inverse of Specialises
+                    </td>
+                </tr>
+                <tr>
+                    <th>Super-properties</th>
+                    <td>
+                        <a href="#linkeddirectedonetomany">icddl:linkedDirectedOneToMany</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Inverse properties</th>
+                    <td>
+                        <a href="#specialises">icddl:specialises</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>SHACL-rules</th>
+                    <td>
+                        <a href="#blank">Infers ICDD Link predicates for els:IsSpecialisedAs</a><sup class="sup-op" title="shacle rule">sh</sup>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="entity property" id="issupersededby">
+            <h3>is superseded by<sup title="object property" class="sup-op">op</sup></h3>
+            <table>
+                <tr>
+                    <th>URI</th>
+                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#isSupersededBy</code></td>
+                </tr>
+                <tr>
+                    <th>Is Defined By</th>
+                    <td>
+                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsSupersededBy
+                    </td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>
+                        Possibly transitive, non-symmetric and inverse of Supersedes
+                    </td>
+                </tr>
+                <tr>
+                    <th>Super-properties</th>
+                    <td>
+                        <a href="#linkeddirectedonetomany">icddl:linkedDirectedOneToMany</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Inverse properties</th>
+                    <td>
+                        <a href="#supersedes">icddl:supersedes</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>SHACL-rules</th>
+                    <td>
+                        <a href="#blank">Infers ICDD Link predicates for els:IsSupersededBy</a><sup class="sup-op" title="shacle rule">sh</sup>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="entity property" id="Linked">
+            <h3>Linked<sup title="object property" class="sup-op">op</sup></h3>
+            <table>
+                <tr>
+                    <th>URI</th>
+                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#linked</code></td>
+                </tr>
+                <tr>
+                    <th>Is Defined By</th>
+                    <td>
+                        https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#Link
+                    </td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>
+                        A grouping of 1 or more instances of ls:LinkElement. The most generic connection between entities
+                    </td>
+                </tr>
+                <tr>
+                    <th>Super-properties</th>
+                    <td>
+                        <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th>SHACL-rules</th>
+                    <td>
+                        <a href="#blank">Infers ICDD Link predicates for ls:Link</a><sup class="sup-op" title="shacle rule">sh</sup>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="entity property" id="linkedbinary">
+            <h3>linked binary<sup title="object property" class="sup-op">op</sup></h3>
+            <table>
+                <tr>
+                    <th>URI</th>
+                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#linkedBinary</code></td>
+                </tr>
+                <tr>
+                    <th>Is Defined By</th>
+                    <td>
+                        https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#BinaryLink
+                    </td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>
+                        An ls:Link comprising exactly 2 individuals of class ls:LinkElement
+                    </td>
+                </tr>
+                <tr>
+                    <th>Super-properties</th>
+                    <td>
+                        <a href="#Linked">icddl:linked</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>SHACL-rules</th>
+                    <td>
+                        <a href="#blank">Infers ICDD Link predicates for ls:BinaryLink</a><sup class="sup-op" title="shacle rule">sh</sup>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="entity property" id="linkeddirected">
+            <h3>linked directed<sup title="object property" class="sup-op">op</sup></h3>
+            <table>
+                <tr>
+                    <th>URI</th>
+                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#linkedDirected</code></td>
+                </tr>
+                <tr>
+                    <th>Is Defined By</th>
+                    <td>
+                        https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#DirectedLink
+                    </td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>
+                        a relation from an ls:Link to an ls:LinkElement. It is a sub property of ls:hasLinkElement
+                    </td>
+                </tr>
+                <tr>
+                    <th>Super-properties</th>
+                    <td>
+                        <a href="#Linked">icddl:linked</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>SHACL-rules</th>
+                    <td>
+                        <a href="#blank">Infers ICDD Link predicates for ls:DirectedLink</a><sup class="sup-op" title="shacle rule">sh</sup>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="entity property" id="linkeddirectedbinary">
+            <h3>linked directed binary<sup title="object property" class="sup-op">op</sup></h3>
+            <table>
+                <tr>
+                    <th>URI</th>
+                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#linkedDirectedBinary</code></td>
+                </tr>
+                <tr>
+                    <th>Is Defined By</th>
+                    <td>
+                        https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#DirectedBinaryLink
+                    </td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>
+                        a subtype of a binary link (that has exactly 2 LinkElements) that uses the subproperties ls:hasFromLinkElement and ls:hasToLinkElement to denote a direction of this link
+                    </td>
+                </tr>
+                <tr>
+                    <th>Super-properties</th>
+                    <td>
+                        <a href="#linkedbinary">icddl:linkedBinary</a><sup class="sup-op" title="object property">op</sup>
+                        <a href="#linkeddirected">icddl:linkedDirected</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>SHACL-rules</th>
+                    <td>
+                        <a href="#blank">Infers ICDD Link predicates for ls:DirectedBinaryLink</a><sup class="sup-op" title="shacle rule">sh</sup>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="entity property" id="linkeddirectedonetomany">
+            <h3>linked directed one to many<sup title="object property" class="sup-op">op</sup></h3>
+            <table>
+                <tr>
+                    <th>URI</th>
+                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#linkedDirectedOneToMany</code></td>
+                </tr>
+                <tr>
+                    <th>Is Defined By</th>
+                    <td>
+                        https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#Directed1toNLink
+                    </td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>
+                        an ls:Directed1toNLink is a subtype of ls:DirectedLink mandating exactly 1 ls:hasFromLinkElement
+                    </td>
+                </tr>
+                <tr>
+                    <th>Super-properties</th>
+                    <td>
+                        <a href="#linkeddirected">icddl:linkedDirected</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>SHACL-rules</th>
+                    <td>
+                        <a href="#blank">Infers ICDD Link predicates for ls:Directed1toNLink</a><sup class="sup-op" title="shacle rule">sh</sup>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="entity property" id="specialises">
+            <h3>specialises<sup title="object property" class="sup-op">op</sup></h3>
+            <table>
+                <tr>
+                    <th>URI</th>
+                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#specialises</code></td>
+                </tr>
+                <tr>
+                    <th>Is Defined By</th>
+                    <td>
+                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#Specialises
+                    </td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>
+                        Possibly transitive, non-symmetric and inverse of IsSpecialisedAs
+                    </td>
+                </tr>
+                <tr>
+                    <th>Super-properties</th>
+                    <td>
+                        <a href="#linkeddirectedonetomany">icddl:linkedDirectedOneToMany</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Inverse properties</th>
+                    <td>
+                        <a href="#isspecialisedas">icddl:isSpecialisedAs</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>SHACL-rules</th>
+                    <td>
+                        <a href="#blank">Infers ICDD Link predicates for els:Specialises</a><sup class="sup-op" title="shacle rule">sh</sup>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="entity property" id="supersedes">
+            <h3>supersedes<sup title="object property" class="sup-op">op</sup></h3>
+            <table>
+                <tr>
+                    <th>URI</th>
+                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#supersedes</code></td>
+                </tr>
+                <tr>
+                    <th>Is Defined By</th>
+                    <td>
+                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#Supersedes
+                    </td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>
+                        This link type relates one link element to one or more other link elements where they are a development of or supersede it in some way. Possibly transitive, non-symmetric and inverse of IsSupersededBy
+                    </td>
+                </tr>
+                <tr>
+                    <th>Super-properties</th>
+                    <td>
+                        <a href="#linkeddirectedonetomany">icddl:linkedDirectedOneToMany</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Inverse properties</th>
+                    <td>
+                        <a href="#issupersededby">icddl:isSupersededBy</a><sup class="sup-op" title="object property">op</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>SHACL-rules</th>
+                    <td>
+                        <a href="#blank">Infers ICDD Link predicates for els:Supersedes</a><sup class="sup-op" title="shacle rule">sh</sup>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+
+    <section id="namespaces">
+        <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+        <dl>
+            <dt>ct</dt>
+            <dd><code>https://standards.iso.org/iso/21597/-1/ed-1/en/Container#</code></dd>
+            <dt>dc</dt>
+            <dd><code>http://purl.org/dc/elements/1.1/</code></dd>
+            <dt>dcterms</dt>
+            <dd><code>http://purl.org/dc/terms/</code></dd>
+            <dt>els</dt>
+            <dd><code>https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#</code></dd>
+            <dt>icddl</dt>
+            <dd><code>https://philhag.github.io/icdd-shacl-validation/icddl#</code></dd>
+            <dt>ls</dt>
+            <dd><code>https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#</code></dd>
+            <dt>owl</dt>
+            <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
+            <dt>prov</dt>
+            <dd><code>http://www.w3.org/ns/prov#</code></dd>
+            <dt>rdf</dt>
+            <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
+            <dt>rdfs</dt>
+            <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
+            <dt>sdo</dt>
+            <dd><code>https://schema.org/</code></dd>
+            <dt>sh</dt>
+            <dd><code>http://www.w3.org/ns/shacl#</code></dd>
+            <dt>skos</dt>
+            <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
+            <dt>vann</dt>
+            <dd><code>http://purl.org/vocab/vann/</code></dd>
+            <dt>xsd</dt>
+            <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
+        </dl>
+    </section>
+    <section id="legend">
+        <h2>Legend</h2>
+        <table class="entity">
+            <tr>
+                <td><sup class="sup-c" title="Classes">c</sup></td>
+                <td>Classes</td>
+            </tr>
+            <tr>
+                <td><sup class="sup-op" title="Object Properties">op</sup></td>
+                <td>Object Properties</td>
+            </tr>
+            <tr>
+                <td><sup class="sup-fp" title="Functional Properties">fp</sup></td>
+                <td>Functional Properties</td>
+            </tr>
+            <tr>
+                <td><sup class="sup-dp" title="Data Properties">dp</sup></td>
+                <td>Data Properties</td>
+            </tr>
+            <tr>
+                <td><sup class="sup-ap" title="Annotation Properties">dp</sup></td>
+                <td>Annotation Properties</td>
+            </tr>
+            <tr>
+                <td><sup class="sup-p" title="Properties">p</sup></td>
+                <td>Properties</td>
+            </tr>
+            <tr>
+                <td><sup class="sup-ni" title="Named Individuals">ni</sup></td>
+                <td>Named Individuals</td>
+            </tr>
+        </table>
+    </section>
+</body>
+
+</html>

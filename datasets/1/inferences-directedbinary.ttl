@@ -1,0 +1,62 @@
+@prefix ct:     <https://standards.iso.org/iso/21597/-1/ed-1/en/Container#> .
+@prefix dc:     <http://purl.org/dc/elements/1.1/> .
+@prefix els:    <https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#> .
+@prefix icddl:  <http://icdd.vm.rub.de/ontology/icddl#> .
+@prefix ls:     <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+<https://icdd.vm.rub.de/convert/ifc/43f546bd-0969-40cb-b669-ec9dea6ba55d#slab_a2bf5e3e-e854-48de-ae2a-4430db17405f>
+        icddl:linkedDirectedBinaryInverse
+                <https://icdd.vm.rub.de/data/1_Garage_DirectedBinary-202236187/index/cto/inst#Task_40_DECKENPLATTE> .
+
+<https://icdd.vm.rub.de/data/1_Garage_DirectedBinary-202236187/index/cto/inst#Task_40_DECKENPLATTE>
+        icddl:linkedDirectedBinary  <https://icdd.vm.rub.de/convert/ifc/43f546bd-0969-40cb-b669-ec9dea6ba55d#slab_a2bf5e3e-e854-48de-ae2a-4430db17405f> .
+
+<https://icdd.vm.rub.de/convert/ifc/43f546bd-0969-40cb-b669-ec9dea6ba55d#slab_75e193fd-81b2-42ea-a574-86959bffac13>
+        icddl:linkedDirectedBinaryInverse
+                <https://icdd.vm.rub.de/data/1_Garage_DirectedBinary-202236187/index/cto/inst#Task_12_BODENPLATTE> .
+
+<https://icdd.vm.rub.de/data/1_Garage_DirectedBinary-202236187/index/cto/inst#Task_6_STREIFENFUNDAMENT1>
+        icddl:linkedDirectedBinary  <https://icdd.vm.rub.de/convert/ifc/43f546bd-0969-40cb-b669-ec9dea6ba55d#slab_33cea67b-0280-42d4-823c-9bb379bc8014> , <https://icdd.vm.rub.de/convert/ifc/43f546bd-0969-40cb-b669-ec9dea6ba55d#slab_75e193fd-81b2-42ea-a574-86959bffada4> .
+
+<https://icdd.vm.rub.de/convert/ifc/43f546bd-0969-40cb-b669-ec9dea6ba55d#wall_a2bf5e3e-e854-48de-ae2a-4430db175eb7>
+        icddl:linkedDirectedBinaryInverse
+                <https://icdd.vm.rub.de/data/1_Garage_DirectedBinary-202236187/index/cto/inst#Task_35_WAENDE> .
+
+<https://icdd.vm.rub.de/data/1_Garage_DirectedBinary-202236187/index/cto/inst#Task_11_STREIFENFUNDAMENT2>
+        icddl:linkedDirectedBinary  <https://icdd.vm.rub.de/convert/ifc/43f546bd-0969-40cb-b669-ec9dea6ba55d#slab_75e193fd-81b2-42ea-a574-86959bffadff> , <https://icdd.vm.rub.de/convert/ifc/43f546bd-0969-40cb-b669-ec9dea6ba55d#slab_75e193fd-81b2-42ea-a574-86959bffad8a> .
+
+<https://icdd.vm.rub.de/data/1_Garage_DirectedBinary-202236187/index/cto/inst#Task_12_BODENPLATTE>
+        icddl:linkedDirectedBinary  <https://icdd.vm.rub.de/convert/ifc/43f546bd-0969-40cb-b669-ec9dea6ba55d#slab_75e193fd-81b2-42ea-a574-86959bffac13> .
+
+<https://icdd.vm.rub.de/convert/ifc/43f546bd-0969-40cb-b669-ec9dea6ba55d#slab_75e193fd-81b2-42ea-a574-86959bffad8a>
+        icddl:linkedDirectedBinaryInverse
+                <https://icdd.vm.rub.de/data/1_Garage_DirectedBinary-202236187/index/cto/inst#Task_11_STREIFENFUNDAMENT2> .
+
+<https://icdd.vm.rub.de/convert/ifc/43f546bd-0969-40cb-b669-ec9dea6ba55d#slab_75e193fd-81b2-42ea-a574-86959bffada4>
+        icddl:linkedDirectedBinaryInverse
+                <https://icdd.vm.rub.de/data/1_Garage_DirectedBinary-202236187/index/cto/inst#Task_6_STREIFENFUNDAMENT1> .
+
+<https://icdd.vm.rub.de/convert/ifc/43f546bd-0969-40cb-b669-ec9dea6ba55d#wall_a2bf5e3e-e854-48de-ae2a-4430db175e59>
+        icddl:linkedDirectedBinaryInverse
+                <https://icdd.vm.rub.de/data/1_Garage_DirectedBinary-202236187/index/cto/inst#Task_35_WAENDE> .
+
+<https://icdd.vm.rub.de/convert/ifc/43f546bd-0969-40cb-b669-ec9dea6ba55d#wall_a2bf5e3e-e854-48de-ae2a-4430db175f33>
+        icddl:linkedDirectedBinaryInverse
+                <https://icdd.vm.rub.de/data/1_Garage_DirectedBinary-202236187/index/cto/inst#Task_35_WAENDE> .
+
+<https://icdd.vm.rub.de/convert/ifc/43f546bd-0969-40cb-b669-ec9dea6ba55d#slab_75e193fd-81b2-42ea-a574-86959bffadff>
+        icddl:linkedDirectedBinaryInverse
+                <https://icdd.vm.rub.de/data/1_Garage_DirectedBinary-202236187/index/cto/inst#Task_11_STREIFENFUNDAMENT2> .
+
+<https://icdd.vm.rub.de/convert/ifc/43f546bd-0969-40cb-b669-ec9dea6ba55d#slab_33cea67b-0280-42d4-823c-9bb379bc8014>
+        icddl:linkedDirectedBinaryInverse
+                <https://icdd.vm.rub.de/data/1_Garage_DirectedBinary-202236187/index/cto/inst#Task_6_STREIFENFUNDAMENT1> .
+
+<https://icdd.vm.rub.de/data/1_Garage_DirectedBinary-202236187/index/cto/inst#Task_35_WAENDE>
+        icddl:linkedDirectedBinary  <https://icdd.vm.rub.de/convert/ifc/43f546bd-0969-40cb-b669-ec9dea6ba55d#wall_a2bf5e3e-e854-48de-ae2a-4430db175f33> , <https://icdd.vm.rub.de/convert/ifc/43f546bd-0969-40cb-b669-ec9dea6ba55d#wall_a2bf5e3e-e854-48de-ae2a-4430db175e59> , <https://icdd.vm.rub.de/convert/ifc/43f546bd-0969-40cb-b669-ec9dea6ba55d#wall_a2bf5e3e-e854-48de-ae2a-4430db175eb7> .

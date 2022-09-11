@@ -1,0 +1,103 @@
+# baseURI: http://icdd.vm.rub.de/ontology/icddl
+# imports: http://www.w3.org/ns/shacl#
+# prefix: icddl
+
+@prefix ct: <https://standards.iso.org/iso/21597/-1/ed-1/en/Container#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix els: <https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#> .
+@prefix icddl: <http://icdd.vm.rub.de/ontology/icddl#> .
+@prefix ls: <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <https://schema.org/> .
+
+<http://icdd.vm.rub.de/ontology/icddl>
+  rdf:type owl:Ontology ;
+  dc:creator [
+      rdf:type schema:Person ;
+      schema:email <mailto:philipp.hagedorn-n6v@rub.de> ;
+      schema:identifier <https://orcid.org/0000-0002-6249-243X> ;
+      schema:memberOf [
+          schema:identifier <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en> ;
+          schema:name "Ruhr University Bochum" ;
+        ] ;
+      schema:name "Philipp Hagedorn" ;
+    ] ;
+  dc:description "An ontology to provide link predicates on the basis of the ICDD ontology schemes for links and extended links"@en ;
+  dc:publisher [
+      rdf:type schema:Organization ;
+      schema:identifier <https://www.inf.bi.rub.de> ;
+      schema:name "Chair of Computing in Engineering, Ruhr University Bochum" ;
+      schema:parentOrganization [
+          rdf:type schema:Organization ;
+          schema:name "Ruhr University Bochum, Germany" ;
+        ] ;
+    ] ;
+  dc:rights "CC-BY-40" ;
+  dc:license <https://creativecommons.org/licenses/by/4.0/> ;
+  dc:title "ICDD Link Predicates"@en ;
+  rdfs:seeAlso <https://standards.iso.org/iso/21597/-1/ed-1/en/Container> ;
+  rdfs:seeAlso <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset> ;
+  rdfs:seeAlso <https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset> ;
+  owl:versionIRI <http://icdd.vm.rub.de/ontology/icddl> ;
+  owl:versionInfo "v0.1"@en ;
+.
+
+icddl:linkedDirectedBinary
+  rdf:type owl:ObjectProperty ;
+  rdf:type sh:NodeShape ;
+  rdfs:comment "A subtype of a binary link (that has exactly 2 LinkElements) that uses the subproperties ls:hasFromLinkElement and ls:hasToLinkElement to denote a direction of this link"@en ;
+  rdfs:label "linked directed binary"@en ;
+  rdfs:seeAlso ls:DirectedBinaryLink ;
+  rdfs:subPropertyOf icddl:linkedBinary ;
+  rdfs:subPropertyOf icddl:linkedDirected ;
+  owl:inverseOf icddl:linkedDirectedBinaryInverse ;
+  sh:rule [
+      rdf:type sh:SPARQLRule ;
+      rdfs:label "Infers ICDD Link predicates for DirectedBinaryLinks and 1 StringBasedIdentifier and 1 UriBasedIdentifier" ;
+      sh:construct """
+      PREFIX ls: <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#>
+      PREFIX icddl: <http://icdd.vm.rub.de/ontology/icddl#>
+      CONSTRUCT {
+         	?rdfEntity1 icddl:linkedDirectedBinary ?rdfEntity2 .
+         	?rdfEntity2 icddl:linkedDirectedBinaryInverse ?rdfEntity1 .
+         }
+         WHERE {
+            $this ls:hasFromLinkElement ?elem1 .
+            $this ls:hasToLinkElement ?elem2 .
+            FILTER(!sameTerm(?elem1, ?elem2))
+          {
+           ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+           ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+           ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+           ?rdfEntity1 ?hasProp1 ?guid1 .
+           FILTER CONTAINS(str(?hasProp1),?field)
+     	}
+      UNION
+      {
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+        ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+        ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+        ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+        ?rdfEntity1 ?hasProp1 ?guid1 .
+        ?rdfEntity2 ?hasProp2 ?guid2 .     
+        FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))       
+      }
+      UNION
+      {
+         ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+         ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+      }
+     	
+     	FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+     	FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier}
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier}
+         }
+         			""" ;
+    ] ;
+  sh:targetClass ls:DirectedBinaryLink ;
+.

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!--
+    Plain-Academic by Vasilios Mavroudis
+    Released under the Simplified BSD License/FreeBSD (2-clause) License.
+    https://github.com/mavroudisv/plain-academic
+-->
+
+<html lang="en">
+
+<head>
+    <title>icdd-shacl-validation</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/codemirror.css">
+    <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/codemirror.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/mode/turtle/turtle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/mode/javascript/javascript.js"></script>
+</head>
+
+<body>
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" role="navigation">
+        <a class="navbar-brand px-2" href="#">icdd-shacl-validation</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ps-1">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#datasets">Datasets</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#rules">Rules</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#sourcecode">Source code</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ontology">ICDDL ontology</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container" style="height: 90vh; ">
+
+        <div class="row" style="margin-top: 40px;">
+
+            <!-- Entries Column -->
+            <div class="col-md-8">
+
+                <!-- Main Image -->
+
+                <div style="margin-top:2%; text-align:justify;" class="mb-5">
+                    <div style="font-family: 'Oswald', sans-serif; font-size: 32px;"><b>icdd-shacl-validation</b></div><br>
+                    <p>This <a href="https://github.com/philhag/icdd-shacl-validation">GitHub repository</a> contains datasets, rules, and source code used in the paper "Semantic Rule Checking using SHACL for ICDD Information Containers: A Benchmarking Approach"
+                        by <a href="https://orcid.org/0000-0002-6249-243X">P. Hagedorn <img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16" /></a>, <a href="https://orcid.org/0000-0001-8020-4609">P. Pauwels <img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16" /></a>,
+                        and <a href="https://orcid.org/0000-0002-2729-7743">M. König <img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16" /></a> to provide a benchmark of SHACL rules on
+                        <a href="https://www.iso.org/standard/74389.html" target="_blank">ICDD information containers</a>.</p>
+
+
+                </div>
+                <div style="margin-top:19%">
+                    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                </div>
+            </div>
+
+            <!-- Contact Info on the Sidebar -->
+            <div class="col-md-4" style="margin-top:2%;">
+                <div style="font-family: 'Oswald', sans-serif; font-size: 32px;"><b>Contact</b></div><br>
+                <p><b>Philipp Hagedorn</b><br>
+                    <p><b>philipp.hagedorn-n6v@rub.de</b><br>
+                        <p>Chair of Computing in Engineering
+                            <br> Ruhr-Universität Bochum
+                            <br> Bochum <br> Germany
+                        </p>
+                        <div style="margin-top:2%">
+                            <dd><a href="https://github.com/philhag" target="_blank">GitHub</a></dd>
+                            <dd><a href="https://twitter.com/PhilippHagedorn" target="_blank">Twitter</a></dd>
+                            <dd><a href="https://www.linkedin.com/in/hagedorn-philipp/" target="_blank">LinkedIn</a></dd>
+                        </div>
+
+            </div>
+
+
+            <!-- Links on the Sidebar -->
+
+
+
+            <!-- Publications -->
+
+
+            <!-- Publications -->
+            <div class="col-md-12  my-3">
+                <h2 id="datasets">Datasets</h2>
+                <p>The following datasets are available as Turtle files generated from ICDD containers in three different link configurations. The original datasets are inferred using the SHACL rules from the <a href="icddl/index.html" target="_blank">ICDDL ontology</a>.
+                    The inferred triples are available besides the original dataset.</p>
+                <h3>Dataset 1: Garage</h3>
+                <div class="alert alert-secondary rounded-0 my-1 py-1 px-1">
+                    <div class="row g-1">
+                        <div class="col-2">
+                            <img class="img-thumbnail" src="datasets/Model1.png" style=" width: 100%;">
+                        </div>
+                        <div class="col-10 small">
+                            <dd><a href="datasets/1/dataset-binary.ttl" target="_blank">Dataset (Binary links)</a> | <a href="datasets/1/inferences-binary.ttl" target="_blank">Inferences (Binary links)</a></dd>
+                            <dd><a href="datasets/1/dataset-directedbinary.ttl" target="_blank">Dataset (Directed Binary links)</a> | <a href="datasets/1/inferences-directedbinary.ttl" target="_blank">Inferences (Directed Binary  links)</a></dd>
+                            <dd><a href="datasets/1/dataset-directed1ton.ttl" target="_blank">Dataset (Directed 1-to-n links)</a> | <a href="datasets/1/inferences-directed1ton.ttl" target="_blank">Inferences (Directed 1-to-n links)</a></dd>
+                        </div>
+                    </div>
+                </div>
+                <h3 style="margin-top:2%;">Dataset 2: Apartment building</h3>
+                <div class="alert alert-secondary rounded-0 my-1 py-1 px-1">
+                    <div class="row g-1">
+                        <div class="col-2">
+                            <img class="img-thumbnail" src="datasets/Model2.png" style=" width: 100%;">
+                        </div>
+                        <div class="col-10 small">
+                            <dd><a href="datasets/2/dataset-binary.ttl" target="_blank">Dataset (Binary links)</a> | <a href="datasets/2/inferences-binary.ttl" target="_blank">Inferences (Binary links)</a></dd>
+                            <dd><a href="datasets/2/dataset-directedbinary.ttl" target="_blank">Dataset (Directed Binary links)</a> | <a href="datasets/2/inferences-directedbinary.ttl" target="_blank">Inferences (Directed Binary  links)</a></dd>
+                            <dd><a href="datasets/2/dataset-directed1ton.ttl" target="_blank">Dataset (Directed 1-to-n links)</a> | <a href="datasets/2/inferences-directed1ton.ttl" target="_blank">Inferences (Directed 1-to-n links)</a></dd>
+                        </div>
+                    </div>
+                </div>
+                <h3 style="margin-top:2%;">Dataset 3: Duplex building</h3>
+                <div class="alert alert-secondary rounded-0 my-1 py-1 px-1">
+                    <div class="row g-1">
+                        <div class="col-2">
+                            <img class="img-thumbnail" src="datasets/Model3.png" style=" width: 100%;">
+                        </div>
+                        <div class="col-10 small">
+                            <dd><a href="datasets/3/dataset-binary.ttl" target="_blank">Dataset (Binary links)</a> | <a href="datasets/3/inferences-binary.ttl" target="_blank">Inferences (Binary links)</a></dd>
+                            <dd><a href="datasets/3/dataset-directedbinary.ttl" target="_blank">Dataset (Directed Binary links)</a> | <a href="datasets/3/inferences-directedbinary.ttl" target="_blank">Inferences (Directed Binary  links)</a></dd>
+                            <dd><a href="datasets/3/dataset-directed1ton.ttl" target="_blank">Dataset (Directed 1-to-n links)</a> | <a href="datasets/3/inferences-directed1ton.ttl" target="_blank">Inferences (Directed 1-to-n links)</a></dd>
+                        </div>
+                    </div>
+                </div>
+                <h3 style="margin-top:2%;">Dataset 4: Office building</h3>
+                <div class="alert alert-secondary rounded-0 my-1 py-1 px-1">
+                    <div class="row g-1">
+                        <div class="col-2">
+                            <img class="img-thumbnail" src="datasets/Model4.png" style=" width: 100%;">
+                        </div>
+                        <div class="col-10 small">
+                            <dd><a href="datasets/4/dataset-binary.ttl" target="_blank">Dataset (Binary links)</a> | <a href="datasets/4/inferences-binary.ttl" target="_blank">Inferences (Binary links)</a></dd>
+                            <dd><a href="datasets/4/dataset-directedbinary.ttl" target="_blank">Dataset (Directed Binary links)</a> | <a href="datasets/4/inferences-directedbinary.ttl" target="_blank">Inferences (Directed Binary  links)</a></dd>
+                            <dd><a href="datasets/4/dataset-directed1ton.ttl" target="_blank">Dataset (Directed 1-to-n links)</a> | <a href="datasets/4/inferences-directed1ton.ttl" target="_blank">Inferences (Directed 1-to-n links)</a></dd>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 my-3">
+                <h2 id="rules">Rules</h2>
+                <p>The following rules are available as SHACL shapes in the Turtle format. Each rule is encoded once for the inferred dataset and once for the original dataset.</p>
+                <div class="alert alert-secondary rounded-0 my-1 py-1 small">
+                    <dd><a href="rules/1/shapes-1.ttl" target="_blank">R1,V1: Each building element must be linked to (at least) one task.</a></dd>
+                    <dd><a href="rules/1/shapes-2.ttl" target="_blank">R1,V2: Each building element must be linked to (at least) one task.</a></dd>
+                </div>
+                <div class="alert alert-secondary rounded-0 my-1 py-1 small">
+                    <dd><a href="rules/2/shapes-1.ttl" target="_blank">R2,V1: Tasks associated with the same building element may not overlap in time.</a></dd>
+                    <dd><a href="rules/2/shapes-2.ttl" target="_blank">R2,V2: Tasks associated with the same building element may not overlap in time.</a></dd>
+
+                </div>
+                <div class="alert alert-secondary rounded-0 my-1 py-1 small">
+                    <dd><a href="rules/3/shapes-1.ttl" target="_blank">R3,V1: A task for load-bearing reinforced concrete walls should not take longer than the average coefficient of performance of 2.5h/m³ in terms of the ratio between volume per unit time.</a></dd>
+                    <dd><a href="rules/3/shapes-2.ttl" target="_blank">R3,V2: A task for load-bearing reinforced concrete walls should not take longer than the average coefficient of performance of 2.5h/m³ in terms of the ratio between volume per unit time.</a></dd>
+
+                </div>
+
+
+            </div>
+
+            <div class="col-md-12 my-3">
+                <h2 id="sourcecode">Source code</h2>
+                <p>The source code provided for the benchmarking can be obtaines from <b><a href="sourcecode" target="_blank">this repository</a></b>.</p>
+
+
+
+            </div>
+
+            <div class="col-md-12 my-3">
+                <h2 id="ontology">ICDDL Ontology</h2>
+                <p>The original datasets are inferred using the SHACL rules from the <b><a href="icddl/index.html" target="_blank">ICDDL ontology</a></b>.</p>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Other people may like it too! -->
+    <a style="color:#b5bec9;font-size:0.8em; float:right; margin: 4px; top: 95vh; position: fixed; right: 3%;" href="https://github.com/mavroudisv/plain-academic">Plain Academic</a>
+
+</body>
+
+</html>

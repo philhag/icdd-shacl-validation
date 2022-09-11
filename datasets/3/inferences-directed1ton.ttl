@@ -1,0 +1,668 @@
+@prefix ct:     <https://standards.iso.org/iso/21597/-1/ed-1/en/Container#> .
+@prefix dc:     <http://purl.org/dc/elements/1.1/> .
+@prefix els:    <https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#> .
+@prefix icddl:  <http://icdd.vm.rub.de/ontology/icddl#> .
+@prefix ls:     <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_18_FORMWORKREMOVAL>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd16f> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d7938>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_95_INTERIORDRYWALLS-FLATB-GROUNDFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d7d12>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_69_EXTERIORWALLS> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b7236>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_109_FLOORING-FLATB-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_24_FORMWORKREMOVAL>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd177> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_4_CONCRETEPLACEMENT>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd17f> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#beam_98d604b7-4c6f-4ae8-b5f3-0187bb53f220>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_69_EXTERIORWALLS> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_49_CONCRETECURING>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d43b5> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4938>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_76_PARTYWALLS> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_68_CONCRETECURING>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_9808fd7f-dc48-478e-9217-628e833d410f> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_9808fd7f-dc48-478e-9217-628e833d49bd> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_101_SUSPENDEDCEILINGS-FLATA-GROUNDFLOOR>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#covering_e586c31c-dfb6-463e-aee7-a2dffc985031> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#covering_e586c31c-dfb6-463e-aee7-a2dffc98501e> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#covering_e586c31c-dfb6-463e-aee7-a2dffc98515e>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_104_SUSPENDEDCEILINGS-FLATB-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#stairflight_06e324b6-962d-4317-b253-85e1df8c71f8>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_91_STAIRS> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_59_FORMWORKERECTION>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4065> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d40ce> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4004> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_27_FORMWORKERECTION>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd097> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd08b> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd0a3> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_64b7f7d3-8cfc-4277-ba33-8de2e6533a28>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_95_INTERIORDRYWALLS-FLATB-GROUNDFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#member_5f1efada-bcd8-41b6-aff4-ad3fb24b7679>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_91_STAIRS> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_17_CONCRETECURING>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd16f> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_94_INTERIORDRYWALLS-FLATA-UPPERFLOOR>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_64b7f7d3-8cfc-4277-ba33-8de2e65338fa> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d5239> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d5330> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d5393> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d5275> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_27ece05c-f06c-4dd2-9ccd-945e52597b0a> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d5246> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_2da40d62-4698-436c-a2c3-95c49bb70c3c>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_79_ATTIC> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_55_CONCRETECURING>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4385> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b7160>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_107_FLOORING-FLATA-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#beam_98d604b7-4c6f-4ae8-b5f3-0187bb53f37b>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_75_EXTERIORWALLS> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4257>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_43_CONCRETECURING> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_40_REBARINSTALLATION> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_42_CONCRETEPLACEMENT> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_41_FORMWORKERECTION> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_44_FORMWORKREMOVAL> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#beam_98d604b7-4c6f-4ae8-b5f3-0187bb53f378>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_69_EXTERIORWALLS> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#railing_81be7c96-ce56-447e-9d93-021422f830c5>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_91_STAIRS> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4065>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_61_CONCRETECURING> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_60_CONCRETEPLACEMENT> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_58_REBARINSTALLATION> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_62_FORMWORKREMOVAL> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_59_FORMWORKERECTION> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_88_SKYLIGHTS>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#window_4ec82fcb-9118-4408-a3ae-37969a372f02> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#window_4ec82fcb-9118-4408-a3ae-37969a37298d> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_80_ROOF>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_09a873b2-0e03-4eb2-b9f1-da270188dc92> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#covering_e586c31c-dfb6-463e-aee7-a2dffc985156>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_102_SUSPENDEDCEILINGS-FLATA-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d471d>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_93_INTERIORDRYWALLS-FLATA-GROUNDFLOOR> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_69_EXTERIORWALLS>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d7d42> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#beam_98d604b7-4c6f-4ae8-b5f3-0187bb53f378> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d7d12> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#beam_98d604b7-4c6f-4ae8-b5f3-0187bb53f220> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d7df1> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d7af9> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_6b61ce71-1a7a-473c-8f87-4262e0bdbd1e>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_74_WOODJOISTCEILING> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#stairflight_ca457005-aa0d-4679-92c1-5067d702c9f3>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_91_STAIRS> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd097>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_27_FORMWORKERECTION> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_29_CONCRETECURING> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_28_CONCRETEPLACEMENT> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_30_FORMWORKREMOVAL> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_26_REBARINSTALLATION> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_52_REBARINSTALLATION>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4385> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_44_FORMWORKREMOVAL>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4257> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#covering_e586c31c-dfb6-463e-aee7-a2dffc985748>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_103_SUSPENDEDCEILINGS-FLATB-GROUNDFLOOR> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_2_REBARINSTALLATION>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd17f> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_47_FORMWORKERECTION>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d43b5> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_58_REBARINSTALLATION>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4065> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d40ce> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4004> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_50_FORMWORKREMOVAL>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d43b5> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#covering_e586c31c-dfb6-463e-aee7-a2dffc98514e>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_102_SUSPENDEDCEILINGS-FLATA-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_15_FORMWORKERECTION>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd16f> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b70a9>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_109_FLOORING-FLATB-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_74_WOODJOISTCEILING>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_6b61ce71-1a7a-473c-8f87-4262e0bdbd1e> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_6b61ce71-1a7a-473c-8f87-4262e0bdbd56> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_8_REBARINSTALLATION>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd167> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_62_FORMWORKREMOVAL>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4065> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d40ce> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4004> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#railing_3ab8ee1d-07ad-41b9-8f24-a55884e7e655>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_91_STAIRS> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_40_REBARINSTALLATION>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4257> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#beam_98d604b7-4c6f-4ae8-b5f3-0187bb53f31b>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_75_EXTERIORWALLS> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_20_REBARINSTALLATION>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd177> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#railing_81be7c96-ce56-447e-9d93-021422f83119>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_91_STAIRS> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b7ef5>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_106_FLOORING-FLATA-GROUNDFLOOR> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_29_CONCRETECURING>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd097> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd08b> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd0a3> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b7300>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_109_FLOORING-FLATB-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_6_FORMWORKREMOVAL>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd17f> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_2da40d62-4698-436c-a2c3-95c49bb70ca4>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_79_ATTIC> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d5611>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_75_EXTERIORWALLS> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_102_SUSPENDEDCEILINGS-FLATA-UPPERFLOOR>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#covering_e586c31c-dfb6-463e-aee7-a2dffc985144> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#covering_e586c31c-dfb6-463e-aee7-a2dffc985156> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#covering_e586c31c-dfb6-463e-aee7-a2dffc98514e> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#covering_e586c31c-dfb6-463e-aee7-a2dffc985170> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d795d>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_70_PARTYWALLS> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_3_FORMWORKERECTION>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd17f> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d7af9>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_69_EXTERIORWALLS> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_5_CONCRETECURING>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd17f> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_35_FORMWORKERECTION>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4200> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_9808fd7f-dc48-478e-9217-628e833d49bd>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_66_REBARINSTALLATION> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_68_CONCRETECURING> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_67_CONCRETEPLACEMENT> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d55b5>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_96_INTERIORDRYWALLS-FLATB-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d7df1>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_69_EXTERIORWALLS> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_104_SUSPENDEDCEILINGS-FLATB-UPPERFLOOR>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#covering_e586c31c-dfb6-463e-aee7-a2dffc98515e> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#covering_e586c31c-dfb6-463e-aee7-a2dffc985166> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#covering_e586c31c-dfb6-463e-aee7-a2dffc9850b2> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#covering_e586c31c-dfb6-463e-aee7-a2dffc98516e> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4200>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_38_FORMWORKREMOVAL> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_37_CONCRETECURING> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_34_REBARINSTALLATION> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_35_FORMWORKERECTION> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_36_CONCRETEPLACEMENT> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d568d>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_75_EXTERIORWALLS> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d7d42>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_69_EXTERIORWALLS> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_43_CONCRETECURING>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4257> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_12_FORMWORKREMOVAL>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd167> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b7a99>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_108_FLOORING-FLATB-GROUNDFLOOR> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_60_CONCRETEPLACEMENT>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4004> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4065> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d40ce> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b7b78>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_108_FLOORING-FLATB-GROUNDFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#covering_e586c31c-dfb6-463e-aee7-a2dffc985170>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_102_SUSPENDEDCEILINGS-FLATA-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_30_FORMWORKREMOVAL>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd097> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd08b> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd0a3> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_2c391822-07f8-4a22-86a8-a1e57412dcef>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_95_INTERIORDRYWALLS-FLATB-GROUNDFLOOR> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_11_CONCRETECURING>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd167> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#beam_98d604b7-4c6f-4ae8-b5f3-0187bb53f379>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_71_STEELBEAMS> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d5393>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_94_INTERIORDRYWALLS-FLATA-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd17f>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_6_FORMWORKREMOVAL> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_3_FORMWORKERECTION> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_4_CONCRETEPLACEMENT> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_2_REBARINSTALLATION> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_5_CONCRETECURING> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_2da40d62-4698-436c-a2c3-95c49bb70cfa>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_79_ATTIC> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_6b61ce71-1a7a-473c-8f87-4262e0bdbd56>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_74_WOODJOISTCEILING> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_79_ATTIC>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_2da40d62-4698-436c-a2c3-95c49bb70d41> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_2da40d62-4698-436c-a2c3-95c49bb70ca4> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_2da40d62-4698-436c-a2c3-95c49bb70c3c> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_2da40d62-4698-436c-a2c3-95c49bb70cfa> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#beam_98d604b7-4c6f-4ae8-b5f3-0187bb53f2f4>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_75_EXTERIORWALLS> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d5330>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_94_INTERIORDRYWALLS-FLATA-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#member_d776d4d4-ad53-498c-9675-a4d357bd81ef>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_91_STAIRS> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_106_FLOORING-FLATA-GROUNDFLOOR>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b7ef5> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b7b5b> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b7ca4> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b7a31>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_108_FLOORING-FLATB-GROUNDFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b7361>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_107_FLOORING-FLATA-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_54_CONCRETEPLACEMENT>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4385> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_67_CONCRETEPLACEMENT>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_9808fd7f-dc48-478e-9217-628e833d410f> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_9808fd7f-dc48-478e-9217-628e833d49bd> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_91_STAIRS>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#stairflight_06e324b6-962d-4317-b253-85e1df8c71f8> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#railing_81be7c96-ce56-447e-9d93-021422f83119> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#railing_3ab8ee1d-07ad-41b9-8f24-a55884e7e651> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#member_d776d4d4-ad53-498c-9675-a4d357bd81ef> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#railing_81be7c96-ce56-447e-9d93-021422f830c5> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#member_aee7272c-8ef2-4af0-b3f4-1509a4c67b98> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#member_f26519b1-a697-4f79-9628-ca1443a95258> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#stairflight_ca457005-aa0d-4679-92c1-5067d702c9f3> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#member_5f1efada-bcd8-41b6-aff4-ad3fb24b7679> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#railing_3ab8ee1d-07ad-41b9-8f24-a55884e7e655> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_95_INTERIORDRYWALLS-FLATB-GROUNDFLOOR>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d7be7> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_2c391822-07f8-4a22-86a8-a1e57412dcef> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_2c391822-07f8-4a22-86a8-a1e57412df9e> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d7938> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_64b7f7d3-8cfc-4277-ba33-8de2e6533a28> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_2c391822-07f8-4a22-86a8-a1e57412d8c1> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d54e7>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_96_INTERIORDRYWALLS-FLATB-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#covering_e586c31c-dfb6-463e-aee7-a2dffc985144>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_102_SUSPENDEDCEILINGS-FLATA-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_108_FLOORING-FLATB-GROUNDFLOOR>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b7b78> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b7a99> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b7a31> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d5246>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_94_INTERIORDRYWALLS-FLATA-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#covering_e586c31c-dfb6-463e-aee7-a2dffc985031>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_101_SUSPENDEDCEILINGS-FLATA-GROUNDFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd177>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_21_FORMWORKERECTION> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_22_CONCRETEPLACEMENT> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_24_FORMWORKREMOVAL> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_20_REBARINSTALLATION> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_23_CONCRETECURING> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_103_SUSPENDEDCEILINGS-FLATB-GROUNDFLOOR>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#covering_e586c31c-dfb6-463e-aee7-a2dffc985003> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#covering_e586c31c-dfb6-463e-aee7-a2dffc98500b> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#covering_e586c31c-dfb6-463e-aee7-a2dffc985748> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_42_CONCRETEPLACEMENT>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4257> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_75_EXTERIORWALLS>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#beam_98d604b7-4c6f-4ae8-b5f3-0187bb53f31b> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#beam_98d604b7-4c6f-4ae8-b5f3-0187bb53f2f4> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d5611> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d5659> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d56c9> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#beam_98d604b7-4c6f-4ae8-b5f3-0187bb53f37b> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#beam_98d604b7-4c6f-4ae8-b5f3-0187bb53f37a> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d568d> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_64b7f7d3-8cfc-4277-ba33-8de2e6533ae9>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_93_INTERIORDRYWALLS-FLATA-GROUNDFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d5659>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_75_EXTERIORWALLS> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d5275>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_94_INTERIORDRYWALLS-FLATA-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_9_FORMWORKERECTION>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd167> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_9808fd7f-dc48-478e-9217-628e833d410f>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_66_REBARINSTALLATION> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_67_CONCRETEPLACEMENT> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_68_CONCRETECURING> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_22_CONCRETEPLACEMENT>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd177> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_48_CONCRETEPLACEMENT>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d43b5> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_2c391822-07f8-4a22-86a8-a1e57412df9e>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_95_INTERIORDRYWALLS-FLATB-GROUNDFLOOR> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_28_CONCRETEPLACEMENT>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd097> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd08b> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd0a3> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d441c>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_93_INTERIORDRYWALLS-FLATA-GROUNDFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd16f>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_16_CONCRETEPLACEMENT> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_17_CONCRETECURING> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_18_FORMWORKREMOVAL> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_15_FORMWORKERECTION> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_14_REBARINSTALLATION> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_107_FLOORING-FLATA-UPPERFLOOR>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b700f> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b7160> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b7361> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b72d9> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b72d9>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_107_FLOORING-FLATA-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d43b5>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_50_FORMWORKREMOVAL> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_47_FORMWORKERECTION> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_46_REBARINSTALLATION> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_48_CONCRETEPLACEMENT> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_49_CONCRETECURING> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_10_CONCRETEPLACEMENT>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd167> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d5512>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_96_INTERIORDRYWALLS-FLATB-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d46ec>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_70_PARTYWALLS> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_96_INTERIORDRYWALLS-FLATB-UPPERFLOOR>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d54e7> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_27ece05c-f06c-4dd2-9ccd-945e52597fa3> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d5512> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d548e> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d574f> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d55b5> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_64b7f7d3-8cfc-4277-ba33-8de2e6533e77> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_36_CONCRETEPLACEMENT>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4200> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_23_CONCRETECURING>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd177> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d40ce>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_61_CONCRETECURING> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_59_FORMWORKERECTION> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_58_REBARINSTALLATION> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_62_FORMWORKREMOVAL> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_60_CONCRETEPLACEMENT> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_16_CONCRETEPLACEMENT>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd16f> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#beam_98d604b7-4c6f-4ae8-b5f3-0187bb53f37a>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_75_EXTERIORWALLS> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_38_FORMWORKREMOVAL>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4200> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d56c9>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_75_EXTERIORWALLS> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#railing_3ab8ee1d-07ad-41b9-8f24-a55884e7e651>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_91_STAIRS> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_61_CONCRETECURING>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d40ce> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4065> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4004> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d548e>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_96_INTERIORDRYWALLS-FLATB-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd08b>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_26_REBARINSTALLATION> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_30_FORMWORKREMOVAL> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_28_CONCRETEPLACEMENT> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_29_CONCRETECURING> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_27_FORMWORKERECTION> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_2c391822-07f8-4a22-86a8-a1e57412d8c1>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_95_INTERIORDRYWALLS-FLATB-GROUNDFLOOR> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_37_CONCRETECURING>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4200> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#covering_e586c31c-dfb6-463e-aee7-a2dffc98501e>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_101_SUSPENDEDCEILINGS-FLATA-GROUNDFLOOR> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_56_FORMWORKREMOVAL>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4385> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd167>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_12_FORMWORKREMOVAL> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_11_CONCRETECURING> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_10_CONCRETEPLACEMENT> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_8_REBARINSTALLATION> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_9_FORMWORKERECTION> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_53_FORMWORKERECTION>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4385> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_64b7f7d3-8cfc-4277-ba33-8de2e65338fa>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_94_INTERIORDRYWALLS-FLATA-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4385>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_52_REBARINSTALLATION> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_54_CONCRETEPLACEMENT> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_56_FORMWORKREMOVAL> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_55_CONCRETECURING> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_53_FORMWORKERECTION> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_21_FORMWORKERECTION>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd177> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#window_4ec82fcb-9118-4408-a3ae-37969a372f02>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_88_SKYLIGHTS> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_64b7f7d3-8cfc-4277-ba33-8de2e6533e77>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_96_INTERIORDRYWALLS-FLATB-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b700f>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_107_FLOORING-FLATA-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d7be7>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_95_INTERIORDRYWALLS-FLATB-GROUNDFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#covering_e586c31c-dfb6-463e-aee7-a2dffc98500b>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_103_SUSPENDEDCEILINGS-FLATB-GROUNDFLOOR> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_66_REBARINSTALLATION>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_9808fd7f-dc48-478e-9217-628e833d410f> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_9808fd7f-dc48-478e-9217-628e833d49bd> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b7b5b>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_106_FLOORING-FLATA-GROUNDFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#member_aee7272c-8ef2-4af0-b3f4-1509a4c67b98>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_91_STAIRS> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#covering_e586c31c-dfb6-463e-aee7-a2dffc98516e>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_104_SUSPENDEDCEILINGS-FLATB-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_70_PARTYWALLS>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d795d> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d46ec> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d46d1> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_27ece05c-f06c-4dd2-9ccd-945e52597b0a>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_94_INTERIORDRYWALLS-FLATA-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_46_REBARINSTALLATION>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d43b5> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_76_PARTYWALLS>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4938> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b7ca4>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_106_FLOORING-FLATA-GROUNDFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d46d1>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_70_PARTYWALLS> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_2c391822-07f8-4a22-86a8-a1e57412d386>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_93_INTERIORDRYWALLS-FLATA-GROUNDFLOOR> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_26_REBARINSTALLATION>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd097> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd08b> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd0a3> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d44b8>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_93_INTERIORDRYWALLS-FLATA-GROUNDFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b720f>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_109_FLOORING-FLATB-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_2c391822-07f8-4a22-86a8-a1e57412d365>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_93_INTERIORDRYWALLS-FLATA-GROUNDFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_2da40d62-4698-436c-a2c3-95c49bb70d41>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_79_ATTIC> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_71_STEELBEAMS>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#beam_98d604b7-4c6f-4ae8-b5f3-0187bb53f379> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#beam_98d604b7-4c6f-4ae8-b5f3-0187bb53ebc8> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#member_f26519b1-a697-4f79-9628-ca1443a95258>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_91_STAIRS> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4004>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_60_CONCRETEPLACEMENT> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_58_REBARINSTALLATION> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_62_FORMWORKREMOVAL> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_59_FORMWORKERECTION> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_61_CONCRETECURING> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#covering_e586c31c-dfb6-463e-aee7-a2dffc9850b2>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_104_SUSPENDEDCEILINGS-FLATB-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_109_FLOORING-FLATB-UPPERFLOOR>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b720f> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b7300> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b70a9> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_982f59b0-f2e1-485f-8ce1-c9f6117b7236> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#window_4ec82fcb-9118-4408-a3ae-37969a37298d>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_88_SKYLIGHTS> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d5239>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_94_INTERIORDRYWALLS-FLATA-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_93_INTERIORDRYWALLS-FLATA-GROUNDFLOOR>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_64b7f7d3-8cfc-4277-ba33-8de2e6533ae9> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_2c391822-07f8-4a22-86a8-a1e57412d365> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d44b8> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d471d> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_2c391822-07f8-4a22-86a8-a1e57412d386> , <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d441c> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_34_REBARINSTALLATION>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4200> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#covering_e586c31c-dfb6-463e-aee7-a2dffc985003>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_103_SUSPENDEDCEILINGS-FLATB-GROUNDFLOOR> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_14_REBARINSTALLATION>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd16f> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#covering_e586c31c-dfb6-463e-aee7-a2dffc985166>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_104_SUSPENDEDCEILINGS-FLATB-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#footing_2e3c415a-d885-4964-a589-bb0941bdd0a3>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_26_REBARINSTALLATION> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_30_FORMWORKREMOVAL> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_28_CONCRETEPLACEMENT> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_29_CONCRETECURING> , <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_27_FORMWORKERECTION> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#slab_09a873b2-0e03-4eb2-b9f1-da270188dc92>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_80_ROOF> .
+
+<https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_41_FORMWORKERECTION>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d4257> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_27ece05c-f06c-4dd2-9ccd-945e52597fa3>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_96_INTERIORDRYWALLS-FLATB-UPPERFLOOR> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#beam_98d604b7-4c6f-4ae8-b5f3-0187bb53ebc8>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_71_STEELBEAMS> .
+
+<https://icdd.vm.rub.de/convert/ifc/63606a85-8b86-4651-beda-9655081fb5cd#wall_9808fd7f-dc48-478e-9217-628e833d574f>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/33_DuplexBuilding_Directed1ToN-20223613/index/cto/inst#Task_96_INTERIORDRYWALLS-FLATB-UPPERFLOOR> .

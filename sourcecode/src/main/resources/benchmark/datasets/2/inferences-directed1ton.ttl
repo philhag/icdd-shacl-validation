@@ -1,0 +1,293 @@
+@prefix ct:     <https://standards.iso.org/iso/21597/-1/ed-1/en/Container#> .
+@prefix dc:     <http://purl.org/dc/elements/1.1/> .
+@prefix els:    <https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#> .
+@prefix icddl:  <http://icdd.vm.rub.de/ontology/icddl#> .
+@prefix ls:     <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa20638f479>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_7_STUETZENE0> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa20638f248>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_6_WAENDEE0> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388a87>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_15_WAENDEE2> .
+
+<https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_13_DECKEE2>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#slab_f9fa4621-9fe2-4ac7-a34e-dfa206388a97> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#slab_f9fa4621-9fe2-4ac7-a34e-dfa206388a9d> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa20638f5cc>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_6_WAENDEE0> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388a81>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_15_WAENDEE2> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388ac4>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_9_WAENDEE1> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa20638f23b>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_6_WAENDEE0> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa20638f13b>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_6_WAENDEE0> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388af5>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_14_STUETZENE2> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388aca>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_9_WAENDEE1> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388aa3>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_15_WAENDEE2> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa20638f465>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_7_STUETZENE0> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388aaf>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_15_WAENDEE2> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388a86>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_15_WAENDEE2> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388afb>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_14_STUETZENE2> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388a35>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_12_STUETZENE1> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388acd>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_12_STUETZENE1> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#slab_580340a8-02ef-4e86-ab7f-0c548af08e5c>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_1_GRUENDUNG> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa20638f46b>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_7_STUETZENE0> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388a80>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_15_WAENDEE2> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388a89>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_14_STUETZENE2> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#slab_f9fa4621-9fe2-4ac7-a34e-dfa206388a97>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_13_DECKEE2> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388a3b>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_12_STUETZENE1> .
+
+<https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_9_WAENDEE1>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388ac1> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388ae3> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388ac0> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388acb> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388aca> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388aef> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388aee> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388ac4> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388ac5> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388ac7> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388ac6> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388ae3>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_9_WAENDEE1> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388a8f>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_14_STUETZENE2> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#slab_f9fa4621-9fe2-4ac7-a34e-dfa206388a9d>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_13_DECKEE2> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388aae>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_15_WAENDEE2> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388a85>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_15_WAENDEE2> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388aef>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_9_WAENDEE1> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa20638f1de>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_6_WAENDEE0> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa20638f560>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_6_WAENDEE0> .
+
+<https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_1_GRUENDUNG>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#slab_580340a8-02ef-4e86-ab7f-0c548af08e5c> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa20638f47d>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_7_STUETZENE0> .
+
+<https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_8_DECKEE0>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#slab_f9fa4621-9fe2-4ac7-a34e-dfa20638f2ed> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#slab_f9fa4621-9fe2-4ac7-a34e-dfa20638f29b> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388a8b>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_15_WAENDEE2> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388af3>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_14_STUETZENE2> .
+
+<https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_12_STUETZENE1>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388acd> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388a37> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388a33> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388ac9> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388acf> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388a35> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388a31> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388a3b> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa20638f463>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_7_STUETZENE0> .
+
+<https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_6_WAENDEE0>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388c83> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa20638f560> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa20638f501> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa20638f13b> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa20638f1de> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa20638f23b> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa20638f5fc> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa20638f4a6> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa20638f5cc> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa20638f248> .
+
+<https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_15_WAENDEE2>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388a85> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388a8b> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388a87> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388aa3> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388a80> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388aae> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388a86> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388a84> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388a81> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388aaf> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388a8a> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#slab_f9fa4621-9fe2-4ac7-a34e-dfa20638f2ed>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_8_DECKEE0> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388a84>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_15_WAENDEE2> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388ac7>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_9_WAENDEE1> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388aee>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_9_WAENDEE1> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388a33>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_12_STUETZENE1> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388ac1>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_9_WAENDEE1> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388a8a>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_15_WAENDEE2> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388c83>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_6_WAENDEE0> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388a8d>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_14_STUETZENE2> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa20638f5fc>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_6_WAENDEE0> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388ac6>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_9_WAENDEE1> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388ac0>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_9_WAENDEE1> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388af7>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_14_STUETZENE2> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388ac9>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_12_STUETZENE1> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa20638f47b>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_7_STUETZENE0> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#slab_f9fa4621-9fe2-4ac7-a34e-dfa206388ad7>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_11_DECKEE1> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa20638f467>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_7_STUETZENE0> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#slab_f9fa4621-9fe2-4ac7-a34e-dfa20638f29b>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_8_DECKEE0> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388af1>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_14_STUETZENE2> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa20638f461>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_7_STUETZENE0> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388a37>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_12_STUETZENE1> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388acf>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_12_STUETZENE1> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#slab_f9fa4621-9fe2-4ac7-a34e-dfa206388add>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_11_DECKEE1> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388ac5>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_9_WAENDEE1> .
+
+<https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_11_DECKEE1>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#slab_f9fa4621-9fe2-4ac7-a34e-dfa206388add> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#slab_f9fa4621-9fe2-4ac7-a34e-dfa206388ad7> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa20638f4a6>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_6_WAENDEE0> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388a31>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_12_STUETZENE1> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa20638f501>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_6_WAENDEE0> .
+
+<https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_14_STUETZENE2>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388af5> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388af1> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388a8d> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388af7> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388a8f> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388af3> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388a89> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa206388afb> .
+
+<https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_7_STUETZENE0>
+        icddl:linkedDirectedOneToMany  <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa20638f479> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa20638f467> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa20638f463> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa20638f47b> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa20638f465> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa20638f461> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa20638f47d> , <https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#column_f9fa4621-9fe2-4ac7-a34e-dfa20638f46b> .
+
+<https://icdd.vm.rub.de/convert/ifc/f741e392-fd62-4661-8471-aa67ec9b5e94#wall_f9fa4621-9fe2-4ac7-a34e-dfa206388acb>
+        icddl:linkedDirectedOneToManyInverse
+                <https://icdd.vm.rub.de/data/2_ApartmentBuilding_Directed1ToN-202236928/index/cto/inst#Task_9_WAENDEE1> .

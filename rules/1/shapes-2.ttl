@@ -1,0 +1,50 @@
+# baseURI: http://icdd.vm.rub.de/shacl/ruleset
+# imports: http://datashapes.org/dash.ttl
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix ct:    <https://standards.iso.org/iso/21597/-1/ed-1/en/Container#> .
+@prefix ls:    <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#> .
+@prefix els:   <https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#> .
+
+@prefix rule: <http://icdd.vm.rub.de/shacl/ruleset#> .
+@prefix icddl: <http://icdd.vm.rub.de/ontology/icddl#> .
+
+@prefix prj: <http://www.inf.bi.rub.de/msprojectxml#> .
+@prefix bot: <https://w3id.org/bot#> .
+@prefix cto: <https://w3id.org/cto#>.
+
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+
+<http://icdd.vm.rub.de/shacl/ruleset#>
+  rdf:type owl:Ontology .
+
+rule:R1_V2_ElementLinkedToMinOneTask
+  a sh:NodeShape ;
+  sh:targetClass bot:Element ;
+  sh:sparql [
+  a sh:SPARQLConstraint ;
+	sh:message "[R1_V2] Each building element must be linked to (at least) one task." ;
+	sh:select """
+        PREFIX ls: <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#>
+        PREFIX props: <https://w3id.org/props#>
+        PREFIX msproj: <http://schemas.microsoft.com/project#>
+        PREFIX cto: <https://w3id.org/cto#>
+        
+        SELECT DISTINCT $this
+        WHERE {                                  
+            $this props:globalIdIfcRoot_attribute_simple ?elementGuid .
+            OPTIONAL{              
+              ?link ?linking1 [ls:hasIdentifier/ls:identifier ?elementGuid] .
+              ?link ?linking2 [ls:hasIdentifier/ls:identifier ?taskUid] .
+              ?task msproj:UID ?taskUid.
+              ?task a cto:Task. 
+            }
+            FILTER(!bound(?task))
+        }""" ;
+  ] .

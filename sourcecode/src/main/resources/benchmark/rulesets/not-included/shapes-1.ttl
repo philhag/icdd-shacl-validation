@@ -1,0 +1,46 @@
+  # baseURI: http://icdd.vm.rub.de/shacl/ruleset
+  # imports: http://datashapes.org/dash.ttl
+
+  @prefix owl: <http://www.w3.org/2002/07/owl#> .
+  @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+  @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+  @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+  @prefix ct:    <https://standards.iso.org/iso/21597/-1/ed-1/en/Container#> .
+  @prefix ls:    <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#> .
+  @prefix els:   <https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#> .
+
+  @prefix rule: <http://icdd.vm.rub.de/shacl/ruleset#> .
+  @prefix icddl: <http://icdd.vm.rub.de/ontology/icddl#> .
+
+  @prefix prj: <http://www.inf.bi.rub.de/msprojectxml#> .
+  @prefix bot: <https://w3id.org/bot#> .
+  @prefix cto: <https://w3id.org/cto#>.
+
+  @prefix dash: <http://datashapes.org/dash#> .
+  @prefix sh: <http://www.w3.org/ns/shacl#> .
+
+
+  <http://icdd.vm.rub.de/shacl/ruleset#>
+    rdf:type owl:Ontology .
+
+rule:R3_V1_MultipleElementsForTask
+  a sh:NodeShape ;
+  sh:targetClass cto:Task ;
+  sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "[R3_V1] A task that refers to two or more building elements must be executed in the same topological building story. This task is linked to several building elements in different storeys and violates the rule." ;
+        sh:select """
+          PREFIX bot: <https://w3id.org/bot#>
+          PREFIX icddl: <http://icdd.vm.rub.de/ontology/icddl#>
+
+          SELECT DISTINCT $this 
+          WHERE {
+            $this icddl:linkedDirectedBinary | icddl:linkedDirectedBinaryInverse | icddl:linkedDirected | icddl:linkedDirectedInverse | icddl:linkedDirectedOneToMany | icddl:linkedDirectedOneToManyInverse | icddl:linkedBinary ?firstElement.
+            $this icddl:linkedDirectedBinary | icddl:linkedDirectedBinaryInverse | icddl:linkedDirected | icddl:linkedDirectedInverse | icddl:linkedDirectedOneToMany | icddl:linkedDirectedOneToManyInverse | icddl:linkedBinary ?secondElement.
+            ?story1 bot:containsElement ?firstElement .
+            ?story2 bot:containsElement ?secondElement .
+            FILTER(!sameTerm(?firstElement, ?secondElement))
+            FILTER(!sameTerm(?story1, ?story2))
+          }""" ;
+  ] .

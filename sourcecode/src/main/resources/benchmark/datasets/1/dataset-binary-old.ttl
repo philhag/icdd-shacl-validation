@@ -1,0 +1,726 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix ct: <https://standards.iso.org/iso/21597/-1/ed-1/en/Container#>.
+@prefix ls: <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#>.
+@prefix els: <https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#>.
+@prefix exdc: <https://icdd.vm.rub.de/ontology/icdd/ExtendedDocument#>.
+@prefix : <https://icdd.vm.rub.de/data/-2021612643/index#>.
+@prefix lse: <https://icdd.vm.rub.de/ontology/icdd/LinksetSparqlExtension#>.
+@prefix ns0: <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#>.
+@prefix idx: <https://icdd.vm.rub.de/data/-2021612643/index#>.
+@prefix ns1: <https://icdd.vm.rub.de/data/-2021612643/index/ls/auto-generated#>.
+@prefix bot: <https://w3id.org/bot#>.
+@prefix ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#>.
+@prefix beo: <https://pi.pauwel.be/voc/buildingelement#>.
+@prefix lbd: <https://linkebuildingdata.org/LBD#>.
+@prefix props: <https://w3id.org/props#>.
+@prefix geo: <http://www.opengis.net/ont/geosparql#>.
+@prefix unit: <http://qudt.org/vocab/unit/>.
+@prefix IFC4-PSD: <https://www.linkedbuildingdata.net/IFC4-PSD#>.
+@prefix smls: <https://w3id.org/def/smls-owl#>.
+@prefix inst: <https://icdd.vm.rub.de/convert/ifc/826ff41a-6962-41f0-bda7-c299041f2d17#>.
+@prefix mep: <http://pi.pauwel.be/voc/distributionelement#>.
+@prefix furn: <http://pi.pauwel.be/voc/furniture#>.
+@prefix msproj: <http://schemas.microsoft.com/project#>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix cto: <https://w3id.org/cto#>.
+@prefix ns2: <https://icdd.vm.rub.de/data/-2021612643/index/cto/inst#>.
+
+
+    inst:building_9d90071a-8d5a-46c0-9506-caf819245d02 a bot:Building;
+                                                       bot:hasStorey inst:storey_9d90071a-8d5a-46c0-9506-caf8e6dbc171,
+                                                                     inst:storey_9d90071a-8d5a-46c0-9506-caf8e6dbc1dc,
+                                                                     inst:storey_9d90071a-8d5a-46c0-9506-caf8e6dbc231;
+                                                       props:globalIdIfcRoot_attribute_simple "2Ta0SQZLf6m9K6olWP95q2";
+                                                       props:isLandmarked_simple <https://w3id.org/express#UNKNOWN>;
+                                                       props:numberOfStoreys_simple 3 .
+    inst:site_9d90071a-8d5a-46c0-9506-caf819245d01 geo:hasGeometry <urn:bot:geom:pt:9d90071a-8d5a-46c0-9506-caf819245d01>;
+                                                   a geo:Feature,
+                                                     bot:Site;
+                                                   bot:hasBuilding inst:building_9d90071a-8d5a-46c0-9506-caf819245d02;
+                                                   props:globalIdIfcRoot_attribute_simple "2Ta0SQZLf6m9K6olWP95q1";
+                                                   props:nameIfcRoot_attribute_simple "Default";
+                                                   props:refElevationIfcSite_attribute_simple "0."^^xsd:double.
+    inst:slab_33cea67b-0280-42d4-823c-9bb379bc8014 a beo:Slab,
+                                                     beo:Slab-FLOOR,
+                                                     bot:Element;
+                                                   props:batid_attribute_simple "2446261";
+                                                   props:familieUndTyp_simple "Streifenfundament: STB 1500 x 1500 x 500";
+                                                   props:globalIdIfcRoot_attribute_simple "0ppgPx0e12r88ycxDvl80K";
+                                                   props:isExternal_simple false;
+                                                   props:nameIfcRoot_attribute_simple "Streifenfundament:STB 1500 x 1500 x 500:2446261";
+                                                   props:objectTypeIfcObject_attribute_simple "Streifenfundament:STB 1500 x 1500 x 500";
+                                                   props:pitchAngle_simple "0."^^xsd:double;
+                                                   props:reference_simple "STB 1500 x 1500 x 500";
+                                                   props:taskID_simple "6."^^xsd:double.
+    inst:slab_75e193fd-81b2-42ea-a574-86959bffac13 a beo:Slab,
+                                                     beo:Slab-BASESLAB,
+                                                     bot:Element;
+                                                   props:batid_attribute_simple "2444714";
+                                                   props:familieUndTyp_simple "Bodenplatte: STB 300";
+                                                   props:globalIdIfcRoot_attribute_simple "1ruPFzWR92wgLqXfMR$wmJ";
+                                                   props:isExternal_simple false;
+                                                   props:loadBearing_simple true;
+                                                   props:nameIfcRoot_attribute_simple "Bodenplatte:STB 300:2444714";
+                                                   props:objectTypeIfcObject_attribute_simple "Bodenplatte:STB 300";
+                                                   props:pitchAngle_simple "0."^^xsd:double;
+                                                   props:reference_simple "STB 300";
+                                                   props:taskID_simple "12."^^xsd:double;
+                                                   props:thermalTransmittance_simple "3.48666666666667"^^xsd:double.
+    inst:slab_75e193fd-81b2-42ea-a574-86959bffad8a a beo:Slab,
+                                                     beo:Slab-FLOOR,
+                                                     bot:Element;
+                                                   props:batid_attribute_simple "2444339";
+                                                   props:familieUndTyp_simple "Streifenfundament: STB 1500 x 1500 x 500";
+                                                   props:globalIdIfcRoot_attribute_simple "1ruPFzWR92wgLqXfMR$wsA";
+                                                   props:isExternal_simple false;
+                                                   props:nameIfcRoot_attribute_simple "Streifenfundament:STB 1500 x 1500 x 500:2444339";
+                                                   props:objectTypeIfcObject_attribute_simple "Streifenfundament:STB 1500 x 1500 x 500";
+                                                   props:pitchAngle_simple "0."^^xsd:double;
+                                                   props:reference_simple "STB 1500 x 1500 x 500";
+                                                   props:taskID_simple "11."^^xsd:double.
+    inst:slab_75e193fd-81b2-42ea-a574-86959bffada4 a beo:Slab,
+                                                     beo:Slab-FLOOR,
+                                                     bot:Element;
+                                                   props:batid_attribute_simple "2444317";
+                                                   props:familieUndTyp_simple "Streifenfundament: STB 1500 x 1500 x 500";
+                                                   props:globalIdIfcRoot_attribute_simple "1ruPFzWR92wgLqXfMR$wsa";
+                                                   props:isExternal_simple false;
+                                                   props:nameIfcRoot_attribute_simple "Streifenfundament:STB 1500 x 1500 x 500:2444317";
+                                                   props:objectTypeIfcObject_attribute_simple "Streifenfundament:STB 1500 x 1500 x 500";
+                                                   props:pitchAngle_simple "0."^^xsd:double;
+                                                   props:reference_simple "STB 1500 x 1500 x 500";
+                                                   props:taskID_simple "6."^^xsd:double.
+    inst:slab_75e193fd-81b2-42ea-a574-86959bffadff a beo:Slab,
+                                                     beo:Slab-FLOOR,
+                                                     bot:Element;
+                                                   props:batid_attribute_simple "2444358";
+                                                   props:familieUndTyp_simple "Streifenfundament: STB 1500 x 1500 x 500";
+                                                   props:globalIdIfcRoot_attribute_simple "1ruPFzWR92wgLqXfMR$wt$";
+                                                   props:isExternal_simple false;
+                                                   props:nameIfcRoot_attribute_simple "Streifenfundament:STB 1500 x 1500 x 500:2444358";
+                                                   props:objectTypeIfcObject_attribute_simple "Streifenfundament:STB 1500 x 1500 x 500";
+                                                   props:pitchAngle_simple "0."^^xsd:double;
+                                                   props:reference_simple "STB 1500 x 1500 x 500";
+                                                   props:taskID_simple "11."^^xsd:double.
+    inst:slab_a2bf5e3e-e854-48de-ae2a-4430db17405f a beo:Slab,
+                                                     beo:Slab-FLOOR,
+                                                     bot:Element;
+                                                   props:batid_attribute_simple "2445749";
+                                                   props:globalIdIfcRoot_attribute_simple "2Ylru_w5H8tgugH33R5q1V";
+                                                   props:isExternal_simple false;
+                                                   props:loadBearing_simple true;
+                                                   props:nameIfcRoot_attribute_simple "Geschossdecke:STB 300:2445749";
+                                                   props:objectTypeIfcObject_attribute_simple "Geschossdecke:STB 300";
+                                                   props:pitchAngle_simple "0."^^xsd:double;
+                                                   props:reference_simple "STB 300";
+                                                   props:thermalTransmittance_simple "3.48666666666667"^^xsd:double.
+    inst:storey_9d90071a-8d5a-46c0-9506-caf8e6dbc171 a bot:Storey;
+                                                     bot:containsElement inst:slab_a2bf5e3e-e854-48de-ae2a-4430db17405f;
+                                                     props:aboveGround_simple <https://w3id.org/express#UNKNOWN>;
+                                                     props:elevationIfcBuildingStorey_attribute_simple "3."^^xsd:double;
+                                                     props:globalIdIfcRoot_attribute_simple "2Ta0SQZLf6m9K6olZcsy5n";
+                                                     props:longNameIfcSpatialStructureElement_attribute_simple "Ebene 1";
+                                                     props:nameIfcRoot_attribute_simple "Ebene 1";
+                                                     props:name_simple "Ebene 1";
+                                                     props:objectTypeIfcObject_attribute_simple "Ebene:Ebene".
+    inst:storey_9d90071a-8d5a-46c0-9506-caf8e6dbc1dc a bot:Storey;
+                                                     bot:containsElement inst:slab_33cea67b-0280-42d4-823c-9bb379bc8014,
+                                                                         inst:slab_75e193fd-81b2-42ea-a574-86959bffad8a,
+                                                                         inst:slab_75e193fd-81b2-42ea-a574-86959bffada4,
+                                                                         inst:slab_75e193fd-81b2-42ea-a574-86959bffadff;
+                                                     props:aboveGround_simple <https://w3id.org/express#UNKNOWN>;
+                                                     props:elevationIfcBuildingStorey_attribute_simple "-0.3"^^xsd:double;
+                                                     props:globalIdIfcRoot_attribute_simple "2Ta0SQZLf6m9K6olZcsy7S";
+                                                     props:longNameIfcSpatialStructureElement_attribute_simple "Ebene -1";
+                                                     props:nameIfcRoot_attribute_simple "Ebene -1";
+                                                     props:name_simple "Ebene -1";
+                                                     props:objectTypeIfcObject_attribute_simple "Ebene:Ebene".
+    inst:storey_9d90071a-8d5a-46c0-9506-caf8e6dbc231 a bot:Storey;
+                                                     bot:containsElement inst:slab_75e193fd-81b2-42ea-a574-86959bffac13,
+                                                                         inst:wall_a2bf5e3e-e854-48de-ae2a-4430db175e59,
+                                                                         inst:wall_a2bf5e3e-e854-48de-ae2a-4430db175eb7,
+                                                                         inst:wall_a2bf5e3e-e854-48de-ae2a-4430db175f33;
+                                                     props:aboveGround_simple <https://w3id.org/express#UNKNOWN>;
+                                                     props:elevationIfcBuildingStorey_attribute_simple "0."^^xsd:double;
+                                                     props:globalIdIfcRoot_attribute_simple "2Ta0SQZLf6m9K6olZcsy8n";
+                                                     props:longNameIfcSpatialStructureElement_attribute_simple "Ebene 0";
+                                                     props:nameIfcRoot_attribute_simple "Ebene 0";
+                                                     props:name_simple "Ebene 0";
+                                                     props:objectTypeIfcObject_attribute_simple "Ebene:Ebene".
+    inst:wall_a2bf5e3e-e854-48de-ae2a-4430db175e59 a beo:Wall,
+                                                     bot:Element;
+                                                   props:batid_attribute_simple "2445235";
+                                                   props:extendToStructure_simple true;
+                                                   props:globalIdIfcRoot_attribute_simple "2Ylru_w5H8tgugH33R5rvP";
+                                                   props:isExternal_simple true;
+                                                   props:loadBearing_simple true;
+                                                   props:nameIfcRoot_attribute_simple "Basiswand:LB 250:2445235";
+                                                   props:objectTypeIfcObject_attribute_simple "Basiswand:LB 250";
+                                                   props:reference_simple "LB 250";
+                                                   props:thermalTransmittance_simple "5.188"^^xsd:double.
+    inst:wall_a2bf5e3e-e854-48de-ae2a-4430db175eb7 a beo:Wall,
+                                                     bot:Element;
+                                                   props:batid_attribute_simple "2445149";
+                                                   props:extendToStructure_simple true;
+                                                   props:globalIdIfcRoot_attribute_simple "2Ylru_w5H8tgugH33R5rwt";
+                                                   props:isExternal_simple true;
+                                                   props:loadBearing_simple true;
+                                                   props:nameIfcRoot_attribute_simple "Basiswand:LB 250:2445149";
+                                                   props:objectTypeIfcObject_attribute_simple "Basiswand:LB 250";
+                                                   props:reference_simple "LB 250";
+                                                   props:thermalTransmittance_simple "5.188"^^xsd:double.
+    inst:wall_a2bf5e3e-e854-48de-ae2a-4430db175f33 a beo:Wall,
+                                                     bot:Element;
+                                                   props:batid_attribute_simple "2445017";
+                                                   props:extendToStructure_simple true;
+                                                   props:globalIdIfcRoot_attribute_simple "2Ylru_w5H8tgugH33R5ryp";
+                                                   props:isExternal_simple true;
+                                                   props:loadBearing_simple true;
+                                                   props:nameIfcRoot_attribute_simple "Basiswand:LB 250:2445017";
+                                                   props:objectTypeIfcObject_attribute_simple "Basiswand:LB 250";
+                                                   props:reference_simple "LB 250";
+                                                   props:thermalTransmittance_simple "5.188"^^xsd:double.
+    <https://icdd.vm.rub.de/data/-2021612643/index> owl:imports <https://icdd.vm.rub.de/ontology/icdd/ExtendedDocument.rdf>,
+                                                                <https://standards.iso.org/iso/21597/-1/ed-1/en/Container.rdf>,
+                                                                <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset.rdf>,
+                                                                <https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset.rdf>.
+    <https://icdd.vm.rub.de/data/-2021612643/index#1a395034-5739-4129-a60e-e83024ba0d12> a _:autos177,
+                                                                                           owl:Thing,
+                                                                                           ct:Document,
+                                                                                           ct:InternalDocument;
+                                                                                         ct:createdBy :ed38c97e-f002-4a95-a40b-73fc587a8312;
+                                                                                         ct:creationDate "06.12.2021 16:06:45"^^xsd:dateTime;
+                                                                                         ct:description "This document has been added using the ICDDToolkitLibrary.";
+                                                                                         ct:filename "model.ifc";
+                                                                                         ct:filetype "ifc";
+                                                                                         ct:format "application/octet-stream";
+                                                                                         ct:name "model.ifc";
+                                                                                         ct:versionDescription "This is the first version added using the ICDDToolkitLibrary.";
+                                                                                         ct:versionId "1".
+    <https://icdd.vm.rub.de/data/-2021612643/index#1d41fc71-70d3-404b-b66e-8336c20995e2> a _:autos157,
+                                                                                           ct:ContainerDescription;
+                                                                                         ct:conformanceIndicator "ICDD-Part1-Container";
+                                                                                         ct:containsDocument <https://icdd.vm.rub.de/data/-2021612643/index#1a395034-5739-4129-a60e-e83024ba0d12>,
+                                                                                                             <https://icdd.vm.rub.de/data/-2021612643/index#61daf0d6-6f48-40ac-9160-4c5d6a27cc7b>,
+                                                                                                             :PayloadProxy-4fdd245f-3ade-45a8-bb55-d9436b95312d,
+                                                                                                             :PayloadProxy-7c9f49d0-2b4e-46a6-b72c-5a884c8db240;
+                                                                                         ct:containsLinkset :b543e6c8-451d-488f-bfb5-653717b3f729,
+                                                                                                            <https://icdd.vm.rub.de/data/-2021612643/index#https://standards.iso.org/iso/21597/-1/ed-1/en/Container#Linkset_01d21cca-a4aa-43a9-87fe-9f8d705fb54e>;
+                                                                                         ct:createdBy :ed38c97e-f002-4a95-a40b-73fc587a8312;
+                                                                                         ct:creationDate "06.12.2021 16:06:16"^^xsd:dateTime;
+                                                                                         ct:description "Container vollständig / Bauteile und Tasks in Desite manuell verknüpft";
+                                                                                         ct:isModified "True"^^xsd:boolean;
+                                                                                         ct:modificationDate "10.05.2022 16:38:00"^^xsd:dateTime;
+                                                                                         ct:modifiedBy :ed38c97e-f002-4a95-a40b-73fc587a8312;
+                                                                                         ct:versionDescription "Initial Version";
+                                                                                         ct:versionId "1".
+    <https://icdd.vm.rub.de/data/-2021612643/index#61daf0d6-6f48-40ac-9160-4c5d6a27cc7b> a _:autos177,
+                                                                                           owl:Thing,
+                                                                                           ct:Document,
+                                                                                           ct:InternalDocument;
+                                                                                         ct:createdBy :ed38c97e-f002-4a95-a40b-73fc587a8312;
+                                                                                         ct:creationDate "06.12.2021 16:06:59"^^xsd:dateTime;
+                                                                                         ct:description "This document has been added using the ICDDToolkitLibrary.";
+                                                                                         ct:filename "schedule.xml";
+                                                                                         ct:filetype "xml";
+                                                                                         ct:format "text/xml";
+                                                                                         ct:name "schedule.xml";
+                                                                                         ct:versionDescription "This is the first version added using the ICDDToolkitLibrary.";
+                                                                                         ct:versionId "1".
+    :PayloadProxy-4fdd245f-3ade-45a8-bb55-d9436b95312d a owl:Thing,
+                                                         exdc:PayloadProxy,
+                                                         ct:Document,
+                                                         ct:ExternalDocument;
+                                                       ct:creationDate "10.05.2022 16:38:00"^^xsd:dateTime;
+                                                       ct:description "This ExtPayloadProxy has been added for the payload triples file schedule.instances";
+                                                       ct:filetype "http";
+                                                       ct:format "rfc3986";
+                                                       ct:name "schedule.instances.ttl";
+                                                       ct:url "https://icdd.vm.rub.de/data/-2021612643/index/cto/inst";
+                                                       ct:versionDescription "This is the first version added using the ICDDToolkitLibrary.";
+                                                       ct:versionId "1".
+    :PayloadProxy-7c9f49d0-2b4e-46a6-b72c-5a884c8db240 a owl:Thing,
+                                                         exdc:PayloadProxy,
+                                                         ct:Document,
+                                                         ct:ExternalDocument;
+                                                       ct:creationDate "10.05.2022 16:38:00"^^xsd:dateTime;
+                                                       ct:description "This ExtPayloadProxy has been added for the payload triples file model.instances";
+                                                       ct:filetype "http";
+                                                       ct:format "rfc3986";
+                                                       ct:name "model.instances.ttl";
+                                                       ct:url "file:///C:/Users/Philipp/Documents/icdd/containers/OXAQ59eq6EKVbFhl-bSogg/c4af275d-e821-4dcf-a2bf-6c8f629c39e7/Payload%20triples/model.instances.ttl";
+                                                       ct:versionDescription "This is the first version added using the ICDDToolkitLibrary.";
+                                                       ct:versionId "1".
+    :b543e6c8-451d-488f-bfb5-653717b3f729 a _:autos170,
+                                            _:autos177,
+                                            ct:Linkset;
+                                          ct:createdBy :ed38c97e-f002-4a95-a40b-73fc587a8312;
+                                          ct:creationDate "06.12.2021 16:10:40"^^xsd:dateTime;
+                                          ct:filename "linkset-20211206-161042.rdf";
+                                          ct:isModified "True"^^xsd:boolean;
+                                          ct:modificationDate "06.12.2021 16:10:40"^^xsd:dateTime.
+    :ed38c97e-f002-4a95-a40b-73fc587a8312 a owl:Thing,
+                                            ct:Party,
+                                            ct:Person;
+                                          ct:creationDate "06.12.2021 16:06:16"^^xsd:dateTime;
+                                          ct:name "felixcleve".
+    <https://icdd.vm.rub.de/data/-2021612643/index#https://standards.iso.org/iso/21597/-1/ed-1/en/Container#Linkset_01d21cca-a4aa-43a9-87fe-9f8d705fb54e> a _:autos170,
+                                                                                                                                                            _:autos177,
+                                                                                                                                                            ct:Linkset;
+                                                                                                                                                          ct:createdBy <https://icdd.vm.rub.de/data/-2021612643/index#https://standards.iso.org/iso/21597/-1/ed-1/en/Container#Person_0ceefbfa-f63b-456a-8fa8-1eb73045d3e9>;
+                                                                                                                                                          ct:creationDate "28.04.2022 14:39:27"^^xsd:dateTime;
+                                                                                                                                                          ct:filename "auto-generated.rdf";
+                                                                                                                                                          ct:isModified "True"^^xsd:boolean;
+                                                                                                                                                          ct:modificationDate "28.04.2022 14:39:27"^^xsd:dateTime.
+    <https://icdd.vm.rub.de/data/-2021612643/index#https://standards.iso.org/iso/21597/-1/ed-1/en/Container#Person_0ceefbfa-f63b-456a-8fa8-1eb73045d3e9> a owl:Thing,
+                                                                                                                                                           ct:Party,
+                                                                                                                                                           ct:Person;
+                                                                                                                                                         ct:creationDate "28.04.2022 14:36:31"^^xsd:dateTime;
+                                                                                                                                                         ct:name "admin".
+    ns2:ConstructionProject a msproj:Project,
+                              cto:TaskContext.
+    ns2:Task_0 msproj:UID "0";
+               a msproj:Task,
+                 cto:Task;
+               prov:endedAtTime "2021-01-29T17:00:00.000000"^^xsd:dateTime;
+               prov:startedAtTime "2021-01-01T08:00:00.000000"^^xsd:dateTime;
+               cto:hasTaskContext ns2:ConstructionProject.
+    ns2:Task_11_STREIFENFUNDAMENT2 msproj:UID "11";
+                                   a msproj:Task,
+                                     cto:Task;
+                                   prov:endedAtTime "2021-01-06T17:00:00.000000"^^xsd:dateTime;
+                                   prov:startedAtTime "2021-01-05T08:00:00.000000"^^xsd:dateTime;
+                                   cto:hasSimpleTaskMethodDescription "Streifenfundament 2";
+                                   cto:hasTaskContext ns2:ConstructionProject.
+    ns2:Task_12_BODENPLATTE msproj:UID "12";
+                            a msproj:Task,
+                              cto:Task;
+                            prov:endedAtTime "2021-01-11T17:00:00.000000"^^xsd:dateTime;
+                            prov:startedAtTime "2021-01-07T08:00:00.000000"^^xsd:dateTime;
+                            cto:afterFinishedTask ns2:Task_11_STREIFENFUNDAMENT2,
+                                                  ns2:Task_6_STREIFENFUNDAMENT1;
+                            cto:hasSimpleTaskMethodDescription "Bodenplatte";
+                            cto:hasTaskContext ns2:ConstructionProject.
+    ns2:Task_1_ROHBAU msproj:UID "1";
+                      a msproj:Task,
+                        cto:Task;
+                      prov:endedAtTime "2021-01-29T17:00:00.000000"^^xsd:dateTime;
+                      prov:startedAtTime "2021-01-12T08:00:00.000000"^^xsd:dateTime;
+                      cto:hasSimpleTaskMethodDescription "Rohbau";
+                      cto:hasTaskContext ns2:ConstructionProject.
+    ns2:Task_35_WAENDE msproj:UID "35";
+                       a msproj:Task,
+                         cto:Task;
+                       prov:endedAtTime "2021-01-20T17:00:00.000000"^^xsd:dateTime;
+                       prov:startedAtTime "2021-01-12T08:00:00.000000"^^xsd:dateTime;
+                       cto:afterFinishedTask ns2:Task_41_FUNDAMENTE;
+                       cto:hasSimpleTaskMethodDescription "Wände";
+                       cto:hasTaskContext ns2:ConstructionProject.
+    ns2:Task_40_DECKENPLATTE msproj:UID "40";
+                             a msproj:Task,
+                               cto:Task;
+                             prov:endedAtTime "2021-01-29T17:00:00.000000"^^xsd:dateTime;
+                             prov:startedAtTime "2021-01-21T08:00:00.000000"^^xsd:dateTime;
+                             cto:afterFinishedTask ns2:Task_35_WAENDE;
+                             cto:hasSimpleTaskMethodDescription "Deckenplatte";
+                             cto:hasTaskContext ns2:ConstructionProject.
+    ns2:Task_41_FUNDAMENTE msproj:UID "41";
+                           a msproj:Task,
+                             cto:Task;
+                           prov:endedAtTime "2021-01-11T17:00:00.000000"^^xsd:dateTime;
+                           prov:startedAtTime "2021-01-01T08:00:00.000000"^^xsd:dateTime;
+                           cto:hasSimpleTaskMethodDescription "Fundamente";
+                           cto:hasTaskContext ns2:ConstructionProject.
+    ns2:Task_6_STREIFENFUNDAMENT1 msproj:UID "6";
+                                  a msproj:Task,
+                                    cto:Task;
+                                  prov:endedAtTime "2021-01-04T17:00:00.000000"^^xsd:dateTime;
+                                  prov:startedAtTime "2021-01-01T08:00:00.000000"^^xsd:dateTime;
+                                  cto:hasSimpleTaskMethodDescription "Streifenfundament 1";
+                                  cto:hasTaskContext ns2:ConstructionProject.
+    <https://icdd.vm.rub.de/data/-2021612643/index/ls/auto-generated> owl:imports <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset.rdf>.
+    <https://icdd.vm.rub.de/data/-2021612643/index/ls/auto-generated#http://www.w3.org/2002/07/owl#Ontology_af3ea464-3d1a-4a54-a7a2-eab983a30663> a owl:Ontology;
+                                                                                                                                                  ct:creationDate "28.04.2022 14:39:27"^^xsd:dateTime;
+                                                                                                                                                  ct:isModified "True"^^xsd:boolean;
+                                                                                                                                                  ct:modificationDate "28.04.2022 14:39:27"^^xsd:dateTime.
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042> owl:imports <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset.rdf>.
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#004c842e-0fb7-41fc-ba2a-4049f86043f3> a owl:Thing,
+                                                                                                                                                    ls:LinkElement;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ct:isModified "True"^^xsd:boolean;
+                                                                                                                                                  ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ls:hasDocument <https://icdd.vm.rub.de/data/-2021612643/index#61daf0d6-6f48-40ac-9160-4c5d6a27cc7b>;
+                                                                                                                                                  ls:hasIdentifier ns0:e349011e-588d-47be-b799-8d1b90407f09.
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#01514ba0-b56a-4e2c-bdd8-0281fee82e36> a _:autos230,
+                                                                                                                                                    ls:BinaryLink,
+                                                                                                                                                    ls:Link;
+                                                                                                                                                  ct:createdBy :ed38c97e-f002-4a95-a40b-73fc587a8312;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ls:hasLinkElement ns0:b4e5ab3b-e633-44e9-b2e0-e28c7931f399,
+                                                                                                                                                                    ns0:e90cf391-03f6-43a8-a5ca-ceddf860facf.
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#02558783-d861-4304-a6ad-f2d1e47356cd> a owl:Thing,
+                                                                                                                                                    ls:LinkElement;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ct:isModified "True"^^xsd:boolean;
+                                                                                                                                                  ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ls:hasDocument <https://icdd.vm.rub.de/data/-2021612643/index#61daf0d6-6f48-40ac-9160-4c5d6a27cc7b>;
+                                                                                                                                                  ls:hasIdentifier ns0:fd31212d-383e-4c52-a22d-4dd8d7d8a5b0.
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#043bac8e-b384-4349-9262-5aee6ecd8758> a owl:Thing,
+                                                                                                                                                    ls:Identifier,
+                                                                                                                                                    ls:UriBasedIdentifier;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ct:isModified "True"^^xsd:boolean;
+                                                                                                                                                  ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ls:uri <https://icdd.vm.rub.de/convert/ifc/826ff41a-6962-41f0-bda7-c299041f2d17#slab_a2bf5e3e-e854-48de-ae2a-4430db17405f>.
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#0bd056f6-362e-465c-885b-b95dc4c8b440> a owl:Thing,
+                                                                                                                                                    ls:LinkElement;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:40"^^xsd:dateTime;
+                                                                                                                                                  ct:isModified "True"^^xsd:boolean;
+                                                                                                                                                  ct:modificationDate "06.12.2021 16:10:40"^^xsd:dateTime;
+                                                                                                                                                  ls:hasDocument <https://icdd.vm.rub.de/data/-2021612643/index#1a395034-5739-4129-a60e-e83024ba0d12>;
+                                                                                                                                                  ls:hasIdentifier <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#1711f496-5fad-49f0-9dcf-94393334b6a2>.
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#142337a8-dec9-4d10-891f-5ac6fad5e32f> a owl:Thing,
+                                                                                                                                                    ls:Identifier,
+                                                                                                                                                    ls:StringBasedIdentifier;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ct:isModified "True"^^xsd:boolean;
+                                                                                                                                                  ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ls:identifier "40";
+                                                                                                                                                  ls:identifierField "UID".
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#1711f496-5fad-49f0-9dcf-94393334b6a2> a owl:Thing,
+                                                                                                                                                    ls:Identifier,
+                                                                                                                                                    ls:StringBasedIdentifier;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:40"^^xsd:dateTime;
+                                                                                                                                                  ct:isModified "True"^^xsd:boolean;
+                                                                                                                                                  ct:modificationDate "06.12.2021 16:10:40"^^xsd:dateTime;
+                                                                                                                                                  ls:identifier "1ruPFzWR92wgLqXfMR$wsa";
+                                                                                                                                                  ls:identifierField "globalId".
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#190feef2-7331-4889-8c4d-63e0e41fc341> a _:autos230,
+                                                                                                                                                    ls:DirectedLink,
+                                                                                                                                                    ls:Link;
+                                                                                                                                                  ct:createdBy :ed38c97e-f002-4a95-a40b-73fc587a8312;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:40"^^xsd:dateTime;
+                                                                                                                                                  ls:hasFromLinkElement <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#0bd056f6-362e-465c-885b-b95dc4c8b440>;
+                                                                                                                                                   ls:hasToLinkElement  <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#34814167-adcc-4672-948e-87f1ee2379f6>.
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#222076d8-13d8-4f97-aebf-61089b721a66> a owl:Thing,
+                                                                                                                                                    ls:LinkElement;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:40"^^xsd:dateTime;
+                                                                                                                                                  ct:isModified "True"^^xsd:boolean;
+                                                                                                                                                  ct:modificationDate "06.12.2021 16:10:40"^^xsd:dateTime;
+                                                                                                                                                  ls:hasDocument <https://icdd.vm.rub.de/data/-2021612643/index#1a395034-5739-4129-a60e-e83024ba0d12>;
+                                                                                                                                                  ls:hasIdentifier ns0:a39cd41a-f59e-4c52-9559-571f5a29258c.
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#22557b97-6c24-42c2-9e14-63dbe143bbe7> a owl:Thing,
+                                                                                                                                                    ls:LinkElement;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ct:isModified "True"^^xsd:boolean;
+                                                                                                                                                  ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ls:hasDocument <https://icdd.vm.rub.de/data/-2021612643/index#61daf0d6-6f48-40ac-9160-4c5d6a27cc7b>;
+                                                                                                                                                  ls:hasIdentifier ns0:b298cdd8-eca7-42e6-accb-558df93dc54c.
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#24a51311-f7f5-441b-ae12-ea169dae9c51> a owl:Thing,
+                                                                                                                                                    ls:Identifier,
+                                                                                                                                                    ls:StringBasedIdentifier;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ct:isModified "True"^^xsd:boolean;
+                                                                                                                                                  ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ls:identifier "2Ylru_w5H8tgugH33R5ryp";
+                                                                                                                                                  ls:identifierField "globalId".
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#26999d22-7098-4fe7-bab9-948f0e1c88a3> a owl:Thing,
+                                                                                                                                                    ls:Identifier,
+                                                                                                                                                    ls:StringBasedIdentifier;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ct:isModified "True"^^xsd:boolean;
+                                                                                                                                                  ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ls:identifier "1ruPFzWR92wgLqXfMR$wsA";
+                                                                                                                                                  ls:identifierField "globalId".
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#34814167-adcc-4672-948e-87f1ee2379f6> a owl:Thing,
+                                                                                                                                                    ls:LinkElement;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:40"^^xsd:dateTime;
+                                                                                                                                                  ct:isModified "True"^^xsd:boolean;
+                                                                                                                                                  ct:modificationDate "06.12.2021 16:10:40"^^xsd:dateTime;
+                                                                                                                                                  ls:hasDocument <https://icdd.vm.rub.de/data/-2021612643/index#61daf0d6-6f48-40ac-9160-4c5d6a27cc7b>;
+                                                                                                                                                  ls:hasIdentifier <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#6847810d-48d2-4214-b4fd-d2831b8598be>.
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#36e23b0c-dc17-4b20-91c6-68c916451b27> a owl:Thing,
+                                                                                                                                                    ls:LinkElement;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ct:isModified "True"^^xsd:boolean;
+                                                                                                                                                  ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ls:hasDocument <https://icdd.vm.rub.de/data/-2021612643/index#61daf0d6-6f48-40ac-9160-4c5d6a27cc7b>;
+                                                                                                                                                  ls:hasIdentifier <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#462c87f3-5857-44ca-9273-bb43571efb7a>.
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#37da43b8-c07a-43ed-8266-b445e885660d> a owl:Thing,
+                                                                                                                                                    ls:Identifier,
+                                                                                                                                                    ls:StringBasedIdentifier;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ct:isModified "True"^^xsd:boolean;
+                                                                                                                                                  ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ls:identifier "35";
+                                                                                                                                                  ls:identifierField "UID".
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#3ddeebbd-5e6e-4bf1-8d84-f4b622a86c61> a owl:Thing,
+                                                                                                                                                    ls:LinkElement;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:40"^^xsd:dateTime;
+                                                                                                                                                  ct:isModified "True"^^xsd:boolean;
+                                                                                                                                                  ct:modificationDate "06.12.2021 16:10:40"^^xsd:dateTime;
+                                                                                                                                                  ls:hasDocument <https://icdd.vm.rub.de/data/-2021612643/index#61daf0d6-6f48-40ac-9160-4c5d6a27cc7b>;
+                                                                                                                                                  ls:hasIdentifier ns0:e7000244-b682-4c31-bd72-3b1a7b6ba0b4.
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#462c87f3-5857-44ca-9273-bb43571efb7a> a owl:Thing,
+                                                                                                                                                    ls:Identifier,
+                                                                                                                                                    ls:StringBasedIdentifier;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ct:isModified "True"^^xsd:boolean;
+                                                                                                                                                  ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ls:identifier "35";
+                                                                                                                                                  ls:identifierField "UID".
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#5bb28892-048d-4997-81fc-2e20a6baf907> a owl:Thing,
+                                                                                                                                                    ls:Identifier,
+                                                                                                                                                    ls:StringBasedIdentifier;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ct:isModified "True"^^xsd:boolean;
+                                                                                                                                                  ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ls:identifier "1ruPFzWR92wgLqXfMR$wt$";
+                                                                                                                                                  ls:identifierField "globalId".
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#6847810d-48d2-4214-b4fd-d2831b8598be> a owl:Thing,
+                                                                                                                                                    ls:Identifier,
+                                                                                                                                                    ls:StringBasedIdentifier;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:40"^^xsd:dateTime;
+                                                                                                                                                  ct:isModified "True"^^xsd:boolean;
+                                                                                                                                                  ct:modificationDate "06.12.2021 16:10:40"^^xsd:dateTime;
+                                                                                                                                                  ls:identifier "6";
+                                                                                                                                                  ls:identifierField "UID".
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#6bae0cd7-e652-4df9-8680-8168c9753824> a owl:Thing,
+                                                                                                                                                    ls:LinkElement;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ct:isModified "True"^^xsd:boolean;
+                                                                                                                                                  ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ls:hasDocument <https://icdd.vm.rub.de/data/-2021612643/index#61daf0d6-6f48-40ac-9160-4c5d6a27cc7b>;
+                                                                                                                                                  ls:hasIdentifier <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#37da43b8-c07a-43ed-8266-b445e885660d>.
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#76b39d06-c7b3-406b-8f4a-17e6d18fb0d5> a owl:Thing,
+                                                                                                                                                    ls:LinkElement;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ct:isModified "True"^^xsd:boolean;
+                                                                                                                                                  ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ls:hasDocument <https://icdd.vm.rub.de/data/-2021612643/index#1a395034-5739-4129-a60e-e83024ba0d12>;
+                                                                                                                                                  ls:hasIdentifier <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#9793580b-04f0-4eef-85cb-753836ed41fd>.
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#7b5ed24f-273f-4964-8e2c-09eee547ad38> a owl:Thing,
+                                                                                                                                                    ls:LinkElement;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ct:isModified "True"^^xsd:boolean;
+                                                                                                                                                  ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ls:hasDocument <https://icdd.vm.rub.de/data/-2021612643/index#1a395034-5739-4129-a60e-e83024ba0d12>;
+                                                                                                                                                  ls:hasIdentifier <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#26999d22-7098-4fe7-bab9-948f0e1c88a3>.
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#7c4549e3-e6e4-4ec9-b48f-8d075e1cf14d> a _:autos230,
+                                                                                                                                                    ls:BinaryLink,
+                                                                                                                                                    ls:Link;
+                                                                                                                                                  ct:createdBy :ed38c97e-f002-4a95-a40b-73fc587a8312;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ls:hasLinkElement <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#02558783-d861-4304-a6ad-f2d1e47356cd>;
+                                                                                                                                                  ls:hasLinkElement <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#76b39d06-c7b3-406b-8f4a-17e6d18fb0d5>.
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#887429eb-1528-478a-90dd-f13b6bb808e9> a _:autos230,
+                                                                                                                                                    ls:BinaryLink,
+                                                                                                                                                    ls:Link;
+                                                                                                                                                  ct:createdBy :ed38c97e-f002-4a95-a40b-73fc587a8312;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ls:hasLinkElement <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#004c842e-0fb7-41fc-ba2a-4049f86043f3>,
+                                                                                                                                                                    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#7b5ed24f-273f-4964-8e2c-09eee547ad38>.
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#90486a01-6047-4a6b-9962-4f7f3ea239aa> a _:autos230,
+                                                                                                                                                    els:HasMember,
+                                                                                                                                                    ls:Link;
+                                                                                                                                                  ct:createdBy :ed38c97e-f002-4a95-a40b-73fc587a8312;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ls:hasFromLinkElement ns0:b7282714-1bd7-4819-87c7-5dc976a4b725;
+                                                                                                                                                   ls:hasToLinkElement  ns0:dc9f7437-41ef-4d97-a985-fb688e912a37, <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#7b5ed24f-273f-4964-8e2c-09eee547ad38>.
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#95eaf991-39b5-442e-ab76-26156c39579a> a owl:Thing,
+                                                                                                                                                    ls:Identifier,
+                                                                                                                                                    ls:StringBasedIdentifier;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ct:isModified "True"^^xsd:boolean;
+                                                                                                                                                  ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ls:identifier "2Ylru_w5H8tgugH33R5rvP";
+                                                                                                                                                  ls:identifierField "globalId".
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#9793580b-04f0-4eef-85cb-753836ed41fd> a owl:Thing,
+                                                                                                                                                    ls:Identifier,
+                                                                                                                                                    ls:StringBasedIdentifier;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ct:isModified "True"^^xsd:boolean;
+                                                                                                                                                  ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ls:identifier "2Ylru_w5H8tgugH33R5rwt";
+                                                                                                                                                  ls:identifierField "globalId".
+    <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#9c8ddc53-c266-4598-9938-1d5a28681982> a _:autos230,
+                                                                                                                                                    ls:BinaryLink,
+                                                                                                                                                    ls:Link;
+                                                                                                                                                  ct:createdBy :ed38c97e-f002-4a95-a40b-73fc587a8312;
+                                                                                                                                                  ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                                                                                                                                  ls:hasLinkElement <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#36e23b0c-dc17-4b20-91c6-68c916451b27>,
+                                                                                                                                                                    ns0:a8dc0f63-0008-4b05-9ebc-c0904a304206.
+    ns0:BinaryLink-e2026929-fd35-43bd-9846-c3297ef38ad2 a _:autos230,
+                                                          ls:BinaryLink,
+                                                          ls:Link;
+                                                        ct:createdBy <https://icdd.vm.rub.de/data/-2021612643/index#https://standards.iso.org/iso/21597/-1/ed-1/en/Container#Person_0ceefbfa-f63b-456a-8fa8-1eb73045d3e9>;
+                                                        ct:creationDate "04.05.2022 10:10:31"^^xsd:dateTime;
+                                                        ls:hasLinkElement ns0:LinkElement-286f4a37-a4a0-448c-8adf-a6f5e1f3233f,
+                                                                          ns0:LinkElement-a624a4fa-5c3b-42b7-9cec-a0ba6879e689.
+    ns0:LinkElement-286f4a37-a4a0-448c-8adf-a6f5e1f3233f a owl:Thing,
+                                                           ls:LinkElement;
+                                                         ct:creationDate "04.05.2022 10:10:31"^^xsd:dateTime;
+                                                         ct:isModified "True"^^xsd:boolean;
+                                                         ct:modificationDate "04.05.2022 10:10:31"^^xsd:dateTime;
+                                                         ls:hasDocument <https://icdd.vm.rub.de/data/-2021612643/index#1a395034-5739-4129-a60e-e83024ba0d12>;
+                                                         ls:hasIdentifier ns0:StringBasedIdentifier-4e2b4957-7b69-4954-800c-6507a28cef9a.
+    ns0:LinkElement-a624a4fa-5c3b-42b7-9cec-a0ba6879e689 a owl:Thing,
+                                                           ls:LinkElement;
+                                                         ct:creationDate "04.05.2022 10:10:31"^^xsd:dateTime;
+                                                         ct:isModified "True"^^xsd:boolean;
+                                                         ct:modificationDate "04.05.2022 10:10:31"^^xsd:dateTime;
+                                                         ls:hasDocument <https://icdd.vm.rub.de/data/-2021612643/index#61daf0d6-6f48-40ac-9160-4c5d6a27cc7b>;
+                                                         ls:hasIdentifier ns0:StringBasedIdentifier-3b2971a2-0ee2-4572-872f-249cfafbd64f.
+    ns0:StringBasedIdentifier-3b2971a2-0ee2-4572-872f-249cfafbd64f a owl:Thing,
+                                                                     ls:Identifier,
+                                                                     ls:StringBasedIdentifier;
+                                                                   ct:creationDate "04.05.2022 10:10:31"^^xsd:dateTime;
+                                                                   ct:isModified "True"^^xsd:boolean;
+                                                                   ct:modificationDate "04.05.2022 10:10:31"^^xsd:dateTime;
+                                                                   ls:identifier "35";
+                                                                   ls:identifierField "UID".
+    ns0:StringBasedIdentifier-4e2b4957-7b69-4954-800c-6507a28cef9a a owl:Thing,
+                                                                     ls:Identifier,
+                                                                     ls:StringBasedIdentifier;
+                                                                   ct:creationDate "04.05.2022 10:10:31"^^xsd:dateTime;
+                                                                   ct:isModified "True"^^xsd:boolean;
+                                                                   ct:modificationDate "04.05.2022 10:10:31"^^xsd:dateTime;
+                                                                   ls:identifier "xyztrthdhfd";
+                                                                   ls:identifierField "globalId".
+    ns0:a39cd41a-f59e-4c52-9559-571f5a29258c a owl:Thing,
+                                               ls:Identifier,
+                                               ls:StringBasedIdentifier;
+                                             ct:creationDate "06.12.2021 16:10:40"^^xsd:dateTime;
+                                             ct:isModified "True"^^xsd:boolean;
+                                             ct:modificationDate "06.12.2021 16:10:40"^^xsd:dateTime;
+                                             ls:identifier "0ppgPx0e12r88ycxDvl80K";
+                                             ls:identifierField "globalId".
+    ns0:a8dc0f63-0008-4b05-9ebc-c0904a304206 a owl:Thing,
+                                               ls:LinkElement;
+                                             ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                             ct:isModified "True"^^xsd:boolean;
+                                             ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                             ls:hasDocument <https://icdd.vm.rub.de/data/-2021612643/index#1a395034-5739-4129-a60e-e83024ba0d12>;
+                                             ls:hasIdentifier <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#95eaf991-39b5-442e-ab76-26156c39579a>.
+    ns0:a94d6ece-8500-41f2-8e1a-2ef7e36097d0 a owl:Ontology;
+                                             ct:creationDate "06.12.2021 16:10:40"^^xsd:dateTime;
+                                             ct:isModified "True"^^xsd:boolean;
+                                             ct:modificationDate "06.12.2021 16:10:40"^^xsd:dateTime.
+    ns0:b298cdd8-eca7-42e6-accb-558df93dc54c a owl:Thing,
+                                               ls:Identifier,
+                                               ls:StringBasedIdentifier;
+                                             ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                             ct:isModified "True"^^xsd:boolean;
+                                             ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                             ls:identifier "12";
+                                             ls:identifierField "UID".
+    ns0:b45ec30d-0cbf-4673-b2bf-cc304408b0ea a owl:Thing,
+                                               ls:LinkElement;
+                                             ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                             ct:isModified "True"^^xsd:boolean;
+                                             ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                             ls:hasDocument <https://icdd.vm.rub.de/data/-2021612643/index#1a395034-5739-4129-a60e-e83024ba0d12>;
+                                             ls:hasIdentifier <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#24a51311-f7f5-441b-ae12-ea169dae9c51>.
+    ns0:b4e5ab3b-e633-44e9-b2e0-e28c7931f399 a owl:Thing,
+                                               ls:LinkElement;
+                                             ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                             ct:isModified "True"^^xsd:boolean;
+                                             ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                             ls:hasDocument <https://icdd.vm.rub.de/data/-2021612643/index#1a395034-5739-4129-a60e-e83024ba0d12>;
+                                             ls:hasIdentifier <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#043bac8e-b384-4349-9262-5aee6ecd8758>.
+    ns0:b7282714-1bd7-4819-87c7-5dc976a4b725 a owl:Thing,
+                                               ls:LinkElement;
+                                             ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                             ct:isModified "True"^^xsd:boolean;
+                                             ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                             ls:hasDocument <https://icdd.vm.rub.de/data/-2021612643/index#1a395034-5739-4129-a60e-e83024ba0d12>;
+                                             ls:hasIdentifier <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#5bb28892-048d-4997-81fc-2e20a6baf907>.
+    ns0:bb262413-6a32-4904-88f5-149d9dad4b0f a owl:Thing,
+                                               ls:LinkElement;
+                                             ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                             ct:isModified "True"^^xsd:boolean;
+                                             ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                             ls:hasDocument <https://icdd.vm.rub.de/data/-2021612643/index#1a395034-5739-4129-a60e-e83024ba0d12>;
+                                             ls:hasIdentifier ns0:d0e1b651-7244-4d5e-bd31-5b21a7c25191.
+    ns0:c04fbfb2-df06-42ce-81b2-424b898593a1 a owl:Thing,
+                                               ls:Identifier,
+                                               ls:StringBasedIdentifier;
+                                             ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                             ct:isModified "True"^^xsd:boolean;
+                                             ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                             ls:identifier "11";
+                                             ls:identifierField "UID".
+    ns0:cce4095b-b826-4338-852b-4b07e9906b7d a _:autos230,
+                                               ls:BinaryLink,
+                                               ls:Link;
+                                             ct:createdBy :ed38c97e-f002-4a95-a40b-73fc587a8312;
+                                             ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                             ls:hasLinkElement <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#22557b97-6c24-42c2-9e14-63dbe143bbe7>,
+                                                               ns0:bb262413-6a32-4904-88f5-149d9dad4b0f.
+    ns0:d0e1b651-7244-4d5e-bd31-5b21a7c25191 a owl:Thing,
+                                               ls:Identifier,
+                                               ls:StringBasedIdentifier;
+                                             ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                             ct:isModified "True"^^xsd:boolean;
+                                             ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                             ls:identifier "1ruPFzWR92wgLqXfMR$wmJ";
+                                             ls:identifierField "globalId".
+    ns0:dc9f7437-41ef-4d97-a985-fb688e912a37 a owl:Thing,
+                                               ls:LinkElement;
+                                             ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                             ct:isModified "True"^^xsd:boolean;
+                                             ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                             ls:hasDocument <https://icdd.vm.rub.de/data/-2021612643/index#61daf0d6-6f48-40ac-9160-4c5d6a27cc7b>;
+                                             ls:hasIdentifier ns0:c04fbfb2-df06-42ce-81b2-424b898593a1.
+    ns0:e349011e-588d-47be-b799-8d1b90407f09 a owl:Thing,
+                                               ls:Identifier,
+                                               ls:StringBasedIdentifier;
+                                             ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                             ct:isModified "True"^^xsd:boolean;
+                                             ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                             ls:identifier "11";
+                                             ls:identifierField "UID".
+    ns0:e7000244-b682-4c31-bd72-3b1a7b6ba0b4 a owl:Thing,
+                                               ls:Identifier,
+                                               ls:StringBasedIdentifier;
+                                             ct:creationDate "06.12.2021 16:10:40"^^xsd:dateTime;
+                                             ct:isModified "True"^^xsd:boolean;
+                                             ct:modificationDate "06.12.2021 16:10:40"^^xsd:dateTime;
+                                             ls:identifier "6";
+                                             ls:identifierField "UID".
+    ns0:e7f963d3-6ac2-4079-8e89-3e59a1969033 a _:autos230,
+                                               ls:BinaryLink,
+                                               ls:Link;
+                                             ct:createdBy :ed38c97e-f002-4a95-a40b-73fc587a8312;
+                                             ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                             ls:hasLinkElement <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#6bae0cd7-e652-4df9-8680-8168c9753824>,
+                                                               ns0:b45ec30d-0cbf-4673-b2bf-cc304408b0ea.
+    ns0:e90cf391-03f6-43a8-a5ca-ceddf860facf a owl:Thing,
+                                               ls:LinkElement;
+                                             ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                             ct:isModified "True"^^xsd:boolean;
+                                             ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                             ls:hasDocument <https://icdd.vm.rub.de/data/-2021612643/index#61daf0d6-6f48-40ac-9160-4c5d6a27cc7b>;
+                                             ls:hasIdentifier <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#142337a8-dec9-4d10-891f-5ac6fad5e32f>.
+    ns0:eb0056ea-4aa4-4928-89a0-93f8fced5088 a _:autos230,
+                                               ls:BinaryLink,
+                                               ls:Link;
+                                             ct:createdBy :ed38c97e-f002-4a95-a40b-73fc587a8312;
+                                             ct:creationDate "06.12.2021 16:10:40"^^xsd:dateTime;
+                                             ls:hasLinkElement <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#222076d8-13d8-4f97-aebf-61089b721a66>,
+                                                               <https://icdd.vm.rub.de/data/45d09818-dd75-4253-bf8c-537d0ccfc38b-2021612324/ls/linkset-20211206-161042#3ddeebbd-5e6e-4bf1-8d84-f4b622a86c61>.
+    ns0:fd31212d-383e-4c52-a22d-4dd8d7d8a5b0 a owl:Thing,
+                                               ls:Identifier,
+                                               ls:StringBasedIdentifier;
+                                             ct:creationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                             ct:isModified "True"^^xsd:boolean;
+                                             ct:modificationDate "06.12.2021 16:10:41"^^xsd:dateTime;
+                                             ls:identifier "35";
+                                             ls:identifierField "UID".
+    <urn:bot:geom:pt:9d90071a-8d5a-46c0-9506-caf819245d01> geo:asWKT "POINT (11.3447783432 48.815359802)"^^geo:wktLiteral.
+
+
