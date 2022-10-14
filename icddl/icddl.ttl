@@ -15,35 +15,35 @@
 @prefix schema: <https://schema.org/> .
 
 <http://icdd.vm.rub.de/ontology/icddl>
-  rdf:type owl:Ontology ;
-  dc:creator [
-      rdf:type schema:Person ;
-      schema:email <mailto:philipp.hagedorn-n6v@rub.de> ;
-      schema:identifier <https://orcid.org/0000-0002-6249-243X> ;
-      schema:memberOf [
-          schema:identifier <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en> ;
-          schema:name "Ruhr University Bochum" ;
-        ] ;
-      schema:name "Philipp Hagedorn" ;
-    ] ;
-  dc:description "An ontology to provide link predicates on the basis of the ICDD ontology schemes for links and extended links"@en ;
-  dc:publisher [
-      rdf:type schema:Organization ;
-      schema:identifier <https://www.inf.bi.rub.de> ;
-      schema:name "Chair of Computing in Engineering, Ruhr University Bochum" ;
-      schema:parentOrganization [
-          rdf:type schema:Organization ;
-          schema:name "Ruhr University Bochum, Germany" ;
-        ] ;
-    ] ;
-  dc:rights "CC-BY-40" ;
-  dc:license <https://creativecommons.org/licenses/by/4.0/> ;
-  dc:title "ICDD Link Predicates"@en ;
-  rdfs:seeAlso <https://standards.iso.org/iso/21597/-1/ed-1/en/Container> ;
-  rdfs:seeAlso <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset> ;
-  rdfs:seeAlso <https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset> ;
-  owl:versionIRI <http://icdd.vm.rub.de/ontology/icddl> ;
-  owl:versionInfo "v0.1"@en ;
+rdf:type owl:Ontology ;
+dc:creator [
+rdf:type schema:Person ;
+schema:email <mailto:philipp.hagedorn-n6v@rub.de> ;
+schema:identifier <https://orcid.org/0000-0002-6249-243X> ;
+schema:memberOf [
+schema:identifier <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en> ;
+schema:name "Ruhr University Bochum" ;
+] ;
+schema:name "Philipp Hagedorn" ;
+] ;
+dc:description "An ontology to provide link predicates on the basis of the ICDD ontology schemes for links and extended links"@en ;
+dc:publisher [
+rdf:type schema:Organization ;
+schema:identifier <https://www.inf.bi.rub.de> ;
+schema:name "Chair of Computing in Engineering, Ruhr University Bochum" ;
+schema:parentOrganization [
+rdf:type schema:Organization ;
+schema:name "Ruhr University Bochum, Germany" ;
+] ;
+] ;
+dc:rights "CC-BY-40" ;
+dc:license <https://creativecommons.org/licenses/by/4.0/> ;
+dc:title "ICDD Link Predicates"@en ;
+rdfs:seeAlso <https://standards.iso.org/iso/21597/-1/ed-1/en/Container> ;
+rdfs:seeAlso <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset> ;
+rdfs:seeAlso <https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset> ;
+owl:versionIRI <http://icdd.vm.rub.de/ontology/icddl> ;
+owl:versionInfo "v0.2"@en ;
 .
 icddl:conflictsWith
   rdf:type owl:ObjectProperty ;
@@ -53,66 +53,48 @@ icddl:conflictsWith
   rdfs:seeAlso els:ConflictsWith ;
   rdfs:subPropertyOf icddl:linkedDirectedBinary ;
   sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:ConflictsWith and 1 StringBasedIdentifier and 1 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-             	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#conflictsWith> ?rdfEntity2 .
-             }
-             WHERE {
-                $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
+    rdf:type sh:SPARQLRule ;  
+    rdfs:label "sh:rule for icddl:conflictsWith" ;
+    rdfs:comment "Infers ICDD Link predicates for instances of els:ConflictsWith as icddl:conflictsWith." ;
+    sh:construct """CONSTRUCT {
+      ?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#conflictsWith> ?rdfEntity2 .
+    }
+    WHERE {
+      $this ls:hasFromLinkElement ?elem1 .
+      $this ls:hasToLinkElement ?elem2 .
+      FILTER(!sameTerm(?elem1, ?elem2))
 
-               OPTIONAL{
-                   ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                   ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                   ?rdfEntity1 ?hasProp1 ?guid1 .
-             	}
-             	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-             	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-             }
-             			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:ConflictsWith and 2 StringBasedIdentifiers" ;
-      sh:construct """CONSTRUCT {
-          	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#conflictsWith> ?rdfEntity2 .
-          }
-          WHERE {
-            $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-            $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
+      {
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+               FILTER CONTAINS(str(?hasProp1),?field)
+      }
+      UNION
+      {
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   
+      }
+      UNION
+      {
+        ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+        ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+      }
 
-            OPTIONAL{
-                ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid2 .
-                ?rdfEntity1 ?hasProp1 ?guid1 .
-                ?rdfEntity2 ?hasProp2 ?guid2 .
-          	}
-          	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-          	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-          }
-          			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:ConflictsWith and 2 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-                	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#conflictsWith> ?rdfEntity2 .
-                }
-                WHERE {
-                  $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                  $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-                  OPTIONAL{
-                      ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity1 .
-                      ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                	}
-                	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                }
-                			""" ;
-    ] ;
-  sh:targetClass els:ConflictsWith ;
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+    }
+    """ ;
+  ] ;
+  sh:targetClass els:ConflictsWith;
 .
 icddl:controls
   rdf:type owl:ObjectProperty ;
@@ -123,68 +105,47 @@ icddl:controls
   rdfs:subPropertyOf icddl:linkedDirectedOneToMany ;
   owl:inverseOf icddl:isControlledBy ;
   sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:Controls and 1 StringBasedIdentifier and 1 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-                                   	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#controls> ?rdfEntity2 .
-                                    ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#isControlledBy> ?rdfEntity1 .
-                                   }
-                                   WHERE {
-                                      $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                                      $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
+    rdf:type sh:SPARQLRule ;
+    rdfs:label "sh:rule for icddl:controls" ;
+    rdfs:comment "Infers ICDD Link predicates for  instances of els:Controls as icddl:controls and inverse as icddl:isControlledBy." ;
+    sh:construct """CONSTRUCT {
+      ?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#controls> ?rdfEntity2 .
+      ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#isControlledBy> ?rdfEntity1 .
+    }
+    WHERE {
+      $this ls:hasFromLinkElement ?elem1 .
+      $this ls:hasToLinkElement ?elem2 .
+      FILTER(!sameTerm(?elem1, ?elem2))
 
-                                     OPTIONAL{
-                                         ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                                         ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                                         ?rdfEntity1 ?hasProp1 ?guid1 .
-                                   	}
-                                   	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                                   	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                                   }
-                                   			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:Controls and 2 StringBasedIdentifiers" ;
-      sh:construct """CONSTRUCT {
-                                	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#controls> ?rdfEntity2 .
-                                	?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#isControlledBy> ?rdfEntity1 .
-                                }
-                                WHERE {
-                                  $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                                  $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-                                  OPTIONAL{
-                                      ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                                      ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid2 .
-                                      ?rdfEntity1 ?hasProp1 ?guid1 .
-                                      ?rdfEntity2 ?hasProp2 ?guid2 .
-                                	}
-                                	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                                	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                                }
-                                			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:Controls and 2 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-                                      	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#controls> ?rdfEntity2 .
-                                        ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#isControlledBy> ?rdfEntity1 .
-                                      }
-                                      WHERE {
-                                        $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                                        $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-                                        OPTIONAL{
-                                            ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity1 .
-                                            ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                                      	}
-                                      	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                                      	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                                      }
-                                      			""" ;
-    ] ;
+      {
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+               FILTER CONTAINS(str(?hasProp1),?field)
+      }
+      UNION
+      {
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   
+      }
+      UNION
+      {
+        ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+        ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+      }
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+    }
+    """ ;
+  ] ;
   sh:targetClass els:Controls ;
 .
 icddl:elaborates
@@ -196,68 +157,47 @@ icddl:elaborates
   rdfs:subPropertyOf icddl:linkedDirectedOneToMany ;
   owl:inverseOf icddl:isElaboratedBy ;
   sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:Elaborates and 1 StringBasedIdentifier and 1 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-                                 	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#elaborates> ?rdfEntity2 .
-                                  ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#isElaboratedBy> ?rdfEntity1 .
-                                 }
-                                 WHERE {
-                                    $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                                    $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
+  rdf:type sh:SPARQLRule ;
+  rdfs:label "sh:rule for icddl:elaborates" ;
+  rdfs:comment "Infers ICDD Link predicates for  instances of els:Elaborates as icddl:elaborates and inverse as icddl:isElaboratedBy." ;
+  sh:construct """CONSTRUCT {
+    ?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#elaborates> ?rdfEntity2 .
+    ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#isElaboratedBy> ?rdfEntity1 .
+  }
+  WHERE {
+    $this ls:hasFromLinkElement ?elem1 .
+    $this ls:hasToLinkElement ?elem2 .
+    FILTER(!sameTerm(?elem1, ?elem2))
 
-                                   OPTIONAL{
-                                       ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                                       ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                                       ?rdfEntity1 ?hasProp1 ?guid1 .
-                                 	}
-                                 	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                                 	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                                 }
-                                 			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:Elaborates and 2 StringBasedIdentifiers" ;
-      sh:construct """CONSTRUCT {
-                              	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#elaborates> ?rdfEntity2 .
-                              	?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#isElaboratedBy> ?rdfEntity1 .
-                              }
-                              WHERE {
-                                $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                                $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-                                OPTIONAL{
-                                    ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                                    ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid2 .
-                                    ?rdfEntity1 ?hasProp1 ?guid1 .
-                                    ?rdfEntity2 ?hasProp2 ?guid2 .
-                              	}
-                              	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                              	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                              }
-                              			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:Elaborates and 2 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-                                    	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#elaborates> ?rdfEntity2 .
-                                      ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#isElaboratedBy> ?rdfEntity1 .
-                                    }
-                                    WHERE {
-                                      $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                                      $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-                                      OPTIONAL{
-                                          ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity1 .
-                                          ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                                    	}
-                                    	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                                    	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                                    }
-                                    			""" ;
-    ] ;
+    {
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+             ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+             ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+             ?rdfEntity1 ?hasProp1 ?guid1 .
+             FILTER CONTAINS(str(?hasProp1),?field)
+    }
+    UNION
+    {
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+          ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+          ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+          ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+          ?rdfEntity1 ?hasProp1 ?guid1 .
+          ?rdfEntity2 ?hasProp2 ?guid2 .     
+          FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   
+    }
+    UNION
+    {
+      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+    }
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+  }
+  """ ;
+  ] ;
   sh:targetClass els:Elaborates ;
 .
 icddl:hasMember
@@ -269,67 +209,46 @@ icddl:hasMember
   rdfs:subPropertyOf icddl:linkedDirectedOneToMany ;
   owl:inverseOf icddl:isMemberOf ;
   sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:HasMember and 1 StringBasedIdentifier and 1 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-                               	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#hasMember> ?rdfEntity2 .
-                                ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#isMemberOf> ?rdfEntity1 .
-                               }
-                               WHERE {
-                                  $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                                  $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
+    rdf:type sh:SPARQLRule ;
+    rdfs:label "sh:rule for icddl:hasMember" ;
+    rdfs:comment "Infers ICDD Link predicates for  instances of els:HasMember as icddl:hasMember and inverse as icddl:isMemberOf." ;
+    sh:construct """CONSTRUCT {
+      ?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#hasMember> ?rdfEntity2 .
+      ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#isMemberOf> ?rdfEntity1 .
+    }
+    WHERE {
+      $this ls:hasFromLinkElement ?elem1 .
+      $this ls:hasToLinkElement ?elem2 .
+      FILTER(!sameTerm(?elem1, ?elem2))
 
-                                 OPTIONAL{
-                                     ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                                     ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                                     ?rdfEntity1 ?hasProp1 ?guid1 .
-                               	}
-                               	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                               	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                               }
-                               			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:HasMember and 2 StringBasedIdentifiers" ;
-      sh:construct """CONSTRUCT {
-                            	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#hasMember> ?rdfEntity2 .
-                            	?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#isMemberOf> ?rdfEntity1 .
-                            }
-                            WHERE {
-                              $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                              $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-                              OPTIONAL{
-                                  ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                                  ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid2 .
-                                  ?rdfEntity1 ?hasProp1 ?guid1 .
-                                  ?rdfEntity2 ?hasProp2 ?guid2 .
-                            	}
-                            	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                            	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                            }
-                            			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:HasMember and 2 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-                                  	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#hasMember> ?rdfEntity2 .
-                                    ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#isMemberOf> ?rdfEntity1 .
-                                  }
-                                  WHERE {
-                                    $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                                    $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-                                    OPTIONAL{
-                                        ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity1 .
-                                        ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                                  	}
-                                  	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                                  	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                                  }
-                                  			""" ;
+      {
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+               FILTER CONTAINS(str(?hasProp1),?field)
+      }
+      UNION
+      {
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   
+      }
+      UNION
+      {
+        ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+        ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+      }
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+    }
+    """ ;
     ] ;
   sh:targetClass els:HasMember ;
 .
@@ -342,67 +261,46 @@ icddl:hasPart
   rdfs:subPropertyOf icddl:linkedDirectedOneToMany ;
   owl:inverseOf icddl:isPartOf ;
   sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:HasPart and 1 StringBasedIdentifier and 1 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-                             	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#hasPart> ?rdfEntity2 .
-                              ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#isPartOf> ?rdfEntity1 .
-                             }
-                             WHERE {
-                                $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                                $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
+    rdf:type sh:SPARQLRule ;
+    rdfs:label "sh:rule for icddl:hasPart" ;
+    rdfs:comment "Infers ICDD Link predicates for  instances of els:HasPart as icddl:hasPart and inverse as icddl:isPartOf." ;
+    sh:construct """CONSTRUCT {
+      ?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#hasPart> ?rdfEntity2 .
+      ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#isPartOf> ?rdfEntity1 .
+    }
+    WHERE {
+      $this ls:hasFromLinkElement ?elem1 .
+      $this ls:hasToLinkElement ?elem2 .
+      FILTER(!sameTerm(?elem1, ?elem2))
 
-                               OPTIONAL{
-                                   ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                                   ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                                   ?rdfEntity1 ?hasProp1 ?guid1 .
-                             	}
-                             	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                             	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                             }
-                             			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:HasPart and 2 StringBasedIdentifiers" ;
-      sh:construct """CONSTRUCT {
-                          	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#hasPart> ?rdfEntity2 .
-                          	?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#isPartOf> ?rdfEntity1 .
-                          }
-                          WHERE {
-                            $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                            $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-                            OPTIONAL{
-                                ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                                ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid2 .
-                                ?rdfEntity1 ?hasProp1 ?guid1 .
-                                ?rdfEntity2 ?hasProp2 ?guid2 .
-                          	}
-                          	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                          	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                          }
-                          			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:HasPart and 2 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-                                	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#hasPart> ?rdfEntity2 .
-                                  ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#isPartOf> ?rdfEntity1 .
-                                }
-                                WHERE {
-                                  $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                                  $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-                                  OPTIONAL{
-                                      ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity1 .
-                                      ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                                	}
-                                	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                                	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                                }
-                                			""" ;
+      {  
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+               FILTER CONTAINS(str(?hasProp1),?field)
+      }
+      UNION
+      {
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   
+      }
+      UNION
+      {
+        ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+        ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+      }
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+    }
+    """ ;
     ] ;
   sh:targetClass els:HasPart ;
 .
@@ -414,65 +312,46 @@ icddl:isAlternativeTo
   rdfs:seeAlso els:IsAlternativeTo ;
   rdfs:subPropertyOf icddl:linkedDirectedBinary ;
   sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:IsAlternativeTo and 1 StringBasedIdentifier and 1 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-               	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isAlternativeTo> ?rdfEntity2 .
-               }
-               WHERE {
-                  $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                  $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
+    rdf:type sh:SPARQLRule ;
+    rdfs:label "sh:rule for icddl:isAlternativeTo" ;
+    rdfs:comment "Infers ICDD Link predicates for  instances of els:IsAlternativeTo as icddl:isAlternativeTo." ;
+    sh:construct """CONSTRUCT {
+      ?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isAlternativeTo> ?rdfEntity2 .
+    }
+    WHERE {
+      $this ls:hasFromLinkElement ?elem1 .
+      $this ls:hasToLinkElement ?elem2 .
+      FILTER(!sameTerm(?elem1, ?elem2))
 
-                 OPTIONAL{
-                     ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                     ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                     ?rdfEntity1 ?hasProp1 ?guid1 .
-               	}
-               	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-               	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-               }
-               			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:IsAlternativeTo and 2 StringBasedIdentifiers" ;
-      sh:construct """CONSTRUCT {
-            	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isAlternativeTo> ?rdfEntity2 .
-            }
-            WHERE {
-              $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-              $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-              OPTIONAL{
-                  ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                  ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid2 .
-                  ?rdfEntity1 ?hasProp1 ?guid1 .
-                  ?rdfEntity2 ?hasProp2 ?guid2 .
-            	}
-            	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-            	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-            }
-            			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:IsAlternativeTo and 2 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-                  	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isAlternativeTo> ?rdfEntity2 .
-                  }
-                  WHERE {
-                    $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                    $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-                    OPTIONAL{
-                        ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity1 .
-                        ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                  	}
-                  	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                  	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                  }
-                  			""" ;
-    ] ;
+      {
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+               FILTER CONTAINS(str(?hasProp1),?field)
+      }
+      UNION
+      {
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   
+      }
+      UNION
+      {
+        ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+        ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+      }
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+    }
+    """ ;
+  ] ;
   sh:targetClass els:IsAlternativeTo ;
 .
 icddl:isControlledBy
@@ -484,68 +363,47 @@ icddl:isControlledBy
   rdfs:subPropertyOf icddl:linkedDirectedOneToMany ;
   owl:inverseOf icddl:controls ;
   sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:IsControlledBy and 1 StringBasedIdentifier and 1 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-                           	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isControlledBy> ?rdfEntity2 .
-                            ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#controls> ?rdfEntity1 .
-                           }
-                           WHERE {
-                              $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                              $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
+    rdf:type sh:SPARQLRule ;
+    rdfs:label "sh:rule for icddl:isControlledBy" ;
+    rdfs:comment "Infers ICDD Link predicates for  instances of els:IsControlledBy as icddl:isControlledBy and inverse as icddl:controls." ;
+    sh:construct """CONSTRUCT {
+      ?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isControlledBy> ?rdfEntity2 .
+      ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#controls> ?rdfEntity1 .
+    }
+    WHERE {
+      $this ls:hasFromLinkElement ?elem1 .
+      $this ls:hasToLinkElement ?elem2 .
+      FILTER(!sameTerm(?elem1, ?elem2))
 
-                             OPTIONAL{
-                                 ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                                 ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                                 ?rdfEntity1 ?hasProp1 ?guid1 .
-                           	}
-                           	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                           	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                           }
-                           			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:IsControlledBy and 2 StringBasedIdentifiers" ;
-      sh:construct """CONSTRUCT {
-                        	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isControlledBy> ?rdfEntity2 .
-                        	?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#controls> ?rdfEntity1 .
-                        }
-                        WHERE {
-                          $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                          $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-                          OPTIONAL{
-                              ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                              ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid2 .
-                              ?rdfEntity1 ?hasProp1 ?guid1 .
-                              ?rdfEntity2 ?hasProp2 ?guid2 .
-                        	}
-                        	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                        	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                        }
-                        			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:IsControlledBy and 2 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-                              	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isControlledBy> ?rdfEntity2 .
-                                ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#controls> ?rdfEntity1 .
-                              }
-                              WHERE {
-                                $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                                $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-                                OPTIONAL{
-                                    ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity1 .
-                                    ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                              	}
-                              	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                              	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                              }
-                              			""" ;
-    ] ;
+      {
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+               FILTER CONTAINS(str(?hasProp1),?field)
+      }
+      UNION
+      {
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   
+      }
+      UNION
+      {
+        ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+        ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+      }
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+    }
+    """ ;
+  ] ;
   sh:targetClass els:IsControlledBy ;
 .
 icddl:isElaboratedBy
@@ -557,67 +415,46 @@ icddl:isElaboratedBy
   rdfs:subPropertyOf icddl:linkedDirectedOneToMany ;
   owl:inverseOf icddl:elaborates ;
   sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:IsElaboratedBy and 1 StringBasedIdentifier and 1 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-                         	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isElaboratedBy> ?rdfEntity2 .
-                          ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#elaborates> ?rdfEntity1 .
-                         }
-                         WHERE {
-                            $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                            $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
+    rdf:type sh:SPARQLRule ;
+    rdfs:label "sh:rule for icddl:isElaboratedBy" ;
+    rdfs:comment "Infers ICDD Link predicates for  instances of els:IsElaboratedBy as icddl:isElaboratedBy and inverse as icddl:elaborates." ;
+    sh:construct """CONSTRUCT {
+      ?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isElaboratedBy> ?rdfEntity2 .
+      ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#elaborates> ?rdfEntity1 .
+    }
+    WHERE {
+      $this ls:hasFromLinkElement ?elem1 .
+      $this ls:hasToLinkElement ?elem2 .
+      FILTER(!sameTerm(?elem1, ?elem2))
 
-                           OPTIONAL{
-                               ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                               ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                               ?rdfEntity1 ?hasProp1 ?guid1 .
-                         	}
-                         	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                         	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                         }
-                         			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:IsElaboratedBy and 2 StringBasedIdentifiers" ;
-      sh:construct """CONSTRUCT {
-                      	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isElaboratedBy> ?rdfEntity2 .
-                      	?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#elaborates> ?rdfEntity1 .
-                      }
-                      WHERE {
-                        $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                        $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-                        OPTIONAL{
-                            ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                            ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid2 .
-                            ?rdfEntity1 ?hasProp1 ?guid1 .
-                            ?rdfEntity2 ?hasProp2 ?guid2 .
-                      	}
-                      	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                      	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                      }
-                      			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:IsElaboratedBy and 2 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-                            	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isElaboratedBy> ?rdfEntity2 .
-                              ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#elaborates> ?rdfEntity1 .
-                            }
-                            WHERE {
-                              $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                              $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-                              OPTIONAL{
-                                  ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity1 .
-                                  ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                            	}
-                            	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                            	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                            }
-                            			""" ;
+      {
+       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+               FILTER CONTAINS(str(?hasProp1),?field)
+     }
+     UNION
+     {
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+          ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+          ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+          ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+          ?rdfEntity1 ?hasProp1 ?guid1 .
+          ?rdfEntity2 ?hasProp2 ?guid2 .     
+          FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))  
+    }
+    UNION
+    {
+      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+    }
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+    }
+    """ ;
     ] ;
   sh:targetClass els:IsElaboratedBy ;
 .
@@ -629,64 +466,45 @@ icddl:isIdenticalTo
   rdfs:seeAlso els:IsIdenticalTo ;
   rdfs:subPropertyOf icddl:linkedDirectedBinary ;
   sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:IsIdenticalTo and 1 StringBasedIdentifier and 1 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-                 	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isIdenticalTo> ?rdfEntity2 .
-                 }
-                 WHERE {
-                    $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                    $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
+    rdf:type sh:SPARQLRule ;
+    rdfs:label "sh:rule for icddl:isIdenticalTo" ;
+    rdfs:comment "Infers ICDD Link predicates for  instances of els:IsIdenticalTo as icddl:isIdenticalTo." ;
+    sh:construct """CONSTRUCT {
+      ?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isIdenticalTo> ?rdfEntity2 .
+    }
+    WHERE {
+      $this ls:hasFromLinkElement ?elem1 .
+      $this ls:hasToLinkElement ?elem2 .
+      FILTER(!sameTerm(?elem1, ?elem2))
 
-                   OPTIONAL{
-                       ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                       ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                       ?rdfEntity1 ?hasProp1 ?guid1 .
-                 	}
-                 	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                 	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                 }
-                 			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:IsIdenticalTo and 2 StringBasedIdentifiers" ;
-      sh:construct """CONSTRUCT {
-              	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isIdenticalTo> ?rdfEntity2 .
-              }
-              WHERE {
-                $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-                OPTIONAL{
-                    ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                    ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid2 .
-                    ?rdfEntity1 ?hasProp1 ?guid1 .
-                    ?rdfEntity2 ?hasProp2 ?guid2 .
-              	}
-              	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-              	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-              }
-              			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:isIdenticalTo and 2 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-                    	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isAlternativeTo> ?rdfEntity2 .
-                    }
-                    WHERE {
-                      $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                      $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-                      OPTIONAL{
-                          ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity1 .
-                          ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                    	}
-                    	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                    	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                    }
-                    			""" ;
+      {
+       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+               FILTER CONTAINS(str(?hasProp1),?field)
+     }
+     UNION
+     {
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   
+    }
+    UNION
+    {
+      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+    }
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+    }
+    """ ;
     ] ;
   sh:targetClass els:IsIdenticalTo ;
 .
@@ -699,67 +517,46 @@ icddl:isMemberOf
   rdfs:subPropertyOf icddl:linkedDirectedOneToMany ;
   owl:inverseOf icddl:hasMember ;
   sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:IsMemberOf and 1 StringBasedIdentifier and 1 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-                       	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isMemberOf> ?rdfEntity2 .
-                        ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#hasMember> ?rdfEntity1 .
-                       }
-                       WHERE {
-                          $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                          $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
+    rdf:type sh:SPARQLRule ;
+    rdfs:label "sh:rule for icddl:isMemberOf" ;
+    rdfs:comment "Infers ICDD Link predicates for  instances of els:IsMemberOf as icddl:isMemberOf and inverse as icddl:hasMember." ;
+    sh:construct """CONSTRUCT {
+      ?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isMemberOf> ?rdfEntity2 .
+      ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#hasMember> ?rdfEntity1 .
+    }
+    WHERE {
+      $this ls:hasFromLinkElement ?elem1 .
+      $this ls:hasToLinkElement ?elem2 .
+      FILTER(!sameTerm(?elem1, ?elem2))
 
-                         OPTIONAL{
-                             ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                             ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                             ?rdfEntity1 ?hasProp1 ?guid1 .
-                       	}
-                       	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                       	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                       }
-                       			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:IsMemberOf and 2 StringBasedIdentifiers" ;
-      sh:construct """CONSTRUCT {
-                    	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isMemberOf> ?rdfEntity2 .
-                    	?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#hasMember> ?rdfEntity1 .
-                    }
-                    WHERE {
-                      $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                      $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-                      OPTIONAL{
-                          ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                          ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid2 .
-                          ?rdfEntity1 ?hasProp1 ?guid1 .
-                          ?rdfEntity2 ?hasProp2 ?guid2 .
-                    	}
-                    	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                    	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                    }
-                    			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:IsMemberOf and 2 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-                          	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isMemberOf> ?rdfEntity2 .
-                            ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#hasMember> ?rdfEntity1 .
-                          }
-                          WHERE {
-                            $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                            $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-                            OPTIONAL{
-                                ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity1 .
-                                ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                          	}
-                          	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                          	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                          }
-                          			""" ;
+      {
+       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+               FILTER CONTAINS(str(?hasProp1),?field)
+     }
+     UNION
+     {
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   
+    }
+    UNION
+    {
+      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+    }
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+    }
+    """ ;
     ] ;
   sh:targetClass els:IsMemberOf ;
 .
@@ -772,67 +569,46 @@ icddl:isPartOf
   rdfs:subPropertyOf icddl:linkedDirectedOneToMany ;
   owl:inverseOf icddl:hasPart ;
   sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:IsPartOf and 1 StringBasedIdentifier and 1 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-                     	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isPartOf> ?rdfEntity2 .
-                      ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#hasPart> ?rdfEntity1 .
-                     }
-                     WHERE {
-                        $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                        $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
+    rdf:type sh:SPARQLRule ;
+    rdfs:label "sh:rule for icddl:isPartOf" ;    
+    rdfs:comment "Infers ICDD Link predicates for  instances of els:IsPartOf as icddl:isPartOf and inverse as icddl:hasPart." ;
+    sh:construct """CONSTRUCT {
+      ?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isPartOf> ?rdfEntity2 .
+      ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#hasPart> ?rdfEntity1 .
+    }
+    WHERE {
+      $this ls:hasFromLinkElement ?elem1 .
+      $this ls:hasToLinkElement ?elem2 .
+      FILTER(!sameTerm(?elem1, ?elem2))
 
-                       OPTIONAL{
-                           ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                           ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                           ?rdfEntity1 ?hasProp1 ?guid1 .
-                     	}
-                     	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                     	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                     }
-                     			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:IsPartOf and 2 StringBasedIdentifiers" ;
-      sh:construct """CONSTRUCT {
-                  	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isPartOf> ?rdfEntity2 .
-                  	?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#hasPart> ?rdfEntity1 .
-                  }
-                  WHERE {
-                    $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                    $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-                    OPTIONAL{
-                        ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                        ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid2 .
-                        ?rdfEntity1 ?hasProp1 ?guid1 .
-                        ?rdfEntity2 ?hasProp2 ?guid2 .
-                  	}
-                  	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                  	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                  }
-                  			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:IsPartOf and 2 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-                        	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isPartOf> ?rdfEntity2 .
-                          ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#hasPart> ?rdfEntity1 .
-                        }
-                        WHERE {
-                          $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                          $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-                          OPTIONAL{
-                              ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity1 .
-                              ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                        	}
-                        	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                        	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                        }
-                        			""" ;
+      {
+       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+               FILTER CONTAINS(str(?hasProp1),?field)
+     }
+     UNION
+     {
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   
+    }
+    UNION
+    {
+      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .  
+    }
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+    }
+    """ ;
     ] ;
   sh:targetClass els:IsPartOf ;
 .
@@ -845,67 +621,46 @@ icddl:isSpecialisedAs
   rdfs:subPropertyOf icddl:linkedDirectedOneToMany ;
   owl:inverseOf icddl:specialises ;
   sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:IsSpecialisedAs and 1 StringBasedIdentifier and 1 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-                   	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isSpecialisedAs> ?rdfEntity2 .
-                    ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#specialises> ?rdfEntity1 .
-                   }
-                   WHERE {
-                      $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                      $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
+    rdf:type sh:SPARQLRule ;
+    rdfs:label "sh:rule for icddl:isSpecialisedAs" ;    
+    rdfs:comment "Infers ICDD Link predicates for  instances of els:IsSpecialisedAs as icddl:isSpecialisedAs and inverse as icddl:specialises." ;
+    sh:construct """CONSTRUCT {
+      ?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isSpecialisedAs> ?rdfEntity2 .
+      ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#specialises> ?rdfEntity1 .
+    }
+    WHERE {
+      $this ls:hasFromLinkElement ?elem1 .
+      $this ls:hasToLinkElement ?elem2 .
+      FILTER(!sameTerm(?elem1, ?elem2))
 
-                     OPTIONAL{
-                         ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                         ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                         ?rdfEntity1 ?hasProp1 ?guid1 .
-                   	}
-                   	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                   	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                   }
-                   			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:IsSpecialisedAs and 2 StringBasedIdentifiers" ;
-      sh:construct """CONSTRUCT {
-                	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isSpecialisedAs> ?rdfEntity2 .
-                	?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#specialises> ?rdfEntity1 .
-                }
-                WHERE {
-                  $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                  $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-                  OPTIONAL{
-                      ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                      ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid2 .
-                      ?rdfEntity1 ?hasProp1 ?guid1 .
-                      ?rdfEntity2 ?hasProp2 ?guid2 .
-                	}
-                	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                }
-                			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:IsSpecialisedAs and 2 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-                      	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isSpecialisedAs> ?rdfEntity2 .
-                        ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#specialises> ?rdfEntity1 .
-                      }
-                      WHERE {
-                        $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                        $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-                        OPTIONAL{
-                            ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity1 .
-                            ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                      	}
-                      	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                      	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                      }
-                      			""" ;
+      {
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+               FILTER CONTAINS(str(?hasProp1),?field)
+      }
+      UNION
+      {
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   
+      }
+      UNION
+      {
+        ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+        ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+      }
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+    }
+    """ ;
     ] ;
   sh:targetClass els:IsSpecialisedAs ;
 .
@@ -918,146 +673,97 @@ icddl:isSupersededBy
   rdfs:subPropertyOf icddl:linkedDirectedOneToMany ;
   owl:inverseOf icddl:supersedes ;
   sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:IsSupersededBy and 1 StringBasedIdentifier and 1 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-                 	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isSupersededBy> ?rdfEntity2 .
-                  ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#supersedes> ?rdfEntity1 .
-                 }
-                 WHERE {
-                    $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                    $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
+    rdf:type sh:SPARQLRule ;
+    rdfs:label "sh:rule for icddl:isSupersededBy" ;   
+    rdfs:comment "Infers ICDD Link predicates for  instances of els:IsSupersededBy as icddl:isSupersededBy and inverse as icddl:supersedes." ;
+    sh:construct """CONSTRUCT {
+      ?rdfEntity1 icddl:isSupersededBy ?rdfEntity2 .
+      ?rdfEntity2 icddl:supersedes ?rdfEntity1 .
+    }
+    WHERE {
+      $this ls:hasFromLinkElement ?elem1 .
+      $this ls:hasToLinkElement ?elem2 .
+      FILTER(!sameTerm(?elem1, ?elem2))
 
-                   OPTIONAL{
-                       ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                       ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                       ?rdfEntity1 ?hasProp1 ?guid1 .
-                 	}
-                 	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-                 	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                 }
-                 			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:IsSupersededBy and 2 StringBasedIdentifiers" ;
-      sh:construct """CONSTRUCT {
-              	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isSupersededBy> ?rdfEntity2 .
-              	?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#supersedes> ?rdfEntity1 .
-              }
-              WHERE {
-                $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-                OPTIONAL{
-                    ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                    ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid2 .
-                    ?rdfEntity1 ?hasProp1 ?guid1 .
-                    ?rdfEntity2 ?hasProp2 ?guid2 .
-              	}
-              	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-              	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-              }
-              			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:IsSupersededBy and 2 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-                    	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#isSupersededBy> ?rdfEntity2 .
-                      ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#supersedes> ?rdfEntity1 .
-                    }
-                    WHERE {
-                      $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                      $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-                      OPTIONAL{
-                          ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity1 .
-                          ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                    	}
-                    	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                    	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                    }
-                    			""" ;
+      {
+       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+               FILTER CONTAINS(str(?hasProp1),?field)
+     }
+     UNION
+     {
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   
+    }
+    UNION
+    {
+      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+    }
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+    }
+    """ ;
     ] ;
   sh:targetClass els:IsSupersededBy ;
 .
 icddl:linked
   rdf:type owl:ObjectProperty ;
   rdf:type sh:NodeShape ;
-  rdfs:comment "A grouping of 1 or more instances of  ls:LinkElement. The most generic connection between entities"@en ;
-  rdfs:label "Linked"@en ;
-  rdfs:seeAlso ls:Link ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
+  rdfs:comment "An ls:Link comprising exactly 2 individuals of class ls:LinkElement"@en ;
+  rdfs:label "linked binary"@en ;
+  rdfs:seeAlso ls:BinaryLink ;
+  rdfs:subPropertyOf icddl:linked ;
   sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for Links and 1 StringBasedIdentifier and 1 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-       	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#linked> ?rdfEntity2 .
-       	?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#linked> ?rdfEntity1 .
-       }
-       WHERE {
-         $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasLinkElement> ?elem1 .
-         $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasLinkElement> ?elem2 .
-         FILTER(!sameTerm(?elem1, ?elem2))
-
-         OPTIONAL{
-             ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-             ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-             ?rdfEntity1 ?hasProp1 ?guid1 .
-       	}
-       	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-       	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-       }
-       			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for Links and 2 StringBasedIdentifiers" ;
-      sh:construct """CONSTRUCT {
-    	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#linked> ?rdfEntity2 .
-    	?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#linked> ?rdfEntity1 .
+    rdf:type sh:SPARQLRule ;
+    rdfs:label "sh:rule for icddl:linked" ;  
+    rdfs:comment "Infers ICDD Link predicates for  instances of ls:Link as icddl:linked and inverse as icddl:linked." ;
+    sh:construct """
+    CONSTRUCT {
+      ?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#linked> ?rdfEntity2 .
+      ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#linked> ?rdfEntity1 .
     }
     WHERE {
-      $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasLinkElement> ?elem1 .
-      $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasLinkElement> ?elem2 .
-      FILTER(!sameTerm(?elem1, ?elem2))
+     $this ls:hasLinkElement ?elem1 .
+     $this ls:hasLinkElement ?elem2 .
+     FILTER(!sameTerm(?elem1, ?elem2))
 
-      OPTIONAL{
-          ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-          ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid2 .
-          ?rdfEntity1 ?hasProp1 ?guid1 .
-          ?rdfEntity2 ?hasProp2 ?guid2 .
-
-           ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifierField> ?field1 .
-           ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifierField> ?field2 .
-           FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))
-    	}
-    	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-    	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
+     {
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+      ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+      ?rdfEntity1 ?hasProp1 ?guid1 .
+      FILTER CONTAINS(str(?hasProp1),?field)
     }
-    			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for Links and 2 UriBasedIdentifiers" ;
-      sh:construct """CONSTRUCT {
-          	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#linked> ?rdfEntity2 .
-          	?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#linked> ?rdfEntity1 .
-          }
-          WHERE {
-            $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasLinkElement> ?elem1 .
-            $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasLinkElement> ?elem2 .
-            FILTER(!sameTerm(?elem1, ?elem2))
-
-            OPTIONAL{
-                ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity1 .
-                ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-          	}
-          	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-          	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-          }
-          			""" ;
+    UNION
+    {
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))
+    }
+    UNION
+    {
+      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+    }
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+    """ ;
     ] ;
   sh:targetClass ls:Link ;
 .
@@ -1069,79 +775,50 @@ icddl:linkedBinary
   rdfs:seeAlso ls:BinaryLink ;
   rdfs:subPropertyOf icddl:linked ;
   sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for BinaryLinks and 1 StringBasedIdentifier and 1 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-     	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#linkedBinary> ?rdfEntity2 .
-     	?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#linkedBinary> ?rdfEntity1 .
+    rdf:type sh:SPARQLRule ;
+    rdfs:label "sh:rule for icddl:linkedBinary" ;  
+    rdfs:comment "Infers ICDD Link predicates for  instances of ls:BinaryLink as icddl:linkedBinary and inverse as icddl:linkedBinary." ;
+    sh:construct """
+    PREFIX ls: <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#>
+    PREFIX icddl: <http://icdd.vm.rub.de/ontology/icddl#>
+    CONSTRUCT {
+      ?rdfEntity1 icddl:linkedBinary ?rdfEntity2 .
+      ?rdfEntity2 icddl:linkedBinary ?rdfEntity1 .
+    }
+    WHERE {
+     $this ls:hasLinkElement ?elem1 .
+     $this ls:hasLinkElement ?elem2 .
+     FILTER(!sameTerm(?elem1, ?elem2))
+
+     {
+       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+       ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+       ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+       ?rdfEntity1 ?hasProp1 ?guid1 .
+       FILTER CONTAINS(str(?hasProp1),?field)
      }
-     WHERE {
-       $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasLinkElement> ?elem1 .
-       $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasLinkElement> ?elem2 .
-       FILTER(!sameTerm(?elem1, ?elem2))
+     UNION
+     {
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+      ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+      ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+      ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+      ?rdfEntity1 ?hasProp1 ?guid1 .
+      ?rdfEntity2 ?hasProp2 ?guid2 .     
+      FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))       
+    }
+    UNION
+    {
+     ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+     ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+    }
 
-       OPTIONAL{
-           ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-           ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifierField> ?field .
-           ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-           ?rdfEntity1 ?hasProp1 ?guid1 .
-     	}
-     	FILTER CONTAINS(str(?hasProp1),?field)
-     	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-     	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-     }
-     			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for BinaryLinks and 2 StringBasedIdentifiers" ;
-      sh:construct """CONSTRUCT {
-  	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#linkedBinary> ?rdfEntity2 .
-  	?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#linkedBinary> ?rdfEntity1 .
-
-  	#?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#hasUID>  ?hasProp2bool.
-  	#?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#hasIFCGUID> ?hasProp1bool.
-  }
-  WHERE {
-    $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasLinkElement> ?elem1 .
-    $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasLinkElement> ?elem2 .
-    FILTER(!sameTerm(?elem1, ?elem2))
-
-    OPTIONAL{
-        ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-        ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid2 .
-        ?rdfEntity1 ?hasProp1 ?guid1 .
-        ?rdfEntity2 ?hasProp2 ?guid2 .
-        FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-        FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-
-        ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifierField> ?field1 .
-        ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifierField> ?field2 .
-  	    FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))
-  	}
-  }
-  			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for BinaryLinks and 2 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-        	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#linkedBinary> ?rdfEntity2 .
-        	?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#linkedBinary> ?rdfEntity1 .
-        }
-        WHERE {
-          $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasLinkElement> ?elem1 .
-          $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasLinkElement> ?elem2 .
-          FILTER(!sameTerm(?elem1, ?elem2))
-
-          OPTIONAL{
-              ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity1 .
-              ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-        	}
-        	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-        	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-        }
-        			""" ;
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier}
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier}
+    }
+    """ ;
     ] ;
   sh:targetClass ls:BinaryLink ;
 .
@@ -1154,67 +831,46 @@ icddl:linkedDirected
   rdfs:subPropertyOf icddl:linked ;
   owl:inverseOf icddl:linkedDirectedInverse ;
   sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for DirectedLinks and 1 StringBasedIdentifier and 1 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-       	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#linkedDirected> ?rdfEntity2 .
-       	?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#linkedDirectedInverse> ?rdfEntity1 .
-       }
-       WHERE {
-          $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-          $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-         OPTIONAL{
-             ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-             ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-             ?rdfEntity1 ?hasProp1 ?guid1 .
-       	}
-       	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-       	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-       }
-       			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for DirectedLinks and 2 StringBasedIdentifiers" ;
-      sh:construct """CONSTRUCT {
-    	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#linkedDirected> ?rdfEntity2 .
-    	?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#linkedDirectedInverse> ?rdfEntity1 .
+    rdf:type sh:SPARQLRule ;
+    rdfs:label "sh:rule for icddl:linkedDirected" ; 
+    rdfs:comment "Infers ICDD Link predicates for  instances of ls:DirectedLink as icddl:linkedDirected and inverse as icddl:linkedDirectedInverse." ;
+    sh:construct """CONSTRUCT {
+      ?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#linkedDirected> ?rdfEntity2 .
+      ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#linkedDirectedInverse> ?rdfEntity1 .
     }
     WHERE {
-      $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-      $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
+      $this ls:hasFromLinkElement ?elem1 .
+      $this ls:hasToLinkElement ?elem2 .
+      FILTER(!sameTerm(?elem1, ?elem2))
 
-      OPTIONAL{
-          ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-          ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid2 .
-          ?rdfEntity1 ?hasProp1 ?guid1 .
-          ?rdfEntity2 ?hasProp2 ?guid2 .
-    	}
-    	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-    	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
+      {
+       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+               FILTER CONTAINS(str(?hasProp1),?field)
+     }
+     UNION
+     {
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   
     }
-    			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for DirectedLinks and 2 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-          	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#linkedDirected> ?rdfEntity2 .
-          	?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#linkedDirectedInverse> ?rdfEntity1 .
-          }
-          WHERE {
-            $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-            $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-            OPTIONAL{
-                ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity1 .
-                ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-          	}
-          	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-          	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-          }
-          			""" ;
+    UNION
+    {
+      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+    }
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+    }
+    """ ;
     ] ;
   sh:targetClass ls:DirectedLink ;
 .
@@ -1228,85 +884,68 @@ icddl:linkedDirectedBinary
   rdfs:subPropertyOf icddl:linkedDirected ;
   owl:inverseOf icddl:linkedDirectedBinaryInverse ;
   sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for DirectedBinaryLinks and 1 StringBasedIdentifier and 1 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-         	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#linkedDirectedBinary> ?rdfEntity2 .
-         	?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#linkedDirectedBinaryInverse> ?rdfEntity1 .
-         }
-         WHERE {
-            $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-            $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
+    rdf:type sh:SPARQLRule ;
+    rdfs:label "sh:rule for icddl:linkedDirectedBinary" ; 
+    rdfs:comment "Infers ICDD Link predicates for  instances of ls:DirectedBinaryLink as icddl:linkedDirectedBinary and inverse as icddl:linkedDirectedBinaryInverse." ;
+    sh:construct """
+    PREFIX ls: <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#>
+    PREFIX icddl: <http://icdd.vm.rub.de/ontology/icddl#>
+    CONSTRUCT {
+      ?rdfEntity1 icddl:linkedDirectedBinary ?rdfEntity2 .
+      ?rdfEntity2 icddl:linkedDirectedBinaryInverse ?rdfEntity1 .
+    }
+    WHERE {
+      $this ls:hasFromLinkElement ?elem1 .
+      $this ls:hasToLinkElement ?elem2 .
+      $this ls:hasToLinkElement ?elem2 .
+      FILTER(!sameTerm(?elem1, ?elem2))
+      {
+       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+       ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+       ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+       ?rdfEntity1 ?hasProp1 ?guid1 .
+       FILTER CONTAINS(str(?hasProp1),?field)
+     }
+     UNION
+     {
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+      ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+      ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+      ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+      ?rdfEntity1 ?hasProp1 ?guid1 .
+      ?rdfEntity2 ?hasProp2 ?guid2 .     
+      FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))       
+    }
+    UNION
+    {
+     ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+     ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+    }
 
-           OPTIONAL{
-               ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-               ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-               ?rdfEntity1 ?hasProp1 ?guid1 .
-         	}
-         	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-         	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-         }
-         			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for DirectedBinaryLinks and 2 StringBasedIdentifiers" ;
-      sh:construct """CONSTRUCT {
-      	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#linkedDirectedBinary> ?rdfEntity2 .
-      	?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#linkedDirectedBinaryInverse> ?rdfEntity1 .
-      }
-      WHERE {
-        $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-        $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-        OPTIONAL{
-            ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-            ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid2 .
-            ?rdfEntity1 ?hasProp1 ?guid1 .
-            ?rdfEntity2 ?hasProp2 ?guid2 .
-      	}
-      	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-      	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-      }
-      			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for DirectedBinaryLinks and 2 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-            	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#linkedDirectedBinary> ?rdfEntity2 .
-            	?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#linkedDirectedBinaryInverse> ?rdfEntity1 .
-            }
-            WHERE {
-              $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-              $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-              OPTIONAL{
-                  ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity1 .
-                  ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-            	}
-            	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-            	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-            }
-            			""" ;
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier}
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier}
+    }
+    """ ;
     ] ;
   sh:targetClass ls:DirectedBinaryLink ;
 .
 icddl:linkedDirectedBinaryInverse
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "Inverse property of icddl:linkedDirectedBinary.  Inferred during rule execution for icddl:linkedDirectedBinary."@en ;
-  rdfs:label "linked directed binary inverse"@en ;
-  rdfs:seeAlso icddl:linkedDirectedBinary ;
-  rdfs:subPropertyOf icddl:linkedDirectedInverse ;
-  owl:inverseOf icddl:linkedDirectedBinary ;
+rdf:type owl:ObjectProperty ;
+rdfs:comment "Inverse property of icddl:linkedDirectedBinary.  Inferred during rule execution for icddl:linkedDirectedBinary."@en ;
+rdfs:label "linked directed binary inverse"@en ;
+rdfs:seeAlso icddl:linkedDirectedBinary ;
+rdfs:subPropertyOf icddl:linkedDirectedInverse ;
+owl:inverseOf icddl:linkedDirectedBinary ;
 .
 icddl:linkedDirectedInverse
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "Inverse property of icddl:linkedDirected.  Inferred during rule execution for icddl:linkedDirected."@en ;
-  rdfs:label "linked directed inverse"@en ;
-  rdfs:seeAlso icddl:linkedDirected ;
-  rdfs:subPropertyOf icddl:linked ;
-  owl:inverseOf icddl:linkedDirected ;
+rdf:type owl:ObjectProperty ;
+rdfs:comment "Inverse property of icddl:linkedDirected.  Inferred during rule execution for icddl:linkedDirected."@en ;
+rdfs:label "linked directed inverse"@en ;
+rdfs:seeAlso icddl:linkedDirected ;
+rdfs:subPropertyOf icddl:linked ;
+owl:inverseOf icddl:linkedDirected ;
 .
 icddl:linkedDirectedOneToMany
   rdf:type owl:ObjectProperty ;
@@ -1317,67 +956,49 @@ icddl:linkedDirectedOneToMany
   rdfs:subPropertyOf icddl:linkedDirected ;
   owl:inverseOf icddl:linkedDirectedOneToManyInverse ;
   sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for Directed1toNLinks and 1 StringBasedIdentifier and 1 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-           	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#linkedDirectedOneToMany> ?rdfEntity2 .
-           	?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#linkedDirectedOneToManyInverse> ?rdfEntity1 .
-           }
-           WHERE {
-              $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-              $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
+    rdf:type sh:SPARQLRule ;
+    rdfs:label "sh:rule for icddl:linkedDirectedOneToMany" ; 
+    rdfs:comment "Infers ICDD Link predicates for  instances of ls:Directed1toNLink as icddl:linkedDirectedOneToMany and inverse as icddl:linkedDirectedOneToManyInverse." ;
+    sh:construct """
+    PREFIX ls: <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#>
+    PREFIX icddl: <http://icdd.vm.rub.de/ontology/icddl#>
+    CONSTRUCT {
+      ?rdfEntity1 icddl:linkedDirectedOneToMany ?rdfEntity2 .
+      ?rdfEntity2 icddl:linkedDirectedOneToManyInverse ?rdfEntity1 .
+    }
+    WHERE {
+      $this ls:hasFromLinkElement ?elem1 .
+      $this ls:hasToLinkElement ?elem2 .
+      FILTER(!sameTerm(?elem1, ?elem2))
+      {
+       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+       ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+       ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+       ?rdfEntity1 ?hasProp1 ?guid1 .
+       FILTER CONTAINS(str(?hasProp1),?field)
+     }
+     UNION
+     {
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+      ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+      ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+      ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+      ?rdfEntity1 ?hasProp1 ?guid1 .
+      ?rdfEntity2 ?hasProp2 ?guid2 .     
+      FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))       
+    }
+    UNION
+    {
+     ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+     ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+    }
 
-             OPTIONAL{
-                 ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                 ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                 ?rdfEntity1 ?hasProp1 ?guid1 .
-           	}
-           	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-           	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-           }
-           			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for Directed1toNLinks and 2 StringBasedIdentifiers" ;
-      sh:construct """CONSTRUCT {
-        	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#linkedDirectedOneToMany> ?rdfEntity2 .
-        	?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#linkedDirectedOneToManyInverse> ?rdfEntity1 .
-        }
-        WHERE {
-          $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-          $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-          OPTIONAL{
-              ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-              ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid2 .
-              ?rdfEntity1 ?hasProp1 ?guid1 .
-              ?rdfEntity2 ?hasProp2 ?guid2 .
-        	}
-        	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-        	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-        }
-        			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for Directed1toNLinks and 2 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-              	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#linkedDirectedOneToMany> ?rdfEntity2 .
-              	?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#linkedDirectedOneToManyInverse> ?rdfEntity1 .
-              }
-              WHERE {
-                $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-                OPTIONAL{
-                    ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity1 .
-                    ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-              	}
-              	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-              	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-              }
-              			""" ;
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier}
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier}
+    }
+    """ ;
     ] ;
   sh:targetClass ls:Directed1toNLink ;
 .
@@ -1388,8 +1009,8 @@ icddl:linkedDirectedOneToManyInverse
   rdfs:seeAlso icddl:linkedDirectedOneToMany ;
   rdfs:subPropertyOf icddl:linkedDirectedInverse ;
   owl:inverseOf icddl:linkedDirectedOneToMany ;
-.
-icddl:specialises
+  .
+  icddl:specialises
   rdf:type owl:ObjectProperty ;
   rdf:type sh:NodeShape ;
   rdfs:comment "Possibly transitive, non-symmetric and inverse of IsSpecialisedAs"@en ;
@@ -1398,67 +1019,46 @@ icddl:specialises
   rdfs:subPropertyOf icddl:linkedDirectedOneToMany ;
   owl:inverseOf icddl:isSpecialisedAs ;
   sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:Specialises and 1 StringBasedIdentifier and 1 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-             	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#specialises> ?rdfEntity2 .
-                ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#isSpecialisedAs> ?rdfEntity1 .
-             }
-             WHERE {
-                $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
+    rdf:type sh:SPARQLRule ;
+    rdfs:label "sh:rule for icddl:specialises" ; 
+    rdfs:comment "Infers ICDD Link predicates for  instances of els:Specialises as icddl:specialises and inverse as icddl:isSpecialisedAs." ;
+    sh:construct """CONSTRUCT {
+      ?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#specialises> ?rdfEntity2 .
+      ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#isSpecialisedAs> ?rdfEntity1 .
+    }
+    WHERE {
+      $this ls:hasFromLinkElement ?elem1 .
+      $this ls:hasToLinkElement ?elem2 .
+      FILTER(!sameTerm(?elem1, ?elem2))
 
-               OPTIONAL{
-                   ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                   ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                   ?rdfEntity1 ?hasProp1 ?guid1 .
-             	}
-             	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-             	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-             }
-             			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:Specialises and 2 StringBasedIdentifiers" ;
-      sh:construct """CONSTRUCT {
-          	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#specialises> ?rdfEntity2 .
-          	?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#isSpecialisedAs> ?rdfEntity1 .
-          }
-          WHERE {
-            $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-            $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-            OPTIONAL{
-                ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid2 .
-                ?rdfEntity1 ?hasProp1 ?guid1 .
-                ?rdfEntity2 ?hasProp2 ?guid2 .
-          	}
-          	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-          	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-          }
-          			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:Specialises and 2 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-                	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#specialises> ?rdfEntity2 .
-                    ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#isSpecialisedAs> ?rdfEntity1 .
-                }
-                WHERE {
-                  $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                  $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-                  OPTIONAL{
-                      ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity1 .
-                      ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                	}
-                	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                }
-                			""" ;
+      {
+       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+               FILTER CONTAINS(str(?hasProp1),?field)
+     }
+     UNION
+     {
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   
+    }
+    UNION
+    {
+      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+    }
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+    }
+    """ ;
     ] ;
   sh:targetClass els:Specialises ;
 .
@@ -1471,67 +1071,46 @@ icddl:supersedes
   rdfs:subPropertyOf icddl:linkedDirectedOneToMany ;
   owl:inverseOf icddl:isSupersededBy ;
   sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:Supersedes and 1 StringBasedIdentifier and 1 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-               	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#supersedes> ?rdfEntity2 .
-                ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#isSupersededBy> ?rdfEntity1 .
-               }
-               WHERE {
-                  $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                  $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
+    rdf:type sh:SPARQLRule ;
+    rdfs:label "sh:rule for icddl:supersedes" ; 
+    rdfs:comment "Infers ICDD Link predicates for  instances of els:Supersedes as icddl:supersedes and inverse as icddl:isSupersededBy." ;
+    sh:construct """CONSTRUCT {
+      ?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#supersedes> ?rdfEntity2 .
+      ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#isSupersededBy> ?rdfEntity1 .
+    }
+    WHERE {
+      $this ls:hasFromLinkElement ?elem1 .
+      $this ls:hasToLinkElement ?elem2 .
+      FILTER(!sameTerm(?elem1, ?elem2))
 
-                 OPTIONAL{
-                     ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                     ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                     ?rdfEntity1 ?hasProp1 ?guid1 .
-               	}
-               	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-               	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-               }
-               			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:Supersedes and 2 StringBasedIdentifiers" ;
-      sh:construct """CONSTRUCT {
-            	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#supersedes> ?rdfEntity2 .
-            	?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#isSupersededBy> ?rdfEntity1 .
-            }
-            WHERE {
-              $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-              $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-              OPTIONAL{
-                  ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid1 .
-                  ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#identifier> ?guid2 .
-                  ?rdfEntity1 ?hasProp1 ?guid1 .
-                  ?rdfEntity2 ?hasProp2 ?guid2 .
-            	}
-            	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-            	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#StringBasedIdentifier> }
-            }
-            			""" ;
-    ] ;
-  sh:rule [
-      rdf:type sh:SPARQLRule ;
-      rdfs:label "Infers ICDD Link predicates for els:Supersedes and 2 UriBasedIdentifier" ;
-      sh:construct """CONSTRUCT {
-                  	?rdfEntity1 <http://icdd.vm.rub.de/ontology/icddl#supersedes> ?rdfEntity2 .
-                    ?rdfEntity2 <http://icdd.vm.rub.de/ontology/icddl#isSupersededBy> ?rdfEntity1 .
-                  }
-                  WHERE {
-                    $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasFromLinkElement> ?elem1 .
-                    $this <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasToLinkElement> ?elem2 .
-
-                    OPTIONAL{
-                        ?elem1 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity1 .
-                        ?elem2 <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#hasIdentifier>/<https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#uri> ?rdfEntity2 .
-                  	}
-                  	FILTER NOT EXISTS { ?rdfEntity1 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                  	FILTER NOT EXISTS { ?rdfEntity2 a <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#UriBasedIdentifier> }
-                  }
-                  			""" ;
+      {
+       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+               FILTER CONTAINS(str(?hasProp1),?field)
+     }
+     UNION
+     {
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   
+    }
+    UNION
+    {
+      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+    }
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+    }
+    """ ;
     ] ;
   sh:targetClass els:Supersedes ;
 .

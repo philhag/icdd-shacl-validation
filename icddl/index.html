@@ -256,7 +256,7 @@
                 Philipp Hagedorn<br/>
             </dd>
             <dt>Version Information</dt>
-            <dd>0.1</dd>
+            <dd>0.2</dd>
             <dt>Version URI</dt>
             <dd><a href="https://philhag.github.io/icdd-shacl-validation/icddl">https://philhag.github.io/icdd-shacl-validation/icddl</a></dd>
             <dt>Ontology RDF</dt>
@@ -276,764 +276,3880 @@
             <li><a href="#legend">Legend</a></li>
         </ol>
     </section>
-    <section id="objectproperties">
-        <h2>Object Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
-        <ul class="hlist">
-            <li><a href="#conflictswith">conflicts with</a></li>
-            <li><a href="#controls">controls</a></li>
-            <li><a href="#elaborates">elaborates</a></li>
-            <li><a href="#hasmember">has member</a></li>
-            <li><a href="#haspart">has part</a></li>
-            <li><a href="#isalternativeto">is alternative to</a></li>
-            <li><a href="#iscontrolledby">is controlled by</a></li>
-            <li><a href="#iselaboratedby">is elaborated by</a></li>
-            <li><a href="#isidenticalto">is identical to</a></li>
-            <li><a href="#ismemberof">is member of</a></li>
-            <li><a href="#ispartof">is part of</a></li>
-            <li><a href="#isspecialisedas">is specialised as</a></li>
-            <li><a href="#issupersededby">is superseded by</a></li>
-            <li><a href="#Linked">Linked</a></li>
-            <li><a href="#linkedbinary">linked binary</a></li>
-            <li><a href="#linkeddirected">linked directed</a></li>
-            <li><a href="#linkeddirectedbinary">linked directed binary</a></li>
-            <li><a href="#linkeddirectedonetomany">linked directed one to many</a></li>
-            <li><a href="#specialises">specialises</a></li>
-            <li><a href="#supersedes">supersedes</a></li>
-        </ul>
-        <div class="entity property" id="conflictswith">
-            <h3>conflicts with<sup title="object property" class="sup-op">op</sup></h3>
+    <div class="section" id="objectproperties">
+        <h2>Object Properties</h2>
+        <div class="property entity" id="conflictswith">
+            <h3>conflicts with
+                <sup class="sup-op" title="OWL Object Property">op</sup>
+            </h3>
             <table>
                 <tr>
-                    <th>URI</th>
-                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#conflictsWith</code></td>
-                </tr>
-                <tr>
-                    <th>Is Defined By</th>
+                    <th>IRI</th>
                     <td>
-                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#ConflictsWith
+                        <code>http://icdd.vm.rub.de/ontology/icddl#conflictsWith</code>
                     </td>
                 </tr>
                 <tr>
-                    <th>Description</th>
+                    <th>
+                        <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+                    </th>
                     <td>
-                        This link type relates two link elements that conflict with one another in some way. Possibly non-transitive, symmetric and being its own inverse
+                        <p>This link type relates two link elements that conflict with one another in some way. Possibly non-transitive, symmetric and being its own inverse</p>
                     </td>
                 </tr>
                 <tr>
-                    <th>Super-properties</th>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+                    </th>
                     <td>
-                        <a href="#linkeddirectedbinary">icddl:linkedDirectedBinary</a><sup class="sup-op" title="object property">op</sup>
+                        <span>
+                  <a href="#linkedDirectedBinary">linked directed binary</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
                     </td>
                 </tr>
                 <tr>
-                    <th>SHACL-rules</th>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/ns/shacl#rule" title="The rules linked to a shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Rule</a>
+                    </th>
                     <td>
-                        <a href="#blank">Infers ICDD Link predicates for els:ConflictsWith</a><sup class="sup-op" title="shacle rule">sh</sup>
+                        <span>
+                  <table>
+                    <tr>
+                      <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">type</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <a href="http://www.w3.org/ns/shacl#SPARQLRule">SPARQL CONSTRUCT rule</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#label">label</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">sh:rule for icddl:conflictsWith</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#comment">comment</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">Infers ICDD Link predicates for instances of els:ConflictsWith as icddl:conflictsWith.</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/ns/shacl#construct">construct</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <details>
+                            <code>CONSTRUCT {
+
+      ?rdfEntity1 &lt;http://icdd.vm.rub.de/ontology/icddl#conflictsWith&gt; ?rdfEntity2 .
+
+    }
+
+    WHERE {
+
+      $this ls:hasFromLinkElement ?elem1 .
+
+      $this ls:hasToLinkElement ?elem2 .
+
+      FILTER(!sameTerm(?elem1, ?elem2))
+
+
+
+      {
+
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+
+               FILTER CONTAINS(str(?hasProp1),?field)
+
+      }
+
+      UNION
+
+      {
+
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+
+            FILTER (CONTAINS(str(?hasProp1),?field1) &amp;&amp; CONTAINS(str(?hasProp2),?field2))   
+
+      }
+
+      UNION
+
+      {
+
+        ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+
+        ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+      }
+
+
+
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+
+    }
+
+    </code>
+                            <summary>SPARQL</summary>
+                        </details>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+            </table>
+            </span>
+            </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/ns/shacl#targetClass" title="Links a shape to a class, indicating that all instances of the class must conform to the shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Target Class</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#ConflictsWith">els:ConflictsWith</a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Further information about the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Seealso</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#ConflictsWith">els:ConflictsWith</a>
+                </td>
+            </tr>
+            </table>
+        </div>
+        <div class="property entity" id="controls">
+            <h3>controls
+                <sup class="sup-op" title="OWL Object Property">op</sup>
+            </h3>
+            <table>
+                <tr>
+                    <th>IRI</th>
+                    <td>
+                        <code>http://icdd.vm.rub.de/ontology/icddl#controls</code>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+                    </th>
+                    <td>
+                        <p>This link type relates one link element to one or more other link elements over which it exercises some type of control. Possibly transitive, non-symmetric and inverse of IsControlledBy</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+                    </th>
+                    <td>
+                        <span>
+                  <a href="#linkedDirectedOneToMany">linked directed one to many</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/ns/shacl#rule" title="The rules linked to a shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Rule</a>
+                    </th>
+                    <td>
+                        <span>
+                  <table>
+                    <tr>
+                      <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">type</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <a href="http://www.w3.org/ns/shacl#SPARQLRule">SPARQL CONSTRUCT rule</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#label">label</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">sh:rule for icddl:controls</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#comment">comment</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">Infers ICDD Link predicates for instances of els:Controls as icddl:controls and inverse as icddl:isControlledBy.</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/ns/shacl#construct">construct</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <details>
+                            <code>CONSTRUCT {
+
+      ?rdfEntity1 &lt;http://icdd.vm.rub.de/ontology/icddl#controls&gt; ?rdfEntity2 .
+
+      ?rdfEntity2 &lt;http://icdd.vm.rub.de/ontology/icddl#isControlledBy&gt; ?rdfEntity1 .
+
+    }
+
+    WHERE {
+
+      $this ls:hasFromLinkElement ?elem1 .
+
+      $this ls:hasToLinkElement ?elem2 .
+
+      FILTER(!sameTerm(?elem1, ?elem2))
+
+
+
+      {
+
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+
+               FILTER CONTAINS(str(?hasProp1),?field)
+
+      }
+
+      UNION
+
+      {
+
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+
+            FILTER (CONTAINS(str(?hasProp1),?field1) &amp;&amp; CONTAINS(str(?hasProp2),?field2))   
+
+      }
+
+      UNION
+
+      {
+
+        ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+
+        ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+      }
+
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+
+    }
+
+    </code>
+                            <summary>SPARQL</summary>
+                        </details>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+            </table>
+            </span>
+            </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/ns/shacl#targetClass" title="Links a shape to a class, indicating that all instances of the class must conform to the shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Target Class</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#Controls">els:Controls</a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Further information about the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Seealso</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#Controls">els:Controls</a>
+                </td>
+            </tr>
+            </table>
+        </div>
+        <div class="property entity" id="elaborates">
+            <h3>elaborates
+                <sup class="sup-op" title="OWL Object Property">op</sup>
+            </h3>
+            <table>
+                <tr>
+                    <th>IRI</th>
+                    <td>
+                        <code>http://icdd.vm.rub.de/ontology/icddl#elaborates</code>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+                    </th>
+                    <td>
+                        <p>Possibly transitive, non-symmetric and inverse of IsElaboratedBy</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+                    </th>
+                    <td>
+                        <span>
+                  <a href="#linkedDirectedOneToMany">linked directed one to many</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/ns/shacl#rule" title="The rules linked to a shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Rule</a>
+                    </th>
+                    <td>
+                        <span>
+                  <table>
+                    <tr>
+                      <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">type</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <a href="http://www.w3.org/ns/shacl#SPARQLRule">SPARQL CONSTRUCT rule</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#label">label</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">sh:rule for icddl:elaborates</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#comment">comment</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">Infers ICDD Link predicates for instances of els:Elaborates as icddl:elaborates and inverse as icddl:isElaboratedBy.</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/ns/shacl#construct">construct</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <details>
+                            <code>CONSTRUCT {
+
+    ?rdfEntity1 &lt;http://icdd.vm.rub.de/ontology/icddl#elaborates&gt; ?rdfEntity2 .
+
+    ?rdfEntity2 &lt;http://icdd.vm.rub.de/ontology/icddl#isElaboratedBy&gt; ?rdfEntity1 .
+
+  }
+
+  WHERE {
+
+    $this ls:hasFromLinkElement ?elem1 .
+
+    $this ls:hasToLinkElement ?elem2 .
+
+    FILTER(!sameTerm(?elem1, ?elem2))
+
+
+
+    {
+
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+             ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+
+             ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+             ?rdfEntity1 ?hasProp1 ?guid1 .
+
+             FILTER CONTAINS(str(?hasProp1),?field)
+
+    }
+
+    UNION
+
+    {
+
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+          ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+
+          ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+
+          ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+
+          ?rdfEntity1 ?hasProp1 ?guid1 .
+
+          ?rdfEntity2 ?hasProp2 ?guid2 .     
+
+          FILTER (CONTAINS(str(?hasProp1),?field1) &amp;&amp; CONTAINS(str(?hasProp2),?field2))   
+
+    }
+
+    UNION
+
+    {
+
+      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+
+      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+    }
+
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+
+  }
+
+  </code>
+                            <summary>SPARQL</summary>
+                        </details>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+            </table>
+            </span>
+            </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/ns/shacl#targetClass" title="Links a shape to a class, indicating that all instances of the class must conform to the shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Target Class</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#Elaborates">els:Elaborates</a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Further information about the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Seealso</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#Elaborates">els:Elaborates</a>
+                </td>
+            </tr>
+            </table>
+        </div>
+        <div class="property entity" id="hasmember">
+            <h3>has member
+                <sup class="sup-op" title="OWL Object Property">op</sup>
+            </h3>
+            <table>
+                <tr>
+                    <th>IRI</th>
+                    <td>
+                        <code>http://icdd.vm.rub.de/ontology/icddl#hasMember</code>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+                    </th>
+                    <td>
+                        <p>This link type relates one link element to one or more other link elements to form a grouping based on some consistent criteria. Possibly non-transitive, non-symmetric and inverse of IsMemberOf</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+                    </th>
+                    <td>
+                        <span>
+                  <a href="#linkedDirectedOneToMany">linked directed one to many</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/ns/shacl#rule" title="The rules linked to a shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Rule</a>
+                    </th>
+                    <td>
+                        <span>
+                  <table>
+                    <tr>
+                      <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">type</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <a href="http://www.w3.org/ns/shacl#SPARQLRule">SPARQL CONSTRUCT rule</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#label">label</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">sh:rule for icddl:hasMember</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#comment">comment</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">Infers ICDD Link predicates for instances of els:HasMember as icddl:hasMember and inverse as icddl:isMemberOf.</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/ns/shacl#construct">construct</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <details>
+                            <code>CONSTRUCT {
+
+      ?rdfEntity1 &lt;http://icdd.vm.rub.de/ontology/icddl#hasMember&gt; ?rdfEntity2 .
+
+      ?rdfEntity2 &lt;http://icdd.vm.rub.de/ontology/icddl#isMemberOf&gt; ?rdfEntity1 .
+
+    }
+
+    WHERE {
+
+      $this ls:hasFromLinkElement ?elem1 .
+
+      $this ls:hasToLinkElement ?elem2 .
+
+      FILTER(!sameTerm(?elem1, ?elem2))
+
+
+
+      {
+
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+
+               FILTER CONTAINS(str(?hasProp1),?field)
+
+      }
+
+      UNION
+
+      {
+
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+
+            FILTER (CONTAINS(str(?hasProp1),?field1) &amp;&amp; CONTAINS(str(?hasProp2),?field2))   
+
+      }
+
+      UNION
+
+      {
+
+        ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+
+        ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+      }
+
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+
+    }
+
+    </code>
+                            <summary>SPARQL</summary>
+                        </details>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+            </table>
+            </span>
+            </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/ns/shacl#targetClass" title="Links a shape to a class, indicating that all instances of the class must conform to the shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Target Class</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#HasMember">els:HasMember</a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Further information about the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Seealso</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#HasMember">els:HasMember</a>
+                </td>
+            </tr>
+            </table>
+        </div>
+        <div class="property entity" id="haspart">
+            <h3>has part
+                <sup class="sup-op" title="OWL Object Property">op</sup>
+            </h3>
+            <table>
+                <tr>
+                    <th>IRI</th>
+                    <td>
+                        <code>http://icdd.vm.rub.de/ontology/icddl#hasPart</code>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+                    </th>
+                    <td>
+                        <p>This link type relates one link element to one or more other link elements to form an assembly of parts where those parts exist independently. Possibly transitive, non-symmetric and inverse of IsPartOf</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+                    </th>
+                    <td>
+                        <span>
+                  <a href="#linkedDirectedOneToMany">linked directed one to many</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/ns/shacl#rule" title="The rules linked to a shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Rule</a>
+                    </th>
+                    <td>
+                        <span>
+                  <table>
+                    <tr>
+                      <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">type</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <a href="http://www.w3.org/ns/shacl#SPARQLRule">SPARQL CONSTRUCT rule</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#label">label</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">sh:rule for icddl:hasPart</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#comment">comment</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">Infers ICDD Link predicates for instances of els:HasPart as icddl:hasPart and inverse as icddl:isPartOf.</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/ns/shacl#construct">construct</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <details>
+                            <code>CONSTRUCT {
+
+      ?rdfEntity1 &lt;http://icdd.vm.rub.de/ontology/icddl#hasPart&gt; ?rdfEntity2 .
+
+      ?rdfEntity2 &lt;http://icdd.vm.rub.de/ontology/icddl#isPartOf&gt; ?rdfEntity1 .
+
+    }
+
+    WHERE {
+
+      $this ls:hasFromLinkElement ?elem1 .
+
+      $this ls:hasToLinkElement ?elem2 .
+
+      FILTER(!sameTerm(?elem1, ?elem2))
+
+
+
+      {  
+
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+
+               FILTER CONTAINS(str(?hasProp1),?field)
+
+      }
+
+      UNION
+
+      {
+
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+
+            FILTER (CONTAINS(str(?hasProp1),?field1) &amp;&amp; CONTAINS(str(?hasProp2),?field2))   
+
+      }
+
+      UNION
+
+      {
+
+        ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+
+        ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+      }
+
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+
+    }
+
+    </code>
+                            <summary>SPARQL</summary>
+                        </details>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+            </table>
+            </span>
+            </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/ns/shacl#targetClass" title="Links a shape to a class, indicating that all instances of the class must conform to the shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Target Class</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#HasPart">els:HasPart</a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Further information about the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Seealso</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#HasPart">els:HasPart</a>
+                </td>
+            </tr>
+            </table>
+        </div>
+        <div class="property entity" id="isalternativeto">
+            <h3>is alternative to
+                <sup class="sup-op" title="OWL Object Property">op</sup>
+            </h3>
+            <table>
+                <tr>
+                    <th>IRI</th>
+                    <td>
+                        <code>http://icdd.vm.rub.de/ontology/icddl#isAlternativeTo</code>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+                    </th>
+                    <td>
+                        <p>This link type relates two link elements where one is an alternative to the other. Possibly transitive, symmetric and being its own inverse</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+                    </th>
+                    <td>
+                        <span>
+                  <a href="#linkedDirectedBinary">linked directed binary</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/ns/shacl#rule" title="The rules linked to a shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Rule</a>
+                    </th>
+                    <td>
+                        <span>
+                  <table>
+                    <tr>
+                      <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">type</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <a href="http://www.w3.org/ns/shacl#SPARQLRule">SPARQL CONSTRUCT rule</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#label">label</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">sh:rule for icddl:isAlternativeTo</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#comment">comment</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">Infers ICDD Link predicates for instances of els:IsAlternativeTo as icddl:isAlternativeTo.</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/ns/shacl#construct">construct</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <details>
+                            <code>CONSTRUCT {
+
+      ?rdfEntity1 &lt;http://icdd.vm.rub.de/ontology/icddl#isAlternativeTo&gt; ?rdfEntity2 .
+
+    }
+
+    WHERE {
+
+      $this ls:hasFromLinkElement ?elem1 .
+
+      $this ls:hasToLinkElement ?elem2 .
+
+      FILTER(!sameTerm(?elem1, ?elem2))
+
+
+
+      {
+
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+
+               FILTER CONTAINS(str(?hasProp1),?field)
+
+      }
+
+      UNION
+
+      {
+
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+
+            FILTER (CONTAINS(str(?hasProp1),?field1) &amp;&amp; CONTAINS(str(?hasProp2),?field2))   
+
+      }
+
+      UNION
+
+      {
+
+        ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+
+        ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+      }
+
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+
+    }
+
+    </code>
+                            <summary>SPARQL</summary>
+                        </details>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+            </table>
+            </span>
+            </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/ns/shacl#targetClass" title="Links a shape to a class, indicating that all instances of the class must conform to the shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Target Class</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsAlternativeTo">els:IsAlternativeTo</a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Further information about the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Seealso</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsAlternativeTo">els:IsAlternativeTo</a>
+                </td>
+            </tr>
+            </table>
+        </div>
+        <div class="property entity" id="iscontrolledby">
+            <h3>is controlled by
+                <sup class="sup-op" title="OWL Object Property">op</sup>
+            </h3>
+            <table>
+                <tr>
+                    <th>IRI</th>
+                    <td>
+                        <code>http://icdd.vm.rub.de/ontology/icddl#isControlledBy</code>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+                    </th>
+                    <td>
+                        <p>Possibly transitive, non-symmetric and inverse of Controls</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+                    </th>
+                    <td>
+                        <span>
+                  <a href="#linkedDirectedOneToMany">linked directed one to many</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/ns/shacl#rule" title="The rules linked to a shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Rule</a>
+                    </th>
+                    <td>
+                        <span>
+                  <table>
+                    <tr>
+                      <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">type</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <a href="http://www.w3.org/ns/shacl#SPARQLRule">SPARQL CONSTRUCT rule</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#label">label</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">sh:rule for icddl:isControlledBy</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#comment">comment</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">Infers ICDD Link predicates for instances of els:IsControlledBy as icddl:isControlledBy and inverse as icddl:controls.</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/ns/shacl#construct">construct</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <details>
+                            <code>CONSTRUCT {
+
+      ?rdfEntity1 &lt;http://icdd.vm.rub.de/ontology/icddl#isControlledBy&gt; ?rdfEntity2 .
+
+      ?rdfEntity2 &lt;http://icdd.vm.rub.de/ontology/icddl#controls&gt; ?rdfEntity1 .
+
+    }
+
+    WHERE {
+
+      $this ls:hasFromLinkElement ?elem1 .
+
+      $this ls:hasToLinkElement ?elem2 .
+
+      FILTER(!sameTerm(?elem1, ?elem2))
+
+
+
+      {
+
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+
+               FILTER CONTAINS(str(?hasProp1),?field)
+
+      }
+
+      UNION
+
+      {
+
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+
+            FILTER (CONTAINS(str(?hasProp1),?field1) &amp;&amp; CONTAINS(str(?hasProp2),?field2))   
+
+      }
+
+      UNION
+
+      {
+
+        ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+
+        ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+      }
+
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+
+    }
+
+    </code>
+                            <summary>SPARQL</summary>
+                        </details>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+            </table>
+            </span>
+            </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/ns/shacl#targetClass" title="Links a shape to a class, indicating that all instances of the class must conform to the shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Target Class</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsControlledBy">els:IsControlledBy</a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Further information about the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Seealso</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsControlledBy">els:IsControlledBy</a>
+                </td>
+            </tr>
+            </table>
+        </div>
+        <div class="property entity" id="iselaboratedby">
+            <h3>is elaborated by
+                <sup class="sup-op" title="OWL Object Property">op</sup>
+            </h3>
+            <table>
+                <tr>
+                    <th>IRI</th>
+                    <td>
+                        <code>http://icdd.vm.rub.de/ontology/icddl#isElaboratedBy</code>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+                    </th>
+                    <td>
+                        <p>This link type relates one link element to one or more other link elements where they provide further explanation, reasoning, derivation, information or usage. Possibly transitive, non-symmetric and inverse of IsElaboratedBy</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+                    </th>
+                    <td>
+                        <span>
+                  <a href="#linkedDirectedOneToMany">linked directed one to many</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/ns/shacl#rule" title="The rules linked to a shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Rule</a>
+                    </th>
+                    <td>
+                        <span>
+                  <table>
+                    <tr>
+                      <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">type</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <a href="http://www.w3.org/ns/shacl#SPARQLRule">SPARQL CONSTRUCT rule</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#label">label</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">sh:rule for icddl:isElaboratedBy</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#comment">comment</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">Infers ICDD Link predicates for instances of els:IsElaboratedBy as icddl:isElaboratedBy and inverse as icddl:elaborates.</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/ns/shacl#construct">construct</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <details>
+                            <code>CONSTRUCT {
+
+      ?rdfEntity1 &lt;http://icdd.vm.rub.de/ontology/icddl#isElaboratedBy&gt; ?rdfEntity2 .
+
+      ?rdfEntity2 &lt;http://icdd.vm.rub.de/ontology/icddl#elaborates&gt; ?rdfEntity1 .
+
+    }
+
+    WHERE {
+
+      $this ls:hasFromLinkElement ?elem1 .
+
+      $this ls:hasToLinkElement ?elem2 .
+
+      FILTER(!sameTerm(?elem1, ?elem2))
+
+
+
+      {
+
+       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+
+               FILTER CONTAINS(str(?hasProp1),?field)
+
+     }
+
+     UNION
+
+     {
+
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+          ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+
+          ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+
+          ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+
+          ?rdfEntity1 ?hasProp1 ?guid1 .
+
+          ?rdfEntity2 ?hasProp2 ?guid2 .     
+
+          FILTER (CONTAINS(str(?hasProp1),?field1) &amp;&amp; CONTAINS(str(?hasProp2),?field2))  
+
+    }
+
+    UNION
+
+    {
+
+      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+
+      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+    }
+
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+
+    }
+
+    </code>
+                            <summary>SPARQL</summary>
+                        </details>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+            </table>
+            </span>
+            </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/ns/shacl#targetClass" title="Links a shape to a class, indicating that all instances of the class must conform to the shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Target Class</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsElaboratedBy">els:IsElaboratedBy</a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Further information about the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Seealso</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsElaboratedBy">els:IsElaboratedBy</a>
+                </td>
+            </tr>
+            </table>
+        </div>
+        <div class="property entity" id="isidenticalto">
+            <h3>is identical to
+                <sup class="sup-op" title="OWL Object Property">op</sup>
+            </h3>
+            <table>
+                <tr>
+                    <th>IRI</th>
+                    <td>
+                        <code>http://icdd.vm.rub.de/ontology/icddl#isIdenticalTo</code>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+                    </th>
+                    <td>
+                        <p>This link type relates two link elements that are identical but may be represented in different ways. Possibly transitive, symmetric and being its own inverse</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+                    </th>
+                    <td>
+                        <span>
+                  <a href="#linkedDirectedBinary">linked directed binary</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/ns/shacl#rule" title="The rules linked to a shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Rule</a>
+                    </th>
+                    <td>
+                        <span>
+                  <table>
+                    <tr>
+                      <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">type</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <a href="http://www.w3.org/ns/shacl#SPARQLRule">SPARQL CONSTRUCT rule</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#label">label</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">sh:rule for icddl:isIdenticalTo</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#comment">comment</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">Infers ICDD Link predicates for instances of els:IsIdenticalTo as icddl:isIdenticalTo.</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/ns/shacl#construct">construct</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <details>
+                            <code>CONSTRUCT {
+
+      ?rdfEntity1 &lt;http://icdd.vm.rub.de/ontology/icddl#isIdenticalTo&gt; ?rdfEntity2 .
+
+    }
+
+    WHERE {
+
+      $this ls:hasFromLinkElement ?elem1 .
+
+      $this ls:hasToLinkElement ?elem2 .
+
+      FILTER(!sameTerm(?elem1, ?elem2))
+
+
+
+      {
+
+       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+
+               FILTER CONTAINS(str(?hasProp1),?field)
+
+     }
+
+     UNION
+
+     {
+
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+
+            FILTER (CONTAINS(str(?hasProp1),?field1) &amp;&amp; CONTAINS(str(?hasProp2),?field2))   
+
+    }
+
+    UNION
+
+    {
+
+      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+
+      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+    }
+
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+
+    }
+
+    </code>
+                            <summary>SPARQL</summary>
+                        </details>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+            </table>
+            </span>
+            </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/ns/shacl#targetClass" title="Links a shape to a class, indicating that all instances of the class must conform to the shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Target Class</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsIdenticalTo">els:IsIdenticalTo</a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Further information about the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Seealso</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsIdenticalTo">els:IsIdenticalTo</a>
+                </td>
+            </tr>
+            </table>
+        </div>
+        <div class="property entity" id="ismemberof">
+            <h3>is member of
+                <sup class="sup-op" title="OWL Object Property">op</sup>
+            </h3>
+            <table>
+                <tr>
+                    <th>IRI</th>
+                    <td>
+                        <code>http://icdd.vm.rub.de/ontology/icddl#isMemberOf</code>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+                    </th>
+                    <td>
+                        <p>Possibly non-transitive, non-symmetric and inverse of HasMember</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+                    </th>
+                    <td>
+                        <span>
+                  <a href="#linkedDirectedOneToMany">linked directed one to many</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/ns/shacl#rule" title="The rules linked to a shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Rule</a>
+                    </th>
+                    <td>
+                        <span>
+                  <table>
+                    <tr>
+                      <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">type</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <a href="http://www.w3.org/ns/shacl#SPARQLRule">SPARQL CONSTRUCT rule</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#label">label</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">sh:rule for icddl:isMemberOf</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#comment">comment</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">Infers ICDD Link predicates for instances of els:IsMemberOf as icddl:isMemberOf and inverse as icddl:hasMember.</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/ns/shacl#construct">construct</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <details>
+                            <code>CONSTRUCT {
+
+      ?rdfEntity1 &lt;http://icdd.vm.rub.de/ontology/icddl#isMemberOf&gt; ?rdfEntity2 .
+
+      ?rdfEntity2 &lt;http://icdd.vm.rub.de/ontology/icddl#hasMember&gt; ?rdfEntity1 .
+
+    }
+
+    WHERE {
+
+      $this ls:hasFromLinkElement ?elem1 .
+
+      $this ls:hasToLinkElement ?elem2 .
+
+      FILTER(!sameTerm(?elem1, ?elem2))
+
+
+
+      {
+
+       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+
+               FILTER CONTAINS(str(?hasProp1),?field)
+
+     }
+
+     UNION
+
+     {
+
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+
+            FILTER (CONTAINS(str(?hasProp1),?field1) &amp;&amp; CONTAINS(str(?hasProp2),?field2))   
+
+    }
+
+    UNION
+
+    {
+
+      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+
+      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+    }
+
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+
+    }
+
+    </code>
+                            <summary>SPARQL</summary>
+                        </details>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+            </table>
+            </span>
+            </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/ns/shacl#targetClass" title="Links a shape to a class, indicating that all instances of the class must conform to the shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Target Class</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsMemberOf">els:IsMemberOf</a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Further information about the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Seealso</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsMemberOf">els:IsMemberOf</a>
+                </td>
+            </tr>
+            </table>
+        </div>
+        <div class="property entity" id="ispartof">
+            <h3>is part of
+                <sup class="sup-op" title="OWL Object Property">op</sup>
+            </h3>
+            <table>
+                <tr>
+                    <th>IRI</th>
+                    <td>
+                        <code>http://icdd.vm.rub.de/ontology/icddl#isPartOf</code>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+                    </th>
+                    <td>
+                        <p>Possibly transitive, non-symmetric and inverse of HasPart</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+                    </th>
+                    <td>
+                        <span>
+                  <a href="#linkedDirectedOneToMany">linked directed one to many</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/ns/shacl#rule" title="The rules linked to a shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Rule</a>
+                    </th>
+                    <td>
+                        <span>
+                  <table>
+                    <tr>
+                      <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">type</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <a href="http://www.w3.org/ns/shacl#SPARQLRule">SPARQL CONSTRUCT rule</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#label">label</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">sh:rule for icddl:isPartOf</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#comment">comment</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">Infers ICDD Link predicates for instances of els:IsPartOf as icddl:isPartOf and inverse as icddl:hasPart.</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/ns/shacl#construct">construct</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <details>
+                            <code>CONSTRUCT {
+
+      ?rdfEntity1 &lt;http://icdd.vm.rub.de/ontology/icddl#isPartOf&gt; ?rdfEntity2 .
+
+      ?rdfEntity2 &lt;http://icdd.vm.rub.de/ontology/icddl#hasPart&gt; ?rdfEntity1 .
+
+    }
+
+    WHERE {
+
+      $this ls:hasFromLinkElement ?elem1 .
+
+      $this ls:hasToLinkElement ?elem2 .
+
+      FILTER(!sameTerm(?elem1, ?elem2))
+
+
+
+      {
+
+       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+
+               FILTER CONTAINS(str(?hasProp1),?field)
+
+     }
+
+     UNION
+
+     {
+
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+
+            FILTER (CONTAINS(str(?hasProp1),?field1) &amp;&amp; CONTAINS(str(?hasProp2),?field2))   
+
+    }
+
+    UNION
+
+    {
+
+      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+
+      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .  
+
+    }
+
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+
+    }
+
+    </code>
+                            <summary>SPARQL</summary>
+                        </details>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+            </table>
+            </span>
+            </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/ns/shacl#targetClass" title="Links a shape to a class, indicating that all instances of the class must conform to the shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Target Class</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsPartOf">els:IsPartOf</a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Further information about the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Seealso</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsPartOf">els:IsPartOf</a>
+                </td>
+            </tr>
+            </table>
+        </div>
+        <div class="property entity" id="isspecialisedas">
+            <h3>is specialised as
+                <sup class="sup-op" title="OWL Object Property">op</sup>
+            </h3>
+            <table>
+                <tr>
+                    <th>IRI</th>
+                    <td>
+                        <code>http://icdd.vm.rub.de/ontology/icddl#isSpecialisedAs</code>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+                    </th>
+                    <td>
+                        <p>This link type relates one link element to one or more other link elements that are specializations or sub-classes. Possibly transitive, non-symmetric and inverse of Specialises</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+                    </th>
+                    <td>
+                        <span>
+                  <a href="#linkedDirectedOneToMany">linked directed one to many</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/ns/shacl#rule" title="The rules linked to a shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Rule</a>
+                    </th>
+                    <td>
+                        <span>
+                  <table>
+                    <tr>
+                      <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">type</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <a href="http://www.w3.org/ns/shacl#SPARQLRule">SPARQL CONSTRUCT rule</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#label">label</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">sh:rule for icddl:isSpecialisedAs</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#comment">comment</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">Infers ICDD Link predicates for instances of els:IsSpecialisedAs as icddl:isSpecialisedAs and inverse as icddl:specialises.</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/ns/shacl#construct">construct</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <details>
+                            <code>CONSTRUCT {
+
+      ?rdfEntity1 &lt;http://icdd.vm.rub.de/ontology/icddl#isSpecialisedAs&gt; ?rdfEntity2 .
+
+      ?rdfEntity2 &lt;http://icdd.vm.rub.de/ontology/icddl#specialises&gt; ?rdfEntity1 .
+
+    }
+
+    WHERE {
+
+      $this ls:hasFromLinkElement ?elem1 .
+
+      $this ls:hasToLinkElement ?elem2 .
+
+      FILTER(!sameTerm(?elem1, ?elem2))
+
+
+
+      {
+
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+
+               FILTER CONTAINS(str(?hasProp1),?field)
+
+      }
+
+      UNION
+
+      {
+
+        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+
+            FILTER (CONTAINS(str(?hasProp1),?field1) &amp;&amp; CONTAINS(str(?hasProp2),?field2))   
+
+      }
+
+      UNION
+
+      {
+
+        ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+
+        ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+      }
+
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+
+      FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+
+      FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+
+    }
+
+    </code>
+                            <summary>SPARQL</summary>
+                        </details>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+            </table>
+            </span>
+            </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/ns/shacl#targetClass" title="Links a shape to a class, indicating that all instances of the class must conform to the shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Target Class</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsSpecialisedAs">els:IsSpecialisedAs</a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Further information about the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Seealso</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsSpecialisedAs">els:IsSpecialisedAs</a>
+                </td>
+            </tr>
+            </table>
+        </div>
+        <div class="property entity" id="issupersededby">
+            <h3>is superseded by
+                <sup class="sup-op" title="OWL Object Property">op</sup>
+            </h3>
+            <table>
+                <tr>
+                    <th>IRI</th>
+                    <td>
+                        <code>http://icdd.vm.rub.de/ontology/icddl#isSupersededBy</code>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+                    </th>
+                    <td>
+                        <p>Possibly transitive, non-symmetric and inverse of Supersedes</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+                    </th>
+                    <td>
+                        <span>
+                  <a href="#linkedDirectedOneToMany">linked directed one to many</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/ns/shacl#rule" title="The rules linked to a shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Rule</a>
+                    </th>
+                    <td>
+                        <span>
+                  <table>
+                    <tr>
+                      <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">type</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <a href="http://www.w3.org/ns/shacl#SPARQLRule">SPARQL CONSTRUCT rule</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#label">label</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">sh:rule for icddl:isSupersededBy</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#comment">comment</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">Infers ICDD Link predicates for instances of els:IsSupersededBy as icddl:isSupersededBy and inverse as icddl:supersedes.</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/ns/shacl#construct">construct</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <details>
+                            <code>CONSTRUCT {
+
+      ?rdfEntity1 icddl:isSupersededBy ?rdfEntity2 .
+
+      ?rdfEntity2 icddl:supersedes ?rdfEntity1 .
+
+    }
+
+    WHERE {
+
+      $this ls:hasFromLinkElement ?elem1 .
+
+      $this ls:hasToLinkElement ?elem2 .
+
+      FILTER(!sameTerm(?elem1, ?elem2))
+
+
+
+      {
+
+       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+
+               FILTER CONTAINS(str(?hasProp1),?field)
+
+     }
+
+     UNION
+
+     {
+
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+
+            FILTER (CONTAINS(str(?hasProp1),?field1) &amp;&amp; CONTAINS(str(?hasProp2),?field2))   
+
+    }
+
+    UNION
+
+    {
+
+      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+
+      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+    }
+
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+
+    }
+
+    </code>
+                            <summary>SPARQL</summary>
+                        </details>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+            </table>
+            </span>
+            </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/ns/shacl#targetClass" title="Links a shape to a class, indicating that all instances of the class must conform to the shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Target Class</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsSupersededBy">els:IsSupersededBy</a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Further information about the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Seealso</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsSupersededBy">els:IsSupersededBy</a>
+                </td>
+            </tr>
+            </table>
+        </div>
+        <div class="property entity" id="linkedbinary">
+            <h3>linked binary
+                <sup class="sup-op" title="OWL Object Property">op</sup>
+            </h3>
+            <table>
+                <tr>
+                    <th>IRI</th>
+                    <td>
+                        <code>http://icdd.vm.rub.de/ontology/icddl#linked</code>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+                    </th>
+                    <td>
+                        <p>An ls:Link comprising exactly 2 individuals of class ls:LinkElement</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+                    </th>
+                    <td>
+                        <span>
+                  <a href="#linkedbinary">linked binary</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="https://w3id.org/profile/ontdoc/superPropertyOf" title="Inverse of RDFS' subPropertyOf. Defined in Ontology Documentation Profile">Super Property Of</a>
+                    </th>
+                    <td>
+                        <ul>
+                            <li>
+                                <span>
+                      <a href="#linkedbinary">linked binary</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                            </li>
+                            <li>
+                                <span>
+                      <a href="#linkedBinary">linked binary</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                            </li>
+                            <li>
+                                <span>
+                      <a href="#linkedDirected">linked directed</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                            </li>
+                            <li>
+                                <span>
+                      <a href="#linkedDirectedInverse">linked directed inverse</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/ns/shacl#rule" title="The rules linked to a shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Rule</a>
+                    </th>
+                    <td>
+                        <span>
+                  <table>
+                    <tr>
+                      <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">type</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <a href="http://www.w3.org/ns/shacl#SPARQLRule">SPARQL CONSTRUCT rule</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#label">label</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">sh:rule for icddl:linked</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#comment">comment</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">Infers ICDD Link predicates for instances of ls:Link as icddl:linked and inverse as icddl:linked.</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/ns/shacl#construct">construct</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <details>
+                            <code>
+
+    CONSTRUCT {
+
+      ?rdfEntity1 &lt;http://icdd.vm.rub.de/ontology/icddl#linked&gt; ?rdfEntity2 .
+
+      ?rdfEntity2 &lt;http://icdd.vm.rub.de/ontology/icddl#linked&gt; ?rdfEntity1 .
+
+    }
+
+    WHERE {
+
+     $this ls:hasLinkElement ?elem1 .
+
+     $this ls:hasLinkElement ?elem2 .
+
+     FILTER(!sameTerm(?elem1, ?elem2))
+
+
+
+     {
+
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+      ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+
+      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+      ?rdfEntity1 ?hasProp1 ?guid1 .
+
+      FILTER CONTAINS(str(?hasProp1),?field)
+
+    }
+
+    UNION
+
+    {
+
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+
+            FILTER (CONTAINS(str(?hasProp1),?field1) &amp;&amp; CONTAINS(str(?hasProp2),?field2))
+
+    }
+
+    UNION
+
+    {
+
+      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+
+      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+    }
+
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+
+    </code>
+                            <summary>SPARQL</summary>
+                        </details>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+            </table>
+            </span>
+            </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/ns/shacl#targetClass" title="Links a shape to a class, indicating that all instances of the class must conform to the shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Target Class</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#Link">ls:Link</a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Further information about the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Seealso</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#BinaryLink">ls:BinaryLink</a>
+                </td>
+            </tr>
+            </table>
+        </div>
+        <div class="property entity" id="linkedBinary">
+            <h3>linked binary
+                <sup class="sup-op" title="OWL Object Property">op</sup>
+            </h3>
+            <table>
+                <tr>
+                    <th>IRI</th>
+                    <td>
+                        <code>http://icdd.vm.rub.de/ontology/icddl#linkedBinary</code>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+                    </th>
+                    <td>
+                        <p>An ls:Link comprising exactly 2 individuals of class ls:LinkElement</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+                    </th>
+                    <td>
+                        <span>
+                  <a href="#linkedbinary">linked binary</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="https://w3id.org/profile/ontdoc/superPropertyOf" title="Inverse of RDFS' subPropertyOf. Defined in Ontology Documentation Profile">Super Property Of</a>
+                    </th>
+                    <td>
+                        <span>
+                  <a href="#linkedDirectedBinary">linked directed binary</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/ns/shacl#rule" title="The rules linked to a shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Rule</a>
+                    </th>
+                    <td>
+                        <span>
+                  <table>
+                    <tr>
+                      <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">type</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <a href="http://www.w3.org/ns/shacl#SPARQLRule">SPARQL CONSTRUCT rule</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#label">label</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">sh:rule for icddl:linkedBinary</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#comment">comment</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">Infers ICDD Link predicates for instances of ls:BinaryLink as icddl:linkedBinary and inverse as icddl:linkedBinary.</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/ns/shacl#construct">construct</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <details>
+                            <code>
+
+    PREFIX ls: &lt;https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#&gt;
+
+    PREFIX icddl: &lt;http://icdd.vm.rub.de/ontology/icddl#&gt;
+
+    CONSTRUCT {
+
+      ?rdfEntity1 icddl:linkedBinary ?rdfEntity2 .
+
+      ?rdfEntity2 icddl:linkedBinary ?rdfEntity1 .
+
+    }
+
+    WHERE {
+
+     $this ls:hasLinkElement ?elem1 .
+
+     $this ls:hasLinkElement ?elem2 .
+
+     FILTER(!sameTerm(?elem1, ?elem2))
+
+
+
+     {
+
+       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+       ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+
+       ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+       ?rdfEntity1 ?hasProp1 ?guid1 .
+
+       FILTER CONTAINS(str(?hasProp1),?field)
+
+     }
+
+     UNION
+
+     {
+
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+      ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+
+      ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+
+      ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+
+      ?rdfEntity1 ?hasProp1 ?guid1 .
+
+      ?rdfEntity2 ?hasProp2 ?guid2 .     
+
+      FILTER (CONTAINS(str(?hasProp1),?field1) &amp;&amp; CONTAINS(str(?hasProp2),?field2))       
+
+    }
+
+    UNION
+
+    {
+
+     ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+
+     ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+    }
+
+
+
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier}
+
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier}
+
+    }
+
+    </code>
+                            <summary>SPARQL</summary>
+                        </details>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+            </table>
+            </span>
+            </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/ns/shacl#targetClass" title="Links a shape to a class, indicating that all instances of the class must conform to the shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Target Class</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#BinaryLink">ls:BinaryLink</a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Further information about the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Seealso</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#BinaryLink">ls:BinaryLink</a>
+                </td>
+            </tr>
+            </table>
+        </div>
+        <div class="property entity" id="linkedDirected">
+            <h3>linked directed
+                <sup class="sup-op" title="OWL Object Property">op</sup>
+            </h3>
+            <table>
+                <tr>
+                    <th>IRI</th>
+                    <td>
+                        <code>http://icdd.vm.rub.de/ontology/icddl#linkedDirected</code>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+                    </th>
+                    <td>
+                        <p>An ls:Link that uses the subproperties ls:hasFromLinkElement and ls:hasToLinkElement to denote a direction of this link</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+                    </th>
+                    <td>
+                        <span>
+                  <a href="#linkedbinary">linked binary</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="https://w3id.org/profile/ontdoc/superPropertyOf" title="Inverse of RDFS' subPropertyOf. Defined in Ontology Documentation Profile">Super Property Of</a>
+                    </th>
+                    <td>
+                        <ul>
+                            <li>
+                                <span>
+                      <a href="#linkedDirectedBinary">linked directed binary</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                            </li>
+                            <li>
+                                <span>
+                      <a href="#linkedDirectedOneToMany">linked directed one to many</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/ns/shacl#rule" title="The rules linked to a shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Rule</a>
+                    </th>
+                    <td>
+                        <span>
+                  <table>
+                    <tr>
+                      <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">type</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <a href="http://www.w3.org/ns/shacl#SPARQLRule">SPARQL CONSTRUCT rule</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#label">label</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">sh:rule for icddl:linkedDirected</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#comment">comment</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">Infers ICDD Link predicates for instances of ls:DirectedLink as icddl:linkedDirected and inverse as icddl:linkedDirectedInverse.</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/ns/shacl#construct">construct</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <details>
+                            <code>CONSTRUCT {
+
+      ?rdfEntity1 &lt;http://icdd.vm.rub.de/ontology/icddl#linkedDirected&gt; ?rdfEntity2 .
+
+      ?rdfEntity2 &lt;http://icdd.vm.rub.de/ontology/icddl#linkedDirectedInverse&gt; ?rdfEntity1 .
+
+    }
+
+    WHERE {
+
+      $this ls:hasFromLinkElement ?elem1 .
+
+      $this ls:hasToLinkElement ?elem2 .
+
+      FILTER(!sameTerm(?elem1, ?elem2))
+
+
+
+      {
+
+       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+
+               FILTER CONTAINS(str(?hasProp1),?field)
+
+     }
+
+     UNION
+
+     {
+
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+
+            FILTER (CONTAINS(str(?hasProp1),?field1) &amp;&amp; CONTAINS(str(?hasProp2),?field2))   
+
+    }
+
+    UNION
+
+    {
+
+      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+
+      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+    }
+
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+
+    }
+
+    </code>
+                            <summary>SPARQL</summary>
+                        </details>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+            </table>
+            </span>
+            </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/ns/shacl#targetClass" title="Links a shape to a class, indicating that all instances of the class must conform to the shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Target Class</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#DirectedLink">ls:DirectedLink</a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Further information about the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Seealso</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#DirectedLink">ls:DirectedLink</a>
+                </td>
+            </tr>
+            </table>
+        </div>
+        <div class="property entity" id="linkedDirectedBinary">
+            <h3>linked directed binary
+                <sup class="sup-op" title="OWL Object Property">op</sup>
+            </h3>
+            <table>
+                <tr>
+                    <th>IRI</th>
+                    <td>
+                        <code>http://icdd.vm.rub.de/ontology/icddl#linkedDirectedBinary</code>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+                    </th>
+                    <td>
+                        <p>A subtype of a binary link (that has exactly 2 LinkElements) that uses the subproperties ls:hasFromLinkElement and ls:hasToLinkElement to denote a direction of this link</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+                    </th>
+                    <td>
+                        <ul>
+                            <li>
+                                <span>
+                      <a href="#linkedBinary">linked binary</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                            </li>
+                            <li>
+                                <span>
+                      <a href="#linkedDirected">linked directed</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="https://w3id.org/profile/ontdoc/superPropertyOf" title="Inverse of RDFS' subPropertyOf. Defined in Ontology Documentation Profile">Super Property Of</a>
+                    </th>
+                    <td>
+                        <ul>
+                            <li>
+                                <span>
+                      <a href="#conflictswith">conflicts with</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                            </li>
+                            <li>
+                                <span>
+                      <a href="#isalternativeto">is alternative to</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                            </li>
+                            <li>
+                                <span>
+                      <a href="#isidenticalto">is identical to</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/ns/shacl#rule" title="The rules linked to a shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Rule</a>
+                    </th>
+                    <td>
+                        <span>
+                  <table>
+                    <tr>
+                      <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">type</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <a href="http://www.w3.org/ns/shacl#SPARQLRule">SPARQL CONSTRUCT rule</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#label">label</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">sh:rule for icddl:linkedDirectedBinary</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#comment">comment</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">Infers ICDD Link predicates for instances of ls:DirectedBinaryLink as icddl:linkedDirectedBinary and inverse as icddl:linkedDirectedBinaryInverse.</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/ns/shacl#construct">construct</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <details>
+                            <code>
+
+    PREFIX ls: &lt;https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#&gt;
+
+    PREFIX icddl: &lt;http://icdd.vm.rub.de/ontology/icddl#&gt;
+
+    CONSTRUCT {
+
+      ?rdfEntity1 icddl:linkedDirectedBinary ?rdfEntity2 .
+
+      ?rdfEntity2 icddl:linkedDirectedBinaryInverse ?rdfEntity1 .
+
+    }
+
+    WHERE {
+
+      $this ls:hasFromLinkElement ?elem1 .
+
+      $this ls:hasToLinkElement ?elem2 .
+
+      $this ls:hasToLinkElement ?elem2 .
+
+      FILTER(!sameTerm(?elem1, ?elem2))
+
+      {
+
+       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+       ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+
+       ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+       ?rdfEntity1 ?hasProp1 ?guid1 .
+
+       FILTER CONTAINS(str(?hasProp1),?field)
+
+     }
+
+     UNION
+
+     {
+
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+      ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+
+      ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+
+      ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+
+      ?rdfEntity1 ?hasProp1 ?guid1 .
+
+      ?rdfEntity2 ?hasProp2 ?guid2 .     
+
+      FILTER (CONTAINS(str(?hasProp1),?field1) &amp;&amp; CONTAINS(str(?hasProp2),?field2))       
+
+    }
+
+    UNION
+
+    {
+
+     ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+
+     ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+    }
+
+
+
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier}
+
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier}
+
+    }
+
+    </code>
+                            <summary>SPARQL</summary>
+                        </details>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+            </table>
+            </span>
+            </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/ns/shacl#targetClass" title="Links a shape to a class, indicating that all instances of the class must conform to the shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Target Class</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#DirectedBinaryLink">ls:DirectedBinaryLink</a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Further information about the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Seealso</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#DirectedBinaryLink">ls:DirectedBinaryLink</a>
+                </td>
+            </tr>
+            </table>
+        </div>
+        <div class="property entity" id="linkeddirectedbinaryinverse">
+            <h3>linked directed binary inverse
+                <sup class="sup-op" title="OWL Object Property">op</sup>
+            </h3>
+            <table>
+                <tr>
+                    <th>IRI</th>
+                    <td>
+                        <code>http://icdd.vm.rub.de/ontology/icddl#linkedDirectedBinaryInverse</code>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+                    </th>
+                    <td>
+                        <p>Inverse property of icddl:linkedDirectedBinary. Inferred during rule execution for icddl:linkedDirectedBinary.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+                    </th>
+                    <td>
+                        <span>
+                  <a href="#linkedDirectedInverse">linked directed inverse</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Further information about the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Seealso</a>
+                    </th>
+                    <td>
+                        <span>
+                  <a href="#linkedDirectedBinary">linked directed binary</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
                     </td>
                 </tr>
             </table>
         </div>
-        <div class="entity property" id="controls">
-            <h3>controls<sup title="object property" class="sup-op">op</sup></h3>
+        <div class="property entity" id="linkedDirectedInverse">
+            <h3>linked directed inverse
+                <sup class="sup-op" title="OWL Object Property">op</sup>
+            </h3>
             <table>
                 <tr>
-                    <th>URI</th>
-                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#controls</code></td>
-                </tr>
-                <tr>
-                    <th>Is Defined By</th>
+                    <th>IRI</th>
                     <td>
-                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#Controls
+                        <code>http://icdd.vm.rub.de/ontology/icddl#linkedDirectedInverse</code>
                     </td>
                 </tr>
                 <tr>
-                    <th>Description</th>
+                    <th>
+                        <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+                    </th>
                     <td>
-                        This link type relates one link element to one or more other link elements over which it exercises some type of control. Possibly transitive, non-symmetric and inverse of IsControlledBy
+                        <p>Inverse property of icddl:linkedDirected. Inferred during rule execution for icddl:linkedDirected.</p>
                     </td>
                 </tr>
                 <tr>
-                    <th>Super-properties</th>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+                    </th>
                     <td>
-                        <a href="#linkeddirectedonetomany">icddl:linkedDirectedOneToMany</a><sup class="sup-op" title="object property">op</sup>
+                        <span>
+                  <a href="#linkedbinary">linked binary</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
                     </td>
                 </tr>
                 <tr>
-                    <th>Inverse properties</th>
+                    <th>
+                        <a class="hover_property" href="https://w3id.org/profile/ontdoc/superPropertyOf" title="Inverse of RDFS' subPropertyOf. Defined in Ontology Documentation Profile">Super Property Of</a>
+                    </th>
                     <td>
-                        <a href="#iscontrolledby">icddl:isControlledBy</a><sup class="sup-op" title="object property">op</sup>
+                        <ul>
+                            <li>
+                                <span>
+                      <a href="#linkeddirectedbinaryinverse">linked directed binary inverse</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                            </li>
+                            <li>
+                                <span>
+                      <a href="#linkedDirectedOneToManyInverse">linked directed one to many inverse</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                            </li>
+                        </ul>
                     </td>
                 </tr>
                 <tr>
-                    <th>SHACL-rules</th>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Further information about the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Seealso</a>
+                    </th>
                     <td>
-                        <a href="#blank">Infers ICDD Link predicates for els:Controls</a><sup class="sup-op" title="shacle rule">sh</sup>,
+                        <span>
+                  <a href="#linkedDirected">linked directed</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
                     </td>
                 </tr>
             </table>
         </div>
-        <div class="entity property" id="elaborates">
-            <h3>elaborates<sup title="object property" class="sup-op">op</sup></h3>
+        <div class="property entity" id="linkedDirectedOneToMany">
+            <h3>linked directed one to many
+                <sup class="sup-op" title="OWL Object Property">op</sup>
+            </h3>
             <table>
                 <tr>
-                    <th>URI</th>
-                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#elaborates</code></td>
-                </tr>
-                <tr>
-                    <th>Is Defined By</th>
+                    <th>IRI</th>
                     <td>
-                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#Elaborates
+                        <code>http://icdd.vm.rub.de/ontology/icddl#linkedDirectedOneToMany</code>
                     </td>
                 </tr>
                 <tr>
-                    <th>Description</th>
+                    <th>
+                        <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+                    </th>
                     <td>
-                        Possibly transitive, non-symmetric and inverse of IsElaboratedBy
+                        <p>An ls:Directed1toNLink is a subtype of ls:DirectedLink mandating exactly 1 ls:hasFromLinkElement</p>
                     </td>
                 </tr>
                 <tr>
-                    <th>Super-properties</th>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+                    </th>
                     <td>
-                        <a href="#linkeddirectedonetomany">icddl:linkedDirectedOneToMany</a><sup class="sup-op" title="object property">op</sup>
+                        <span>
+                  <a href="#linkedDirected">linked directed</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
                     </td>
                 </tr>
                 <tr>
-                    <th>Inverse properties</th>
+                    <th>
+                        <a class="hover_property" href="https://w3id.org/profile/ontdoc/superPropertyOf" title="Inverse of RDFS' subPropertyOf. Defined in Ontology Documentation Profile">Super Property Of</a>
+                    </th>
                     <td>
-                        <a href="#iselaboratedby">icddl:isElaboratedBy</a><sup class="sup-op" title="object property">op</sup>
+                        <ul>
+                            <li>
+                                <span>
+                      <a href="#controls">controls</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                            </li>
+                            <li>
+                                <span>
+                      <a href="#elaborates">elaborates</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                            </li>
+                            <li>
+                                <span>
+                      <a href="#hasmember">has member</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                            </li>
+                            <li>
+                                <span>
+                      <a href="#haspart">has part</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                            </li>
+                            <li>
+                                <span>
+                      <a href="#iscontrolledby">is controlled by</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                            </li>
+                            <li>
+                                <span>
+                      <a href="#iselaboratedby">is elaborated by</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                            </li>
+                            <li>
+                                <span>
+                      <a href="#ismemberof">is member of</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                            </li>
+                            <li>
+                                <span>
+                      <a href="#ispartof">is part of</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                            </li>
+                            <li>
+                                <span>
+                      <a href="#isspecialisedas">is specialised as</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                            </li>
+                            <li>
+                                <span>
+                      <a href="#issupersededby">is superseded by</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                            </li>
+                            <li>
+                                <span>
+                      <a href="#specialises">specialises</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                            </li>
+                            <li>
+                                <span>
+                      <a href="#supersedes">supersedes</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                            </li>
+                        </ul>
                     </td>
                 </tr>
                 <tr>
-                    <th>SHACL-rules</th>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/ns/shacl#rule" title="The rules linked to a shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Rule</a>
+                    </th>
                     <td>
-                        <a href="#blank">Infers ICDD Link predicates for els:Elaborates</a><sup class="sup-op" title="shacle rule">sh</sup>
+                        <span>
+                  <table>
+                    <tr>
+                      <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">type</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <a href="http://www.w3.org/ns/shacl#SPARQLRule">SPARQL CONSTRUCT rule</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#label">label</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">sh:rule for icddl:linkedDirectedOneToMany</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#comment">comment</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">Infers ICDD Link predicates for instances of ls:Directed1toNLink as icddl:linkedDirectedOneToMany and inverse as icddl:linkedDirectedOneToManyInverse.</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/ns/shacl#construct">construct</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <details>
+                            <code>
+
+    PREFIX ls: &lt;https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#&gt;
+
+    PREFIX icddl: &lt;http://icdd.vm.rub.de/ontology/icddl#&gt;
+
+    CONSTRUCT {
+
+      ?rdfEntity1 icddl:linkedDirectedOneToMany ?rdfEntity2 .
+
+      ?rdfEntity2 icddl:linkedDirectedOneToManyInverse ?rdfEntity1 .
+
+    }
+
+    WHERE {
+
+      $this ls:hasFromLinkElement ?elem1 .
+
+      $this ls:hasToLinkElement ?elem2 .
+
+      FILTER(!sameTerm(?elem1, ?elem2))
+
+      {
+
+       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+       ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+
+       ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+       ?rdfEntity1 ?hasProp1 ?guid1 .
+
+       FILTER CONTAINS(str(?hasProp1),?field)
+
+     }
+
+     UNION
+
+     {
+
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+      ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+
+      ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+
+      ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+
+      ?rdfEntity1 ?hasProp1 ?guid1 .
+
+      ?rdfEntity2 ?hasProp2 ?guid2 .     
+
+      FILTER (CONTAINS(str(?hasProp1),?field1) &amp;&amp; CONTAINS(str(?hasProp2),?field2))       
+
+    }
+
+    UNION
+
+    {
+
+     ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+
+     ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+    }
+
+
+
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier}
+
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier}
+
+    }
+
+    </code>
+                            <summary>SPARQL</summary>
+                        </details>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+            </table>
+            </span>
+            </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/ns/shacl#targetClass" title="Links a shape to a class, indicating that all instances of the class must conform to the shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Target Class</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#Directed1toNLink">ls:Directed1toNLink</a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Further information about the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Seealso</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#Directed1toNLink">ls:Directed1toNLink</a>
+                </td>
+            </tr>
+            </table>
+        </div>
+        <div class="property entity" id="linkedDirectedOneToManyInverse">
+            <h3>linked directed one to many inverse
+                <sup class="sup-op" title="OWL Object Property">op</sup>
+            </h3>
+            <table>
+                <tr>
+                    <th>IRI</th>
+                    <td>
+                        <code>http://icdd.vm.rub.de/ontology/icddl#linkedDirectedOneToManyInverse</code>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+                    </th>
+                    <td>
+                        <p>Inverse property of icddl:linkedDirectedOneToMany. Inferred during rule execution for icddl:linkedDirectedOneToMany.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+                    </th>
+                    <td>
+                        <span>
+                  <a href="#linkedDirectedInverse">linked directed inverse</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Further information about the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Seealso</a>
+                    </th>
+                    <td>
+                        <span>
+                  <a href="#linkedDirectedOneToMany">linked directed one to many</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
                     </td>
                 </tr>
             </table>
         </div>
-        <div class="entity property" id="hasmember">
-            <h3>has member<sup title="object property" class="sup-op">op</sup></h3>
+        <div class="property entity" id="specialises">
+            <h3>specialises
+                <sup class="sup-op" title="OWL Object Property">op</sup>
+            </h3>
             <table>
                 <tr>
-                    <th>URI</th>
-                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#hasMember</code></td>
-                </tr>
-                <tr>
-                    <th>Is Defined By</th>
+                    <th>IRI</th>
                     <td>
-                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#HasMember
+                        <code>http://icdd.vm.rub.de/ontology/icddl#specialises</code>
                     </td>
                 </tr>
                 <tr>
-                    <th>Description</th>
+                    <th>
+                        <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+                    </th>
                     <td>
-                        This link type relates one link element to one or more other link elements to form a grouping based on some consistent criteria. Possibly non-transitive, non-symmetric and inverse of IsMemberOf
+                        <p>Possibly transitive, non-symmetric and inverse of IsSpecialisedAs</p>
                     </td>
                 </tr>
                 <tr>
-                    <th>Super-properties</th>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+                    </th>
                     <td>
-                        <a href="#linkeddirectedonetomany">icddl:linkedDirectedOneToMany</a><sup class="sup-op" title="object property">op</sup>
+                        <span>
+                  <a href="#linkedDirectedOneToMany">linked directed one to many</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
                     </td>
                 </tr>
                 <tr>
-                    <th>Inverse properties</th>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/ns/shacl#rule" title="The rules linked to a shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Rule</a>
+                    </th>
                     <td>
-                        <a href="#ismemberof">icddl:isMemberOf</a><sup class="sup-op" title="object property">op</sup>
+                        <span>
+                  <table>
+                    <tr>
+                      <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">type</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <a href="http://www.w3.org/ns/shacl#SPARQLRule">SPARQL CONSTRUCT rule</a>
                     </td>
                 </tr>
                 <tr>
-                    <th>SHACL-rules</th>
-                    <td>
-                        <a href="#blank">Infers ICDD Link predicates for els:HasMember</a><sup class="sup-op" title="shacle rule">sh</sup>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#label">label</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">sh:rule for icddl:specialises</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#comment">comment</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">Infers ICDD Link predicates for instances of els:Specialises as icddl:specialises and inverse as icddl:isSpecialisedAs.</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/ns/shacl#construct">construct</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <details>
+                            <code>CONSTRUCT {
+
+      ?rdfEntity1 &lt;http://icdd.vm.rub.de/ontology/icddl#specialises&gt; ?rdfEntity2 .
+
+      ?rdfEntity2 &lt;http://icdd.vm.rub.de/ontology/icddl#isSpecialisedAs&gt; ?rdfEntity1 .
+
+    }
+
+    WHERE {
+
+      $this ls:hasFromLinkElement ?elem1 .
+
+      $this ls:hasToLinkElement ?elem2 .
+
+      FILTER(!sameTerm(?elem1, ?elem2))
+
+
+
+      {
+
+       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+
+               FILTER CONTAINS(str(?hasProp1),?field)
+
+     }
+
+     UNION
+
+     {
+
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+
+            FILTER (CONTAINS(str(?hasProp1),?field1) &amp;&amp; CONTAINS(str(?hasProp2),?field2))   
+
+    }
+
+    UNION
+
+    {
+
+      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+
+      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+    }
+
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+
+    }
+
+    </code>
+                            <summary>SPARQL</summary>
+                        </details>
                     </td>
                 </tr>
+                <tr></tr>
+                <tr></tr>
+            </table>
+            </span>
+            </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/ns/shacl#targetClass" title="Links a shape to a class, indicating that all instances of the class must conform to the shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Target Class</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#Specialises">els:Specialises</a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Further information about the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Seealso</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#Specialises">els:Specialises</a>
+                </td>
+            </tr>
             </table>
         </div>
-        <div class="entity property" id="haspart">
-            <h3>has part<sup title="object property" class="sup-op">op</sup></h3>
+        <div class="property entity" id="supersedes">
+            <h3>supersedes
+                <sup class="sup-op" title="OWL Object Property">op</sup>
+            </h3>
             <table>
                 <tr>
-                    <th>URI</th>
-                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#hasPart</code></td>
-                </tr>
-                <tr>
-                    <th>Is Defined By</th>
+                    <th>IRI</th>
                     <td>
-                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#HasPart
+                        <code>http://icdd.vm.rub.de/ontology/icddl#supersedes</code>
                     </td>
                 </tr>
                 <tr>
-                    <th>Description</th>
+                    <th>
+                        <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+                    </th>
                     <td>
-                        This link type relates one link element to one or more other link elements to form an assembly of parts where those parts exist independently. Possibly transitive, non-symmetric and inverse of IsPartOf
+                        <p>This link type relates one link element to one or more other link elements where they are a development of or supersede it in some way. Possibly transitive, non-symmetric and inverse of IsSupersededBy</p>
                     </td>
                 </tr>
                 <tr>
-                    <th>Super-properties</th>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+                    </th>
                     <td>
-                        <a href="#linkeddirectedonetomany">icddl:linkedDirectedOneToMany</a><sup class="sup-op" title="object property">op</sup>
+                        <span>
+                  <a href="#linkedDirectedOneToMany">linked directed one to many</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
                     </td>
                 </tr>
                 <tr>
-                    <th>Inverse properties</th>
+                    <th>
+                        <a class="hover_property" href="http://www.w3.org/ns/shacl#rule" title="The rules linked to a shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Rule</a>
+                    </th>
                     <td>
-                        <a href="#ispartof">icddl:isPartOf</a><sup class="sup-op" title="object property">op</sup>
+                        <span>
+                  <table>
+                    <tr>
+                      <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">type</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <a href="http://www.w3.org/ns/shacl#SPARQLRule">SPARQL CONSTRUCT rule</a>
                     </td>
                 </tr>
                 <tr>
-                    <th>SHACL-rules</th>
-                    <td>
-                        <a href="#blank">Infers ICDD Link predicates for els:HasPart</a><sup class="sup-op" title="shacle rule">sh</sup>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#label">label</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">sh:rule for icddl:supersedes</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/2000/01/rdf-schema#comment">comment</a>
+                          <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">Infers ICDD Link predicates for instances of els:Supersedes as icddl:supersedes and inverse as icddl:isSupersededBy.</td>
+                </tr>
+                <tr>
+                    <td style="width:10%;padding:3px;">
+                        <span>
+                          <a href="http://www.w3.org/ns/shacl#construct">construct</a>
+                          <sup class="sup-p" title="RDF Property">p</sup>
+                        </span>
+                    </td>
+                    <td style="padding:10px;">
+                        <details>
+                            <code>CONSTRUCT {
+
+      ?rdfEntity1 &lt;http://icdd.vm.rub.de/ontology/icddl#supersedes&gt; ?rdfEntity2 .
+
+      ?rdfEntity2 &lt;http://icdd.vm.rub.de/ontology/icddl#isSupersededBy&gt; ?rdfEntity1 .
+
+    }
+
+    WHERE {
+
+      $this ls:hasFromLinkElement ?elem1 .
+
+      $this ls:hasToLinkElement ?elem2 .
+
+      FILTER(!sameTerm(?elem1, ?elem2))
+
+
+
+      {
+
+       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+               ?elem1 ls:hasIdentifier/ls:identifierField ?field .
+
+               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+               ?rdfEntity1 ?hasProp1 ?guid1 .
+
+               FILTER CONTAINS(str(?hasProp1),?field)
+
+     }
+
+     UNION
+
+     {
+
+      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .
+
+            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .
+
+            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .
+
+            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        
+
+            ?rdfEntity1 ?hasProp1 ?guid1 .
+
+            ?rdfEntity2 ?hasProp2 ?guid2 .     
+
+            FILTER (CONTAINS(str(?hasProp1),?field1) &amp;&amp; CONTAINS(str(?hasProp2),?field2))   
+
+    }
+
+    UNION
+
+    {
+
+      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .
+
+      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .
+
+    }
+
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }
+
+    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }
+
+    }
+
+    </code>
+                            <summary>SPARQL</summary>
+                        </details>
                     </td>
                 </tr>
+                <tr></tr>
+                <tr></tr>
+            </table>
+            </span>
+            </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/ns/shacl#targetClass" title="Links a shape to a class, indicating that all instances of the class must conform to the shape. Defined in W3C Shapes Constraint Language (SHACL) Vocabulary">Target Class</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#Supersedes">els:Supersedes</a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Further information about the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Seealso</a>
+                </th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#Supersedes">els:Supersedes</a>
+                </td>
+            </tr>
             </table>
         </div>
-        <div class="entity property" id="isalternativeto">
-            <h3>is alternative to<sup title="object property" class="sup-op">op</sup></h3>
-            <table>
-                <tr>
-                    <th>URI</th>
-                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#isAlternativeTo</code></td>
-                </tr>
-                <tr>
-                    <th>Is Defined By</th>
-                    <td>
-                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsAlternativeTo
-                    </td>
-                </tr>
-                <tr>
-                    <th>Description</th>
-                    <td>
-                        This link type relates two link elements where one is an alternative to the other. Possibly transitive, symmetric and being its own inverse
-                    </td>
-                </tr>
-                <tr>
-                    <th>Super-properties</th>
-                    <td>
-                        <a href="#linkeddirectedbinary">icddl:linkedDirectedBinary</a><sup class="sup-op" title="object property">op</sup>
-                    </td>
-                </tr>
-                <tr>
-                    <th>SHACL-rules</th>
-                    <td>
-                        <a href="#blank">Infers ICDD Link predicates for els:IsAlternativeTo</a><sup class="sup-op" title="shacle rule">sh</sup>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="entity property" id="iscontrolledby">
-            <h3>is controlled by<sup title="object property" class="sup-op">op</sup></h3>
-            <table>
-                <tr>
-                    <th>URI</th>
-                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#isControlledBy</code></td>
-                </tr>
-                <tr>
-                    <th>Is Defined By</th>
-                    <td>
-                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsControlledBy
-                    </td>
-                </tr>
-                <tr>
-                    <th>Description</th>
-                    <td>
-                        Possibly transitive, non-symmetric and inverse of Controls
-                    </td>
-                </tr>
-                <tr>
-                    <th>Super-properties</th>
-                    <td>
-                        <a href="#linkeddirectedonetomany">icddl:linkedDirectedOneToMany</a><sup class="sup-op" title="object property">op</sup>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Inverse properties</th>
-                    <td>
-                        <a href="#controls">icddl:controls</a><sup class="sup-op" title="object property">op</sup>
-                    </td>
-                </tr>
-                <tr>
-                    <th>SHACL-rules</th>
-                    <td>
-                        <a href="#blank">Infers ICDD Link predicates for els:IsControlledBy</a><sup class="sup-op" title="shacle rule">sh</sup>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="entity property" id="iselaboratedby">
-            <h3>is elaborated by<sup title="object property" class="sup-op">op</sup></h3>
-            <table>
-                <tr>
-                    <th>URI</th>
-                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#isElaboratedBy</code></td>
-                </tr>
-                <tr>
-                    <th>Is Defined By</th>
-                    <td>
-                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsElaboratedBy
-                    </td>
-                </tr>
-                <tr>
-                    <th>Description</th>
-                    <td>
-                        This link type relates one link element to one or more other link elements where they provide further explanation, reasoning, derivation, information or usage. Possibly transitive, non-symmetric and inverse of IsElaboratedBy
-                    </td>
-                </tr>
-                <tr>
-                    <th>Super-properties</th>
-                    <td>
-                        <a href="#linkeddirectedonetomany">icddl:linkedDirectedOneToMany</a><sup class="sup-op" title="object property">op</sup>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Inverse properties</th>
-                    <td>
-                        <a href="#elaborates">icddl:elaborates</a><sup class="sup-op" title="object property">op</sup>
-                    </td>
-                </tr>
-                <tr>
-                    <th>SHACL-rules</th>
-                    <td>
-                        <a href="#blank">Infers ICDD Link predicates for els:IsElaboratedBy</a><sup class="sup-op" title="shacle rule">sh</sup>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="entity property" id="isidenticalto">
-            <h3>is identical to<sup title="object property" class="sup-op">op</sup></h3>
-            <table>
-                <tr>
-                    <th>URI</th>
-                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#isIdenticalTo</code></td>
-                </tr>
-                <tr>
-                    <th>Is Defined By</th>
-                    <td>
-                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsIdenticalTo
-                    </td>
-                </tr>
-                <tr>
-                    <th>Description</th>
-                    <td>
-                        This link type relates two link elements that are identical but may be represented in different ways. Possibly transitive, symmetric and being its own inverse
-                    </td>
-                </tr>
-                <tr>
-                    <th>Super-properties</th>
-                    <td>
-                        <a href="#linkeddirectedbinary">icddl:linkedDirectedBinary</a><sup class="sup-op" title="object property">op</sup>
-                    </td>
-                </tr>
-                <tr>
-                    <th>SHACL-rules</th>
-                    <td>
-                        <a href="#blank">Infers ICDD Link predicates for els:IsIdenticalTo</a><sup class="sup-op" title="shacle rule">sh</sup>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="entity property" id="ismemberof">
-            <h3>is member of<sup title="object property" class="sup-op">op</sup></h3>
-            <table>
-                <tr>
-                    <th>URI</th>
-                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#isMemberOf</code></td>
-                </tr>
-                <tr>
-                    <th>Is Defined By</th>
-                    <td>
-                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsMemberOf
-                    </td>
-                </tr>
-                <tr>
-                    <th>Description</th>
-                    <td>
-                        Possibly non-transitive, non-symmetric and inverse of HasMember
-                    </td>
-                </tr>
-                <tr>
-                    <th>Super-properties</th>
-                    <td>
-                        <a href="#linkeddirectedonetomany">icddl:linkedDirectedOneToMany</a><sup class="sup-op" title="object property">op</sup>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Inverse properties</th>
-                    <td>
-                        <a href="#hasmember">icddl:hasMember</a><sup class="sup-op" title="object property">op</sup>
-                    </td>
-                </tr>
-                <tr>
-                    <th>SHACL-rules</th>
-                    <td>
-                        <a href="#blank">Infers ICDD Link predicates for els:IsMemberOf</a><sup class="sup-op" title="shacle rule">sh</sup>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="entity property" id="ispartof">
-            <h3>is part of<sup title="object property" class="sup-op">op</sup></h3>
-            <table>
-                <tr>
-                    <th>URI</th>
-                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#isPartOf</code></td>
-                </tr>
-                <tr>
-                    <th>Is Defined By</th>
-                    <td>
-                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsPartOf
-                    </td>
-                </tr>
-                <tr>
-                    <th>Description</th>
-                    <td>
-                        Possibly transitive, non-symmetric and inverse of HasPart
-                    </td>
-                </tr>
-                <tr>
-                    <th>Super-properties</th>
-                    <td>
-                        <a href="#linkeddirectedonetomany">icddl:linkedDirectedOneToMany</a><sup class="sup-op" title="object property">op</sup>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Inverse properties</th>
-                    <td>
-                        <a href="#haspart">icddl:hasPart</a><sup class="sup-op" title="object property">op</sup>
-                    </td>
-                </tr>
-                <tr>
-                    <th>SHACL-rules</th>
-                    <td>
-                        <a href="#blank">Infers ICDD Link predicates for els:IsPartOf</a><sup class="sup-op" title="shacle rule">sh</sup>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="entity property" id="isspecialisedas">
-            <h3>is specialised as<sup title="object property" class="sup-op">op</sup></h3>
-            <table>
-                <tr>
-                    <th>URI</th>
-                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#isSpecialisedAs</code></td>
-                </tr>
-                <tr>
-                    <th>Is Defined By</th>
-                    <td>
-                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsSpecialisedAs
-                    </td>
-                </tr>
-                <tr>
-                    <th>Description</th>
-                    <td>
-                        This link type relates one link element to one or more other link elements that are specializations or sub-classes. Possibly transitive, non-symmetric and inverse of Specialises
-                    </td>
-                </tr>
-                <tr>
-                    <th>Super-properties</th>
-                    <td>
-                        <a href="#linkeddirectedonetomany">icddl:linkedDirectedOneToMany</a><sup class="sup-op" title="object property">op</sup>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Inverse properties</th>
-                    <td>
-                        <a href="#specialises">icddl:specialises</a><sup class="sup-op" title="object property">op</sup>
-                    </td>
-                </tr>
-                <tr>
-                    <th>SHACL-rules</th>
-                    <td>
-                        <a href="#blank">Infers ICDD Link predicates for els:IsSpecialisedAs</a><sup class="sup-op" title="shacle rule">sh</sup>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="entity property" id="issupersededby">
-            <h3>is superseded by<sup title="object property" class="sup-op">op</sup></h3>
-            <table>
-                <tr>
-                    <th>URI</th>
-                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#isSupersededBy</code></td>
-                </tr>
-                <tr>
-                    <th>Is Defined By</th>
-                    <td>
-                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#IsSupersededBy
-                    </td>
-                </tr>
-                <tr>
-                    <th>Description</th>
-                    <td>
-                        Possibly transitive, non-symmetric and inverse of Supersedes
-                    </td>
-                </tr>
-                <tr>
-                    <th>Super-properties</th>
-                    <td>
-                        <a href="#linkeddirectedonetomany">icddl:linkedDirectedOneToMany</a><sup class="sup-op" title="object property">op</sup>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Inverse properties</th>
-                    <td>
-                        <a href="#supersedes">icddl:supersedes</a><sup class="sup-op" title="object property">op</sup>
-                    </td>
-                </tr>
-                <tr>
-                    <th>SHACL-rules</th>
-                    <td>
-                        <a href="#blank">Infers ICDD Link predicates for els:IsSupersededBy</a><sup class="sup-op" title="shacle rule">sh</sup>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="entity property" id="Linked">
-            <h3>Linked<sup title="object property" class="sup-op">op</sup></h3>
-            <table>
-                <tr>
-                    <th>URI</th>
-                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#linked</code></td>
-                </tr>
-                <tr>
-                    <th>Is Defined By</th>
-                    <td>
-                        https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#Link
-                    </td>
-                </tr>
-                <tr>
-                    <th>Description</th>
-                    <td>
-                        A grouping of 1 or more instances of ls:LinkElement. The most generic connection between entities
-                    </td>
-                </tr>
-                <tr>
-                    <th>Super-properties</th>
-                    <td>
-                        <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th>SHACL-rules</th>
-                    <td>
-                        <a href="#blank">Infers ICDD Link predicates for ls:Link</a><sup class="sup-op" title="shacle rule">sh</sup>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="entity property" id="linkedbinary">
-            <h3>linked binary<sup title="object property" class="sup-op">op</sup></h3>
-            <table>
-                <tr>
-                    <th>URI</th>
-                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#linkedBinary</code></td>
-                </tr>
-                <tr>
-                    <th>Is Defined By</th>
-                    <td>
-                        https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#BinaryLink
-                    </td>
-                </tr>
-                <tr>
-                    <th>Description</th>
-                    <td>
-                        An ls:Link comprising exactly 2 individuals of class ls:LinkElement
-                    </td>
-                </tr>
-                <tr>
-                    <th>Super-properties</th>
-                    <td>
-                        <a href="#Linked">icddl:linked</a><sup class="sup-op" title="object property">op</sup>
-                    </td>
-                </tr>
-                <tr>
-                    <th>SHACL-rules</th>
-                    <td>
-                        <a href="#blank">Infers ICDD Link predicates for ls:BinaryLink</a><sup class="sup-op" title="shacle rule">sh</sup>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="entity property" id="linkeddirected">
-            <h3>linked directed<sup title="object property" class="sup-op">op</sup></h3>
-            <table>
-                <tr>
-                    <th>URI</th>
-                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#linkedDirected</code></td>
-                </tr>
-                <tr>
-                    <th>Is Defined By</th>
-                    <td>
-                        https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#DirectedLink
-                    </td>
-                </tr>
-                <tr>
-                    <th>Description</th>
-                    <td>
-                        a relation from an ls:Link to an ls:LinkElement. It is a sub property of ls:hasLinkElement
-                    </td>
-                </tr>
-                <tr>
-                    <th>Super-properties</th>
-                    <td>
-                        <a href="#Linked">icddl:linked</a><sup class="sup-op" title="object property">op</sup>
-                    </td>
-                </tr>
-                <tr>
-                    <th>SHACL-rules</th>
-                    <td>
-                        <a href="#blank">Infers ICDD Link predicates for ls:DirectedLink</a><sup class="sup-op" title="shacle rule">sh</sup>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="entity property" id="linkeddirectedbinary">
-            <h3>linked directed binary<sup title="object property" class="sup-op">op</sup></h3>
-            <table>
-                <tr>
-                    <th>URI</th>
-                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#linkedDirectedBinary</code></td>
-                </tr>
-                <tr>
-                    <th>Is Defined By</th>
-                    <td>
-                        https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#DirectedBinaryLink
-                    </td>
-                </tr>
-                <tr>
-                    <th>Description</th>
-                    <td>
-                        a subtype of a binary link (that has exactly 2 LinkElements) that uses the subproperties ls:hasFromLinkElement and ls:hasToLinkElement to denote a direction of this link
-                    </td>
-                </tr>
-                <tr>
-                    <th>Super-properties</th>
-                    <td>
-                        <a href="#linkedbinary">icddl:linkedBinary</a><sup class="sup-op" title="object property">op</sup>
-                        <a href="#linkeddirected">icddl:linkedDirected</a><sup class="sup-op" title="object property">op</sup>
-                    </td>
-                </tr>
-                <tr>
-                    <th>SHACL-rules</th>
-                    <td>
-                        <a href="#blank">Infers ICDD Link predicates for ls:DirectedBinaryLink</a><sup class="sup-op" title="shacle rule">sh</sup>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="entity property" id="linkeddirectedonetomany">
-            <h3>linked directed one to many<sup title="object property" class="sup-op">op</sup></h3>
-            <table>
-                <tr>
-                    <th>URI</th>
-                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#linkedDirectedOneToMany</code></td>
-                </tr>
-                <tr>
-                    <th>Is Defined By</th>
-                    <td>
-                        https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#Directed1toNLink
-                    </td>
-                </tr>
-                <tr>
-                    <th>Description</th>
-                    <td>
-                        an ls:Directed1toNLink is a subtype of ls:DirectedLink mandating exactly 1 ls:hasFromLinkElement
-                    </td>
-                </tr>
-                <tr>
-                    <th>Super-properties</th>
-                    <td>
-                        <a href="#linkeddirected">icddl:linkedDirected</a><sup class="sup-op" title="object property">op</sup>
-                    </td>
-                </tr>
-                <tr>
-                    <th>SHACL-rules</th>
-                    <td>
-                        <a href="#blank">Infers ICDD Link predicates for ls:Directed1toNLink</a><sup class="sup-op" title="shacle rule">sh</sup>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="entity property" id="specialises">
-            <h3>specialises<sup title="object property" class="sup-op">op</sup></h3>
-            <table>
-                <tr>
-                    <th>URI</th>
-                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#specialises</code></td>
-                </tr>
-                <tr>
-                    <th>Is Defined By</th>
-                    <td>
-                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#Specialises
-                    </td>
-                </tr>
-                <tr>
-                    <th>Description</th>
-                    <td>
-                        Possibly transitive, non-symmetric and inverse of IsSpecialisedAs
-                    </td>
-                </tr>
-                <tr>
-                    <th>Super-properties</th>
-                    <td>
-                        <a href="#linkeddirectedonetomany">icddl:linkedDirectedOneToMany</a><sup class="sup-op" title="object property">op</sup>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Inverse properties</th>
-                    <td>
-                        <a href="#isspecialisedas">icddl:isSpecialisedAs</a><sup class="sup-op" title="object property">op</sup>
-                    </td>
-                </tr>
-                <tr>
-                    <th>SHACL-rules</th>
-                    <td>
-                        <a href="#blank">Infers ICDD Link predicates for els:Specialises</a><sup class="sup-op" title="shacle rule">sh</sup>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="entity property" id="supersedes">
-            <h3>supersedes<sup title="object property" class="sup-op">op</sup></h3>
-            <table>
-                <tr>
-                    <th>URI</th>
-                    <td><code>https://philhag.github.io/icdd-shacl-validation/icddl#supersedes</code></td>
-                </tr>
-                <tr>
-                    <th>Is Defined By</th>
-                    <td>
-                        https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#Supersedes
-                    </td>
-                </tr>
-                <tr>
-                    <th>Description</th>
-                    <td>
-                        This link type relates one link element to one or more other link elements where they are a development of or supersede it in some way. Possibly transitive, non-symmetric and inverse of IsSupersededBy
-                    </td>
-                </tr>
-                <tr>
-                    <th>Super-properties</th>
-                    <td>
-                        <a href="#linkeddirectedonetomany">icddl:linkedDirectedOneToMany</a><sup class="sup-op" title="object property">op</sup>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Inverse properties</th>
-                    <td>
-                        <a href="#issupersededby">icddl:isSupersededBy</a><sup class="sup-op" title="object property">op</sup>
-                    </td>
-                </tr>
-                <tr>
-                    <th>SHACL-rules</th>
-                    <td>
-                        <a href="#blank">Infers ICDD Link predicates for els:Supersedes</a><sup class="sup-op" title="shacle rule">sh</sup>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </section>
+    </div>
 
 
     <section id="namespaces">
