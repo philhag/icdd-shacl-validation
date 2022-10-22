@@ -1,0 +1,611 @@
+{
+  "@graph" : [ {
+    "@id" : "_:b0",
+    "@type" : "sh:SPARQLRule",
+    "comment" : "Infers ICDD Link predicates for  instances of ls:Directed1toNLink as icddl:linkedDirectedOneToMany and inverse as icddl:linkedDirectedOneToManyInverse.",
+    "label" : "sh:rule for icddl:linkedDirectedOneToMany",
+    "construct" : "\r\n    PREFIX ls: <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#>\r\n    PREFIX icddl: <https://philhag.github.io/icdd-shacl-validation/icddl#>\r\n    CONSTRUCT {\r\n      ?rdfEntity1 icddl:linkedDirectedOneToMany ?rdfEntity2 .\r\n      ?rdfEntity2 icddl:linkedDirectedOneToManyInverse ?rdfEntity1 .\r\n    }\r\n    WHERE {\r\n      $this ls:hasFromLinkElement ?elem1 .\r\n      $this ls:hasToLinkElement ?elem2 .\r\n      FILTER(!sameTerm(?elem1, ?elem2))\r\n      {\r\n       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n       ?elem1 ls:hasIdentifier/ls:identifierField ?field .\r\n       ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n       ?rdfEntity1 ?hasProp1 ?guid1 .\r\n       FILTER CONTAINS(str(?hasProp1),?field)\r\n     }\r\n     UNION\r\n     {\r\n      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n      ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .\r\n      ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .\r\n      ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        \r\n      ?rdfEntity1 ?hasProp1 ?guid1 .\r\n      ?rdfEntity2 ?hasProp2 ?guid2 .     \r\n      FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))       \r\n    }\r\n    UNION\r\n    {\r\n     ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .\r\n     ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n    }\r\n\r\n    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier}\r\n    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier}\r\n    }\r\n    "
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:Organization",
+    "identifier" : "https://www.inf.bi.rub.de",
+    "name" : "Chair of Computing in Engineering, Ruhr University Bochum",
+    "parentOrganization" : "_:b2"
+  }, {
+    "@id" : "_:b10",
+    "@type" : "sh:SPARQLRule",
+    "comment" : "Infers ICDD Link predicates for  instances of els:IsControlledBy as icddl:isControlledBy and inverse as icddl:controls.",
+    "label" : "sh:rule for icddl:isControlledBy",
+    "construct" : "CONSTRUCT {\r\n      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#isControlledBy> ?rdfEntity2 .\r\n      ?rdfEntity2 <https://philhag.github.io/icdd-shacl-validation/icddl#controls> ?rdfEntity1 .\r\n    }\r\n    WHERE {\r\n      $this ls:hasFromLinkElement ?elem1 .\r\n      $this ls:hasToLinkElement ?elem2 .\r\n      FILTER(!sameTerm(?elem1, ?elem2))\r\n\r\n      {\r\n        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n               ?elem1 ls:hasIdentifier/ls:identifierField ?field .\r\n               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n               ?rdfEntity1 ?hasProp1 ?guid1 .\r\n               FILTER CONTAINS(str(?hasProp1),?field)\r\n      }\r\n      UNION\r\n      {\r\n        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .\r\n            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .\r\n            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        \r\n            ?rdfEntity1 ?hasProp1 ?guid1 .\r\n            ?rdfEntity2 ?hasProp2 ?guid2 .     \r\n            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   \r\n      }\r\n      UNION\r\n      {\r\n        ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .\r\n        ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n      }\r\n      FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }\r\n      FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }\r\n      FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }\r\n      FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }\r\n    }\r\n    "
+  }, {
+    "@id" : "_:b11",
+    "@type" : "sh:SPARQLRule",
+    "comment" : "Infers ICDD Link predicates for  instances of els:IsSpecialisedAs as icddl:isSpecialisedAs and inverse as icddl:specialises.",
+    "label" : "sh:rule for icddl:isSpecialisedAs",
+    "construct" : "CONSTRUCT {\r\n      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#isSpecialisedAs> ?rdfEntity2 .\r\n      ?rdfEntity2 <https://philhag.github.io/icdd-shacl-validation/icddl#specialises> ?rdfEntity1 .\r\n    }\r\n    WHERE {\r\n      $this ls:hasFromLinkElement ?elem1 .\r\n      $this ls:hasToLinkElement ?elem2 .\r\n      FILTER(!sameTerm(?elem1, ?elem2))\r\n\r\n      {\r\n        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n               ?elem1 ls:hasIdentifier/ls:identifierField ?field .\r\n               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n               ?rdfEntity1 ?hasProp1 ?guid1 .\r\n               FILTER CONTAINS(str(?hasProp1),?field)\r\n      }\r\n      UNION\r\n      {\r\n        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .\r\n            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .\r\n            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        \r\n            ?rdfEntity1 ?hasProp1 ?guid1 .\r\n            ?rdfEntity2 ?hasProp2 ?guid2 .     \r\n            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   \r\n      }\r\n      UNION\r\n      {\r\n        ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .\r\n        ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n      }\r\n      FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }\r\n      FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }\r\n      FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }\r\n      FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }\r\n    }\r\n    "
+  }, {
+    "@id" : "_:b12",
+    "@type" : "sh:SPARQLRule",
+    "comment" : "Infers ICDD Link predicates for  instances of ls:DirectedBinaryLink as icddl:linkedDirectedBinary and inverse as icddl:linkedDirectedBinaryInverse.",
+    "label" : "sh:rule for icddl:linkedDirectedBinary",
+    "construct" : "\r\n    PREFIX ls: <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#>\r\n    PREFIX icddl: <https://philhag.github.io/icdd-shacl-validation/icddl#>\r\n    CONSTRUCT {\r\n      ?rdfEntity1 icddl:linkedDirectedBinary ?rdfEntity2 .\r\n      ?rdfEntity2 icddl:linkedDirectedBinaryInverse ?rdfEntity1 .\r\n    }\r\n    WHERE {\r\n      $this ls:hasFromLinkElement ?elem1 .\r\n      $this ls:hasToLinkElement ?elem2 .\r\n      $this ls:hasToLinkElement ?elem2 .\r\n      FILTER(!sameTerm(?elem1, ?elem2))\r\n      {\r\n       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n       ?elem1 ls:hasIdentifier/ls:identifierField ?field .\r\n       ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n       ?rdfEntity1 ?hasProp1 ?guid1 .\r\n       FILTER CONTAINS(str(?hasProp1),?field)\r\n     }\r\n     UNION\r\n     {\r\n      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n      ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .\r\n      ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .\r\n      ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        \r\n      ?rdfEntity1 ?hasProp1 ?guid1 .\r\n      ?rdfEntity2 ?hasProp2 ?guid2 .     \r\n      FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))       \r\n    }\r\n    UNION\r\n    {\r\n     ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .\r\n     ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n    }\r\n\r\n    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier}\r\n    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier}\r\n    }\r\n    "
+  }, {
+    "@id" : "_:b13",
+    "@type" : "sh:SPARQLRule",
+    "comment" : "Infers ICDD Link predicates for  instances of els:IsAlternativeTo as icddl:isAlternativeTo.",
+    "label" : "sh:rule for icddl:isAlternativeTo",
+    "construct" : "CONSTRUCT {\r\n      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#isAlternativeTo> ?rdfEntity2 .\r\n    }\r\n    WHERE {\r\n      $this ls:hasFromLinkElement ?elem1 .\r\n      $this ls:hasToLinkElement ?elem2 .\r\n      FILTER(!sameTerm(?elem1, ?elem2))\r\n\r\n      {\r\n        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n               ?elem1 ls:hasIdentifier/ls:identifierField ?field .\r\n               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n               ?rdfEntity1 ?hasProp1 ?guid1 .\r\n               FILTER CONTAINS(str(?hasProp1),?field)\r\n      }\r\n      UNION\r\n      {\r\n        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .\r\n            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .\r\n            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        \r\n            ?rdfEntity1 ?hasProp1 ?guid1 .\r\n            ?rdfEntity2 ?hasProp2 ?guid2 .     \r\n            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   \r\n      }\r\n      UNION\r\n      {\r\n        ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .\r\n        ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n      }\r\n      FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }\r\n      FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }\r\n      FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }\r\n      FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }\r\n    }\r\n    "
+  }, {
+    "@id" : "_:b14",
+    "@type" : "sh:SPARQLRule",
+    "comment" : "Infers ICDD Link predicates for  instances of ls:Link as icddl:linked and inverse as icddl:linked.",
+    "label" : "sh:rule for icddl:linked",
+    "construct" : "\r\n    CONSTRUCT {\r\n      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#linked> ?rdfEntity2 .\r\n      ?rdfEntity2 <https://philhag.github.io/icdd-shacl-validation/icddl#linked> ?rdfEntity1 .\r\n    }\r\n    WHERE {\r\n     $this ls:hasLinkElement ?elem1 .\r\n     $this ls:hasLinkElement ?elem2 .\r\n     FILTER(!sameTerm(?elem1, ?elem2))\r\n\r\n     {\r\n      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n      ?elem1 ls:hasIdentifier/ls:identifierField ?field .\r\n      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n      ?rdfEntity1 ?hasProp1 ?guid1 .\r\n      FILTER CONTAINS(str(?hasProp1),?field)\r\n    }\r\n    UNION\r\n    {\r\n      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .\r\n            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .\r\n            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        \r\n            ?rdfEntity1 ?hasProp1 ?guid1 .\r\n            ?rdfEntity2 ?hasProp2 ?guid2 .     \r\n            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))\r\n    }\r\n    UNION\r\n    {\r\n      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .\r\n      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n    }\r\n    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }\r\n    "
+  }, {
+    "@id" : "_:b15",
+    "@type" : "sh:SPARQLRule",
+    "comment" : "Infers ICDD Link predicates for  instances of els:IsPartOf as icddl:isPartOf and inverse as icddl:hasPart.",
+    "label" : "sh:rule for icddl:isPartOf",
+    "construct" : "CONSTRUCT {\r\n      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#isPartOf> ?rdfEntity2 .\r\n      ?rdfEntity2 <https://philhag.github.io/icdd-shacl-validation/icddl#hasPart> ?rdfEntity1 .\r\n    }\r\n    WHERE {\r\n      $this ls:hasFromLinkElement ?elem1 .\r\n      $this ls:hasToLinkElement ?elem2 .\r\n      FILTER(!sameTerm(?elem1, ?elem2))\r\n\r\n      {\r\n       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n               ?elem1 ls:hasIdentifier/ls:identifierField ?field .\r\n               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n               ?rdfEntity1 ?hasProp1 ?guid1 .\r\n               FILTER CONTAINS(str(?hasProp1),?field)\r\n     }\r\n     UNION\r\n     {\r\n      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .\r\n            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .\r\n            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        \r\n            ?rdfEntity1 ?hasProp1 ?guid1 .\r\n            ?rdfEntity2 ?hasProp2 ?guid2 .     \r\n            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   \r\n    }\r\n    UNION\r\n    {\r\n      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .\r\n      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .  \r\n    }\r\n    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }\r\n    }\r\n    "
+  }, {
+    "@id" : "_:b16",
+    "@type" : "sh:SPARQLRule",
+    "comment" : "Infers ICDD Link predicates for  instances of els:IsMemberOf as icddl:isMemberOf and inverse as icddl:hasMember.",
+    "label" : "sh:rule for icddl:isMemberOf",
+    "construct" : "CONSTRUCT {\r\n      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#isMemberOf> ?rdfEntity2 .\r\n      ?rdfEntity2 <https://philhag.github.io/icdd-shacl-validation/icddl#hasMember> ?rdfEntity1 .\r\n    }\r\n    WHERE {\r\n      $this ls:hasFromLinkElement ?elem1 .\r\n      $this ls:hasToLinkElement ?elem2 .\r\n      FILTER(!sameTerm(?elem1, ?elem2))\r\n\r\n      {\r\n       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n               ?elem1 ls:hasIdentifier/ls:identifierField ?field .\r\n               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n               ?rdfEntity1 ?hasProp1 ?guid1 .\r\n               FILTER CONTAINS(str(?hasProp1),?field)\r\n     }\r\n     UNION\r\n     {\r\n      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .\r\n            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .\r\n            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        \r\n            ?rdfEntity1 ?hasProp1 ?guid1 .\r\n            ?rdfEntity2 ?hasProp2 ?guid2 .     \r\n            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   \r\n    }\r\n    UNION\r\n    {\r\n      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .\r\n      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n    }\r\n    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }\r\n    }\r\n    "
+  }, {
+    "@id" : "_:b17",
+    "@type" : "schema:Person",
+    "email" : "mailto:philipp.hagedorn-n6v@rub.de",
+    "identifier" : "https://orcid.org/0000-0002-6249-243X",
+    "memberOf" : "_:b23",
+    "name" : "Philipp Hagedorn"
+  }, {
+    "@id" : "_:b18",
+    "@type" : "sh:SPARQLRule",
+    "comment" : "Infers ICDD Link predicates for  instances of els:HasMember as icddl:hasMember and inverse as icddl:isMemberOf.",
+    "label" : "sh:rule for icddl:hasMember",
+    "construct" : "CONSTRUCT {\r\n      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#hasMember> ?rdfEntity2 .\r\n      ?rdfEntity2 <https://philhag.github.io/icdd-shacl-validation/icddl#isMemberOf> ?rdfEntity1 .\r\n    }\r\n    WHERE {\r\n      $this ls:hasFromLinkElement ?elem1 .\r\n      $this ls:hasToLinkElement ?elem2 .\r\n      FILTER(!sameTerm(?elem1, ?elem2))\r\n\r\n      {\r\n        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n               ?elem1 ls:hasIdentifier/ls:identifierField ?field .\r\n               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n               ?rdfEntity1 ?hasProp1 ?guid1 .\r\n               FILTER CONTAINS(str(?hasProp1),?field)\r\n      }\r\n      UNION\r\n      {\r\n        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .\r\n            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .\r\n            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        \r\n            ?rdfEntity1 ?hasProp1 ?guid1 .\r\n            ?rdfEntity2 ?hasProp2 ?guid2 .     \r\n            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   \r\n      }\r\n      UNION\r\n      {\r\n        ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .\r\n        ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n      }\r\n      FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }\r\n      FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }\r\n      FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }\r\n      FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }\r\n    }\r\n    "
+  }, {
+    "@id" : "_:b19",
+    "@type" : "sh:SPARQLRule",
+    "comment" : "Infers ICDD Link predicates for  instances of els:IsElaboratedBy as icddl:isElaboratedBy and inverse as icddl:elaborates.",
+    "label" : "sh:rule for icddl:isElaboratedBy",
+    "construct" : "CONSTRUCT {\r\n      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#isElaboratedBy> ?rdfEntity2 .\r\n      ?rdfEntity2 <https://philhag.github.io/icdd-shacl-validation/icddl#elaborates> ?rdfEntity1 .\r\n    }\r\n    WHERE {\r\n      $this ls:hasFromLinkElement ?elem1 .\r\n      $this ls:hasToLinkElement ?elem2 .\r\n      FILTER(!sameTerm(?elem1, ?elem2))\r\n\r\n      {\r\n       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n               ?elem1 ls:hasIdentifier/ls:identifierField ?field .\r\n               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n               ?rdfEntity1 ?hasProp1 ?guid1 .\r\n               FILTER CONTAINS(str(?hasProp1),?field)\r\n     }\r\n     UNION\r\n     {\r\n      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n          ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .\r\n          ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .\r\n          ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        \r\n          ?rdfEntity1 ?hasProp1 ?guid1 .\r\n          ?rdfEntity2 ?hasProp2 ?guid2 .     \r\n          FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))  \r\n    }\r\n    UNION\r\n    {\r\n      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .\r\n      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n    }\r\n    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }\r\n    }\r\n    "
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:Organization",
+    "name" : "Ruhr University Bochum, Germany"
+  }, {
+    "@id" : "_:b20",
+    "@type" : "sh:SPARQLRule",
+    "comment" : "Infers ICDD Link predicates for  instances of els:Elaborates as icddl:elaborates and inverse as icddl:isElaboratedBy.",
+    "label" : "sh:rule for icddl:elaborates",
+    "construct" : "CONSTRUCT {\r\n    ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#elaborates> ?rdfEntity2 .\r\n    ?rdfEntity2 <https://philhag.github.io/icdd-shacl-validation/icddl#isElaboratedBy> ?rdfEntity1 .\r\n  }\r\n  WHERE {\r\n    $this ls:hasFromLinkElement ?elem1 .\r\n    $this ls:hasToLinkElement ?elem2 .\r\n    FILTER(!sameTerm(?elem1, ?elem2))\r\n\r\n    {\r\n      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n             ?elem1 ls:hasIdentifier/ls:identifierField ?field .\r\n             ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n             ?rdfEntity1 ?hasProp1 ?guid1 .\r\n             FILTER CONTAINS(str(?hasProp1),?field)\r\n    }\r\n    UNION\r\n    {\r\n      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n          ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .\r\n          ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .\r\n          ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        \r\n          ?rdfEntity1 ?hasProp1 ?guid1 .\r\n          ?rdfEntity2 ?hasProp2 ?guid2 .     \r\n          FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   \r\n    }\r\n    UNION\r\n    {\r\n      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .\r\n      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n    }\r\n    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }\r\n  }\r\n  "
+  }, {
+    "@id" : "_:b21",
+    "@type" : "sh:SPARQLRule",
+    "comment" : "Infers ICDD Link predicates for  instances of els:IsSupersededBy as icddl:isSupersededBy and inverse as icddl:supersedes.",
+    "label" : "sh:rule for icddl:isSupersededBy",
+    "construct" : "CONSTRUCT {\r\n      ?rdfEntity1 icddl:isSupersededBy ?rdfEntity2 .\r\n      ?rdfEntity2 icddl:supersedes ?rdfEntity1 .\r\n    }\r\n    WHERE {\r\n      $this ls:hasFromLinkElement ?elem1 .\r\n      $this ls:hasToLinkElement ?elem2 .\r\n      FILTER(!sameTerm(?elem1, ?elem2))\r\n\r\n      {\r\n       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n               ?elem1 ls:hasIdentifier/ls:identifierField ?field .\r\n               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n               ?rdfEntity1 ?hasProp1 ?guid1 .\r\n               FILTER CONTAINS(str(?hasProp1),?field)\r\n     }\r\n     UNION\r\n     {\r\n      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .\r\n            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .\r\n            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        \r\n            ?rdfEntity1 ?hasProp1 ?guid1 .\r\n            ?rdfEntity2 ?hasProp2 ?guid2 .     \r\n            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   \r\n    }\r\n    UNION\r\n    {\r\n      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .\r\n      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n    }\r\n    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }\r\n    }\r\n    "
+  }, {
+    "@id" : "_:b22",
+    "@type" : "sh:SPARQLRule",
+    "comment" : "Infers ICDD Link predicates for  instances of els:Specialises as icddl:specialises and inverse as icddl:isSpecialisedAs.",
+    "label" : "sh:rule for icddl:specialises",
+    "construct" : "CONSTRUCT {\r\n      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#specialises> ?rdfEntity2 .\r\n      ?rdfEntity2 <https://philhag.github.io/icdd-shacl-validation/icddl#isSpecialisedAs> ?rdfEntity1 .\r\n    }\r\n    WHERE {\r\n      $this ls:hasFromLinkElement ?elem1 .\r\n      $this ls:hasToLinkElement ?elem2 .\r\n      FILTER(!sameTerm(?elem1, ?elem2))\r\n\r\n      {\r\n       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n               ?elem1 ls:hasIdentifier/ls:identifierField ?field .\r\n               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n               ?rdfEntity1 ?hasProp1 ?guid1 .\r\n               FILTER CONTAINS(str(?hasProp1),?field)\r\n     }\r\n     UNION\r\n     {\r\n      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .\r\n            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .\r\n            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        \r\n            ?rdfEntity1 ?hasProp1 ?guid1 .\r\n            ?rdfEntity2 ?hasProp2 ?guid2 .     \r\n            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   \r\n    }\r\n    UNION\r\n    {\r\n      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .\r\n      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n    }\r\n    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }\r\n    }\r\n    "
+  }, {
+    "@id" : "_:b23",
+    "identifier" : "https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en",
+    "name" : "Ruhr University Bochum"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "sh:SPARQLRule",
+    "comment" : "Infers ICDD Link predicates for instances of els:ConflictsWith as icddl:conflictsWith.",
+    "label" : "sh:rule for icddl:conflictsWith",
+    "construct" : "CONSTRUCT {\r\n      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#conflictsWith> ?rdfEntity2 .\r\n    }\r\n    WHERE {\r\n      $this ls:hasFromLinkElement ?elem1 .\r\n      $this ls:hasToLinkElement ?elem2 .\r\n      FILTER(!sameTerm(?elem1, ?elem2))\r\n\r\n      {\r\n        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n               ?elem1 ls:hasIdentifier/ls:identifierField ?field .\r\n               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n               ?rdfEntity1 ?hasProp1 ?guid1 .\r\n               FILTER CONTAINS(str(?hasProp1),?field)\r\n      }\r\n      UNION\r\n      {\r\n        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .\r\n            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .\r\n            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        \r\n            ?rdfEntity1 ?hasProp1 ?guid1 .\r\n            ?rdfEntity2 ?hasProp2 ?guid2 .     \r\n            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   \r\n      }\r\n      UNION\r\n      {\r\n        ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .\r\n        ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n      }\r\n\r\n      FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }\r\n      FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }\r\n      FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }\r\n      FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }\r\n    }\r\n    "
+  }, {
+    "@id" : "_:b4",
+    "@type" : "sh:SPARQLRule",
+    "comment" : "Infers ICDD Link predicates for  instances of ls:DirectedLink as icddl:linkedDirected and inverse as icddl:linkedDirectedInverse.",
+    "label" : "sh:rule for icddl:linkedDirected",
+    "construct" : "CONSTRUCT {\r\n      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#linkedDirected> ?rdfEntity2 .\r\n      ?rdfEntity2 <https://philhag.github.io/icdd-shacl-validation/icddl#linkedDirectedInverse> ?rdfEntity1 .\r\n    }\r\n    WHERE {\r\n      $this ls:hasFromLinkElement ?elem1 .\r\n      $this ls:hasToLinkElement ?elem2 .\r\n      FILTER(!sameTerm(?elem1, ?elem2))\r\n\r\n      {\r\n       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n               ?elem1 ls:hasIdentifier/ls:identifierField ?field .\r\n               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n               ?rdfEntity1 ?hasProp1 ?guid1 .\r\n               FILTER CONTAINS(str(?hasProp1),?field)\r\n     }\r\n     UNION\r\n     {\r\n      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .\r\n            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .\r\n            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        \r\n            ?rdfEntity1 ?hasProp1 ?guid1 .\r\n            ?rdfEntity2 ?hasProp2 ?guid2 .     \r\n            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   \r\n    }\r\n    UNION\r\n    {\r\n      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .\r\n      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n    }\r\n    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }\r\n    }\r\n    "
+  }, {
+    "@id" : "_:b5",
+    "@type" : "sh:SPARQLRule",
+    "comment" : "Infers ICDD Link predicates for  instances of ls:BinaryLink as icddl:linkedBinary and inverse as icddl:linkedBinary.",
+    "label" : "sh:rule for icddl:linkedBinary",
+    "construct" : "\r\n    PREFIX ls: <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#>\r\n    PREFIX icddl: <https://philhag.github.io/icdd-shacl-validation/icddl#>\r\n    CONSTRUCT {\r\n      ?rdfEntity1 icddl:linkedBinary ?rdfEntity2 .\r\n      ?rdfEntity2 icddl:linkedBinary ?rdfEntity1 .\r\n    }\r\n    WHERE {\r\n     $this ls:hasLinkElement ?elem1 .\r\n     $this ls:hasLinkElement ?elem2 .\r\n     FILTER(!sameTerm(?elem1, ?elem2))\r\n\r\n     {\r\n       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n       ?elem1 ls:hasIdentifier/ls:identifierField ?field .\r\n       ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n       ?rdfEntity1 ?hasProp1 ?guid1 .\r\n       FILTER CONTAINS(str(?hasProp1),?field)\r\n     }\r\n     UNION\r\n     {\r\n      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n      ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .\r\n      ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .\r\n      ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        \r\n      ?rdfEntity1 ?hasProp1 ?guid1 .\r\n      ?rdfEntity2 ?hasProp2 ?guid2 .     \r\n      FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))       \r\n    }\r\n    UNION\r\n    {\r\n     ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .\r\n     ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n    }\r\n\r\n    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier}\r\n    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier}\r\n    }\r\n    "
+  }, {
+    "@id" : "_:b6",
+    "@type" : "sh:SPARQLRule",
+    "comment" : "Infers ICDD Link predicates for  instances of els:HasPart as icddl:hasPart and inverse as icddl:isPartOf.",
+    "label" : "sh:rule for icddl:hasPart",
+    "construct" : "CONSTRUCT {\r\n      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#hasPart> ?rdfEntity2 .\r\n      ?rdfEntity2 <https://philhag.github.io/icdd-shacl-validation/icddl#isPartOf> ?rdfEntity1 .\r\n    }\r\n    WHERE {\r\n      $this ls:hasFromLinkElement ?elem1 .\r\n      $this ls:hasToLinkElement ?elem2 .\r\n      FILTER(!sameTerm(?elem1, ?elem2))\r\n\r\n      {  \r\n        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n               ?elem1 ls:hasIdentifier/ls:identifierField ?field .\r\n               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n               ?rdfEntity1 ?hasProp1 ?guid1 .\r\n               FILTER CONTAINS(str(?hasProp1),?field)\r\n      }\r\n      UNION\r\n      {\r\n        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .\r\n            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .\r\n            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        \r\n            ?rdfEntity1 ?hasProp1 ?guid1 .\r\n            ?rdfEntity2 ?hasProp2 ?guid2 .     \r\n            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   \r\n      }\r\n      UNION\r\n      {\r\n        ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .\r\n        ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n      }\r\n      FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }\r\n      FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }\r\n      FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }\r\n      FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }\r\n    }\r\n    "
+  }, {
+    "@id" : "_:b7",
+    "@type" : "sh:SPARQLRule",
+    "comment" : "Infers ICDD Link predicates for  instances of els:Supersedes as icddl:supersedes and inverse as icddl:isSupersededBy.",
+    "label" : "sh:rule for icddl:supersedes",
+    "construct" : "CONSTRUCT {\r\n      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#supersedes> ?rdfEntity2 .\r\n      ?rdfEntity2 <https://philhag.github.io/icdd-shacl-validation/icddl#isSupersededBy> ?rdfEntity1 .\r\n    }\r\n    WHERE {\r\n      $this ls:hasFromLinkElement ?elem1 .\r\n      $this ls:hasToLinkElement ?elem2 .\r\n      FILTER(!sameTerm(?elem1, ?elem2))\r\n\r\n      {\r\n       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n               ?elem1 ls:hasIdentifier/ls:identifierField ?field .\r\n               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n               ?rdfEntity1 ?hasProp1 ?guid1 .\r\n               FILTER CONTAINS(str(?hasProp1),?field)\r\n     }\r\n     UNION\r\n     {\r\n      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .\r\n            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .\r\n            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        \r\n            ?rdfEntity1 ?hasProp1 ?guid1 .\r\n            ?rdfEntity2 ?hasProp2 ?guid2 .     \r\n            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   \r\n    }\r\n    UNION\r\n    {\r\n      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .\r\n      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n    }\r\n    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }\r\n    }\r\n    "
+  }, {
+    "@id" : "_:b8",
+    "@type" : "sh:SPARQLRule",
+    "comment" : "Infers ICDD Link predicates for  instances of els:IsIdenticalTo as icddl:isIdenticalTo.",
+    "label" : "sh:rule for icddl:isIdenticalTo",
+    "construct" : "CONSTRUCT {\r\n      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#isIdenticalTo> ?rdfEntity2 .\r\n    }\r\n    WHERE {\r\n      $this ls:hasFromLinkElement ?elem1 .\r\n      $this ls:hasToLinkElement ?elem2 .\r\n      FILTER(!sameTerm(?elem1, ?elem2))\r\n\r\n      {\r\n       ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n               ?elem1 ls:hasIdentifier/ls:identifierField ?field .\r\n               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n               ?rdfEntity1 ?hasProp1 ?guid1 .\r\n               FILTER CONTAINS(str(?hasProp1),?field)\r\n     }\r\n     UNION\r\n     {\r\n      ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .\r\n            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .\r\n            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        \r\n            ?rdfEntity1 ?hasProp1 ?guid1 .\r\n            ?rdfEntity2 ?hasProp2 ?guid2 .     \r\n            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   \r\n    }\r\n    UNION\r\n    {\r\n      ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .\r\n      ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n    }\r\n    FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }\r\n    FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }\r\n    }\r\n    "
+  }, {
+    "@id" : "_:b9",
+    "@type" : "sh:SPARQLRule",
+    "comment" : "Infers ICDD Link predicates for  instances of els:Controls as icddl:controls and inverse as icddl:isControlledBy.",
+    "label" : "sh:rule for icddl:controls",
+    "construct" : "CONSTRUCT {\r\n      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#controls> ?rdfEntity2 .\r\n      ?rdfEntity2 <https://philhag.github.io/icdd-shacl-validation/icddl#isControlledBy> ?rdfEntity1 .\r\n    }\r\n    WHERE {\r\n      $this ls:hasFromLinkElement ?elem1 .\r\n      $this ls:hasToLinkElement ?elem2 .\r\n      FILTER(!sameTerm(?elem1, ?elem2))\r\n\r\n      {\r\n        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n               ?elem1 ls:hasIdentifier/ls:identifierField ?field .\r\n               ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n               ?rdfEntity1 ?hasProp1 ?guid1 .\r\n               FILTER CONTAINS(str(?hasProp1),?field)\r\n      }\r\n      UNION\r\n      {\r\n        ?elem1 ls:hasIdentifier/ls:identifier ?guid1 .\r\n            ?elem1 ls:hasIdentifier/ls:identifierField ?field1 .\r\n            ?elem2 ls:hasIdentifier/ls:identifier ?guid2 .\r\n            ?elem2 ls:hasIdentifier/ls:identifierField ?field2 .        \r\n            ?rdfEntity1 ?hasProp1 ?guid1 .\r\n            ?rdfEntity2 ?hasProp2 ?guid2 .     \r\n            FILTER (CONTAINS(str(?hasProp1),?field1) && CONTAINS(str(?hasProp2),?field2))   \r\n      }\r\n      UNION\r\n      {\r\n        ?elem1 ls:hasIdentifier/ls:uri ?rdfEntity1 .\r\n        ?elem2 ls:hasIdentifier/ls:uri ?rdfEntity2 .\r\n      }\r\n      FILTER NOT EXISTS { ?rdfEntity1 a ls:StringBasedIdentifier }\r\n      FILTER NOT EXISTS { ?rdfEntity1 a ls:UriBasedIdentifier }\r\n      FILTER NOT EXISTS { ?rdfEntity2 a ls:StringBasedIdentifier }\r\n      FILTER NOT EXISTS { ?rdfEntity2 a ls:UriBasedIdentifier }\r\n    }\r\n    "
+  }, {
+    "@id" : "https://philhag.github.io/icdd-shacl-validation/icddl",
+    "@type" : "owl:Ontology",
+    "creator" : "_:b17",
+    "description" : {
+      "@language" : "en",
+      "@value" : "An ontology to provide link predicates on the basis of the ICDD ontology schemes for links and extended links"
+    },
+    "license" : "https://creativecommons.org/licenses/by/4.0/",
+    "publisher" : "_:b1",
+    "rights" : "CC-BY-40",
+    "title" : {
+      "@language" : "en",
+      "@value" : "ICDD Link Predicates"
+    },
+    "seeAlso" : [ "https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset", "https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset", "https://standards.iso.org/iso/21597/-1/ed-1/en/Container" ],
+    "versionIRI" : "https://philhag.github.io/icdd-shacl-validation/icddl",
+    "versionInfo" : {
+      "@language" : "en",
+      "@value" : "v0.2"
+    }
+  }, {
+    "@id" : "icddl:conflictsWith",
+    "@type" : [ "sh:NodeShape", "owl:ObjectProperty" ],
+    "comment" : {
+      "@language" : "en",
+      "@value" : "This link type relates two link elements that conflict with one another in some way. Possibly non-transitive, symmetric and being its own inverse"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "conflicts with"
+    },
+    "seeAlso" : "els:ConflictsWith",
+    "subPropertyOf" : "icddl:linkedDirectedBinary",
+    "rule" : "_:b3",
+    "targetClass" : "els:ConflictsWith"
+  }, {
+    "@id" : "icddl:controls",
+    "@type" : [ "sh:NodeShape", "owl:ObjectProperty" ],
+    "comment" : {
+      "@language" : "en",
+      "@value" : "This link type relates one link element to one or more other link elements over which it exercises some type of control. Possibly transitive, non-symmetric and inverse of IsControlledBy"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "controls"
+    },
+    "seeAlso" : "els:Controls",
+    "subPropertyOf" : "icddl:linkedDirectedOneToMany",
+    "inverseOf" : "icddl:isControlledBy",
+    "rule" : "_:b9",
+    "targetClass" : "els:Controls"
+  }, {
+    "@id" : "icddl:elaborates",
+    "@type" : [ "sh:NodeShape", "owl:ObjectProperty" ],
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Possibly transitive, non-symmetric and inverse of IsElaboratedBy"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "elaborates"
+    },
+    "seeAlso" : "els:Elaborates",
+    "subPropertyOf" : "icddl:linkedDirectedOneToMany",
+    "inverseOf" : "icddl:isElaboratedBy",
+    "rule" : "_:b20",
+    "targetClass" : "els:Elaborates"
+  }, {
+    "@id" : "icddl:hasMember",
+    "@type" : [ "sh:NodeShape", "owl:ObjectProperty" ],
+    "comment" : {
+      "@language" : "en",
+      "@value" : "This link type relates one link element to one or more other link elements to form a grouping based on some consistent criteria. Possibly non-transitive, non-symmetric and inverse of IsMemberOf"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "has member"
+    },
+    "seeAlso" : "els:HasMember",
+    "subPropertyOf" : "icddl:linkedDirectedOneToMany",
+    "inverseOf" : "icddl:isMemberOf",
+    "rule" : "_:b18",
+    "targetClass" : "els:HasMember"
+  }, {
+    "@id" : "icddl:hasPart",
+    "@type" : [ "sh:NodeShape", "owl:ObjectProperty" ],
+    "comment" : {
+      "@language" : "en",
+      "@value" : "This link type relates one link element to one or more other link elements to form an assembly of parts where those parts exist independently. Possibly transitive, non-symmetric and inverse of IsPartOf"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "has part"
+    },
+    "seeAlso" : "els:HasPart",
+    "subPropertyOf" : "icddl:linkedDirectedOneToMany",
+    "inverseOf" : "icddl:isPartOf",
+    "rule" : "_:b6",
+    "targetClass" : "els:HasPart"
+  }, {
+    "@id" : "icddl:isAlternativeTo",
+    "@type" : [ "sh:NodeShape", "owl:ObjectProperty" ],
+    "comment" : {
+      "@language" : "en",
+      "@value" : "This link type relates two link elements where one is an alternative to the other. Possibly transitive, symmetric and being its own inverse"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "is alternative to"
+    },
+    "seeAlso" : "els:IsAlternativeTo",
+    "subPropertyOf" : "icddl:linkedDirectedBinary",
+    "rule" : "_:b13",
+    "targetClass" : "els:IsAlternativeTo"
+  }, {
+    "@id" : "icddl:isControlledBy",
+    "@type" : [ "sh:NodeShape", "owl:ObjectProperty" ],
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Possibly transitive, non-symmetric and inverse of Controls"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "is controlled by"
+    },
+    "seeAlso" : "els:IsControlledBy",
+    "subPropertyOf" : "icddl:linkedDirectedOneToMany",
+    "inverseOf" : "icddl:controls",
+    "rule" : "_:b10",
+    "targetClass" : "els:IsControlledBy"
+  }, {
+    "@id" : "icddl:isElaboratedBy",
+    "@type" : [ "sh:NodeShape", "owl:ObjectProperty" ],
+    "comment" : {
+      "@language" : "en",
+      "@value" : "This link type relates one link element to one or more other link elements where they provide further explanation, reasoning, derivation, information or usage. Possibly transitive, non-symmetric and inverse of IsElaboratedBy"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "is elaborated by"
+    },
+    "seeAlso" : "els:IsElaboratedBy",
+    "subPropertyOf" : "icddl:linkedDirectedOneToMany",
+    "inverseOf" : "icddl:elaborates",
+    "rule" : "_:b19",
+    "targetClass" : "els:IsElaboratedBy"
+  }, {
+    "@id" : "icddl:isIdenticalTo",
+    "@type" : [ "sh:NodeShape", "owl:ObjectProperty" ],
+    "comment" : {
+      "@language" : "en",
+      "@value" : "This link type relates two link elements that are identical but may be represented in different ways. Possibly transitive, symmetric and being its own inverse"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "is identical to"
+    },
+    "seeAlso" : "els:IsIdenticalTo",
+    "subPropertyOf" : "icddl:linkedDirectedBinary",
+    "rule" : "_:b8",
+    "targetClass" : "els:IsIdenticalTo"
+  }, {
+    "@id" : "icddl:isMemberOf",
+    "@type" : [ "sh:NodeShape", "owl:ObjectProperty" ],
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Possibly non-transitive, non-symmetric and inverse of HasMember"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "is member of"
+    },
+    "seeAlso" : "els:IsMemberOf",
+    "subPropertyOf" : "icddl:linkedDirectedOneToMany",
+    "inverseOf" : "icddl:hasMember",
+    "rule" : "_:b16",
+    "targetClass" : "els:IsMemberOf"
+  }, {
+    "@id" : "icddl:isPartOf",
+    "@type" : [ "sh:NodeShape", "owl:ObjectProperty" ],
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Possibly transitive, non-symmetric and inverse of HasPart"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "is part of"
+    },
+    "seeAlso" : "els:IsPartOf",
+    "subPropertyOf" : "icddl:linkedDirectedOneToMany",
+    "inverseOf" : "icddl:hasPart",
+    "rule" : "_:b15",
+    "targetClass" : "els:IsPartOf"
+  }, {
+    "@id" : "icddl:isSpecialisedAs",
+    "@type" : [ "sh:NodeShape", "owl:ObjectProperty" ],
+    "comment" : {
+      "@language" : "en",
+      "@value" : "This link type relates one link element to one or more other link elements that are specializations or sub-classes. Possibly transitive, non-symmetric and inverse of Specialises"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "is specialised as"
+    },
+    "seeAlso" : "els:IsSpecialisedAs",
+    "subPropertyOf" : "icddl:linkedDirectedOneToMany",
+    "inverseOf" : "icddl:specialises",
+    "rule" : "_:b11",
+    "targetClass" : "els:IsSpecialisedAs"
+  }, {
+    "@id" : "icddl:isSupersededBy",
+    "@type" : [ "sh:NodeShape", "owl:ObjectProperty" ],
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Possibly transitive, non-symmetric and inverse of Supersedes"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "is superseded by"
+    },
+    "seeAlso" : "els:IsSupersededBy",
+    "subPropertyOf" : "icddl:linkedDirectedOneToMany",
+    "inverseOf" : "icddl:supersedes",
+    "rule" : "_:b21",
+    "targetClass" : "els:IsSupersededBy"
+  }, {
+    "@id" : "icddl:linked",
+    "@type" : [ "sh:NodeShape", "owl:ObjectProperty" ],
+    "comment" : {
+      "@language" : "en",
+      "@value" : "An ls:Link comprising exactly 2 individuals of class ls:LinkElement"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "linked binary"
+    },
+    "seeAlso" : "ls:BinaryLink",
+    "subPropertyOf" : "icddl:linked",
+    "rule" : "_:b14",
+    "targetClass" : "ls:Link"
+  }, {
+    "@id" : "icddl:linkedBinary",
+    "@type" : [ "sh:NodeShape", "owl:ObjectProperty" ],
+    "comment" : {
+      "@language" : "en",
+      "@value" : "An ls:Link comprising exactly 2 individuals of class ls:LinkElement"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "linked binary"
+    },
+    "seeAlso" : "ls:BinaryLink",
+    "subPropertyOf" : "icddl:linked",
+    "rule" : "_:b5",
+    "targetClass" : "ls:BinaryLink"
+  }, {
+    "@id" : "icddl:linkedDirected",
+    "@type" : [ "sh:NodeShape", "owl:ObjectProperty" ],
+    "comment" : {
+      "@language" : "en",
+      "@value" : "An ls:Link that uses the subproperties ls:hasFromLinkElement and ls:hasToLinkElement to denote a direction of this link"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "linked directed"
+    },
+    "seeAlso" : "ls:DirectedLink",
+    "subPropertyOf" : "icddl:linked",
+    "inverseOf" : "icddl:linkedDirectedInverse",
+    "rule" : "_:b4",
+    "targetClass" : "ls:DirectedLink"
+  }, {
+    "@id" : "icddl:linkedDirectedBinary",
+    "@type" : [ "sh:NodeShape", "owl:ObjectProperty" ],
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A subtype of a binary link (that has exactly 2 LinkElements) that uses the subproperties ls:hasFromLinkElement and ls:hasToLinkElement to denote a direction of this link"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "linked directed binary"
+    },
+    "seeAlso" : "ls:DirectedBinaryLink",
+    "subPropertyOf" : [ "icddl:linkedBinary", "icddl:linkedDirected" ],
+    "inverseOf" : "icddl:linkedDirectedBinaryInverse",
+    "rule" : "_:b12",
+    "targetClass" : "ls:DirectedBinaryLink"
+  }, {
+    "@id" : "icddl:linkedDirectedBinaryInverse",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Inverse property of icddl:linkedDirectedBinary.  Inferred during rule execution for icddl:linkedDirectedBinary."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "linked directed binary inverse"
+    },
+    "seeAlso" : "icddl:linkedDirectedBinary",
+    "subPropertyOf" : "icddl:linkedDirectedInverse",
+    "inverseOf" : "icddl:linkedDirectedBinary"
+  }, {
+    "@id" : "icddl:linkedDirectedInverse",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Inverse property of icddl:linkedDirected.  Inferred during rule execution for icddl:linkedDirected."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "linked directed inverse"
+    },
+    "seeAlso" : "icddl:linkedDirected",
+    "subPropertyOf" : "icddl:linked",
+    "inverseOf" : "icddl:linkedDirected"
+  }, {
+    "@id" : "icddl:linkedDirectedOneToMany",
+    "@type" : [ "sh:NodeShape", "owl:ObjectProperty" ],
+    "comment" : {
+      "@language" : "en",
+      "@value" : "An ls:Directed1toNLink is a subtype of ls:DirectedLink mandating exactly 1 ls:hasFromLinkElement"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "linked directed one to many"
+    },
+    "seeAlso" : "ls:Directed1toNLink",
+    "subPropertyOf" : "icddl:linkedDirected",
+    "inverseOf" : "icddl:linkedDirectedOneToManyInverse",
+    "rule" : "_:b0",
+    "targetClass" : "ls:Directed1toNLink"
+  }, {
+    "@id" : "icddl:linkedDirectedOneToManyInverse",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Inverse property of icddl:linkedDirectedOneToMany.  Inferred during rule execution for icddl:linkedDirectedOneToMany."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "linked directed one to many inverse"
+    },
+    "seeAlso" : "icddl:linkedDirectedOneToMany",
+    "subPropertyOf" : "icddl:linkedDirectedInverse",
+    "inverseOf" : "icddl:linkedDirectedOneToMany"
+  }, {
+    "@id" : "icddl:specialises",
+    "@type" : [ "sh:NodeShape", "owl:ObjectProperty" ],
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Possibly transitive, non-symmetric and inverse of IsSpecialisedAs"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "specialises"
+    },
+    "seeAlso" : "els:Specialises",
+    "subPropertyOf" : "icddl:linkedDirectedOneToMany",
+    "inverseOf" : "icddl:isSpecialisedAs",
+    "rule" : "_:b22",
+    "targetClass" : "els:Specialises"
+  }, {
+    "@id" : "icddl:supersedes",
+    "@type" : [ "sh:NodeShape", "owl:ObjectProperty" ],
+    "comment" : {
+      "@language" : "en",
+      "@value" : "This link type relates one link element to one or more other link elements where they are a development of or supersede it in some way. Possibly transitive, non-symmetric and inverse of IsSupersededBy"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "supersedes"
+    },
+    "seeAlso" : "els:Supersedes",
+    "subPropertyOf" : "icddl:linkedDirectedOneToMany",
+    "inverseOf" : "icddl:isSupersededBy",
+    "rule" : "_:b7",
+    "targetClass" : "els:Supersedes"
+  } ],
+  "@context" : {
+    "construct" : {
+      "@id" : "http://www.w3.org/ns/shacl#construct"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "parentOrganization" : {
+      "@id" : "https://schema.org/parentOrganization",
+      "@type" : "@id"
+    },
+    "name" : {
+      "@id" : "https://schema.org/name"
+    },
+    "identifier" : {
+      "@id" : "https://schema.org/identifier",
+      "@type" : "@id"
+    },
+    "targetClass" : {
+      "@id" : "http://www.w3.org/ns/shacl#targetClass",
+      "@type" : "@id"
+    },
+    "rule" : {
+      "@id" : "http://www.w3.org/ns/shacl#rule",
+      "@type" : "@id"
+    },
+    "subPropertyOf" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+      "@type" : "@id"
+    },
+    "seeAlso" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "@type" : "@id"
+    },
+    "inverseOf" : {
+      "@id" : "http://www.w3.org/2002/07/owl#inverseOf",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/elements/1.1/description"
+    },
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "rights" : {
+      "@id" : "http://purl.org/dc/elements/1.1/rights"
+    },
+    "creator" : {
+      "@id" : "http://purl.org/dc/elements/1.1/creator",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/elements/1.1/license",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/elements/1.1/title"
+    },
+    "publisher" : {
+      "@id" : "http://purl.org/dc/elements/1.1/publisher",
+      "@type" : "@id"
+    },
+    "versionIRI" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionIRI",
+      "@type" : "@id"
+    },
+    "memberOf" : {
+      "@id" : "https://schema.org/memberOf",
+      "@type" : "@id"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email",
+      "@type" : "@id"
+    },
+    "schema" : "https://schema.org/",
+    "ct" : "https://standards.iso.org/iso/21597/-1/ed-1/en/Container#",
+    "icddl" : "https://philhag.github.io/icdd-shacl-validation/icddl#",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "owl" : "http://www.w3.org/2002/07/owl#",
+    "sh" : "http://www.w3.org/ns/shacl#",
+    "ls" : "https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#",
+    "xsd" : "http://www.w3.org/2001/XMLSchema#",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "els" : "https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#",
+    "dc" : "http://purl.org/dc/elements/1.1/"
+  }
+}
