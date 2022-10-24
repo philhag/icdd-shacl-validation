@@ -1,11 +1,11 @@
-# baseURI: https://philhag.github.io/icdd-shacl-validation/icddl
+# baseURI: https://w3id.org/icddl
 # imports: http://www.w3.org/ns/shacl#
 # prefix: icddl
 
 @prefix ct: <https://standards.iso.org/iso/21597/-1/ed-1/en/Container#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix els: <https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#> .
-@prefix icddl: <https://philhag.github.io/icdd-shacl-validation/icddl#> .
+@prefix icddl: <https://w3id.org/icddl#> .
 @prefix ls: <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -14,7 +14,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix schema: <https://schema.org/> .
 
-<https://philhag.github.io/icdd-shacl-validation/icddl>
+<https://w3id.org/icddl>
 rdf:type owl:Ontology ;
 dc:creator [
 rdf:type schema:Person ;
@@ -42,7 +42,7 @@ dc:title "ICDD Link Predicates"@en ;
 rdfs:seeAlso <https://standards.iso.org/iso/21597/-1/ed-1/en/Container> ;
 rdfs:seeAlso <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset> ;
 rdfs:seeAlso <https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset> ;
-owl:versionIRI <https://philhag.github.io/icdd-shacl-validation/icddl> ;
+owl:versionIRI <https://w3id.org/icddl> ;
 owl:versionInfo "v0.2"@en ;
 .
 icddl:conflictsWith
@@ -57,7 +57,7 @@ icddl:conflictsWith
     rdfs:label "sh:rule for icddl:conflictsWith" ;
     rdfs:comment "Infers ICDD Link predicates for instances of els:ConflictsWith as icddl:conflictsWith." ;
     sh:construct """CONSTRUCT {
-      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#conflictsWith> ?rdfEntity2 .
+      ?rdfEntity1 <https://w3id.org/icddl#conflictsWith> ?rdfEntity2 .
     }
     WHERE {
       $this ls:hasFromLinkElement ?elem1 .
@@ -109,8 +109,8 @@ icddl:controls
     rdfs:label "sh:rule for icddl:controls" ;
     rdfs:comment "Infers ICDD Link predicates for  instances of els:Controls as icddl:controls and inverse as icddl:isControlledBy." ;
     sh:construct """CONSTRUCT {
-      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#controls> ?rdfEntity2 .
-      ?rdfEntity2 <https://philhag.github.io/icdd-shacl-validation/icddl#isControlledBy> ?rdfEntity1 .
+      ?rdfEntity1 <https://w3id.org/icddl#controls> ?rdfEntity2 .
+      ?rdfEntity2 <https://w3id.org/icddl#isControlledBy> ?rdfEntity1 .
     }
     WHERE {
       $this ls:hasFromLinkElement ?elem1 .
@@ -161,8 +161,8 @@ icddl:elaborates
   rdfs:label "sh:rule for icddl:elaborates" ;
   rdfs:comment "Infers ICDD Link predicates for  instances of els:Elaborates as icddl:elaborates and inverse as icddl:isElaboratedBy." ;
   sh:construct """CONSTRUCT {
-    ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#elaborates> ?rdfEntity2 .
-    ?rdfEntity2 <https://philhag.github.io/icdd-shacl-validation/icddl#isElaboratedBy> ?rdfEntity1 .
+    ?rdfEntity1 <https://w3id.org/icddl#elaborates> ?rdfEntity2 .
+    ?rdfEntity2 <https://w3id.org/icddl#isElaboratedBy> ?rdfEntity1 .
   }
   WHERE {
     $this ls:hasFromLinkElement ?elem1 .
@@ -213,8 +213,8 @@ icddl:hasMember
     rdfs:label "sh:rule for icddl:hasMember" ;
     rdfs:comment "Infers ICDD Link predicates for  instances of els:HasMember as icddl:hasMember and inverse as icddl:isMemberOf." ;
     sh:construct """CONSTRUCT {
-      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#hasMember> ?rdfEntity2 .
-      ?rdfEntity2 <https://philhag.github.io/icdd-shacl-validation/icddl#isMemberOf> ?rdfEntity1 .
+      ?rdfEntity1 <https://w3id.org/icddl#hasMember> ?rdfEntity2 .
+      ?rdfEntity2 <https://w3id.org/icddl#isMemberOf> ?rdfEntity1 .
     }
     WHERE {
       $this ls:hasFromLinkElement ?elem1 .
@@ -265,8 +265,8 @@ icddl:hasPart
     rdfs:label "sh:rule for icddl:hasPart" ;
     rdfs:comment "Infers ICDD Link predicates for  instances of els:HasPart as icddl:hasPart and inverse as icddl:isPartOf." ;
     sh:construct """CONSTRUCT {
-      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#hasPart> ?rdfEntity2 .
-      ?rdfEntity2 <https://philhag.github.io/icdd-shacl-validation/icddl#isPartOf> ?rdfEntity1 .
+      ?rdfEntity1 <https://w3id.org/icddl#hasPart> ?rdfEntity2 .
+      ?rdfEntity2 <https://w3id.org/icddl#isPartOf> ?rdfEntity1 .
     }
     WHERE {
       $this ls:hasFromLinkElement ?elem1 .
@@ -316,7 +316,7 @@ icddl:isAlternativeTo
     rdfs:label "sh:rule for icddl:isAlternativeTo" ;
     rdfs:comment "Infers ICDD Link predicates for  instances of els:IsAlternativeTo as icddl:isAlternativeTo." ;
     sh:construct """CONSTRUCT {
-      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#isAlternativeTo> ?rdfEntity2 .
+      ?rdfEntity1 <https://w3id.org/icddl#isAlternativeTo> ?rdfEntity2 .
     }
     WHERE {
       $this ls:hasFromLinkElement ?elem1 .
@@ -367,8 +367,8 @@ icddl:isControlledBy
     rdfs:label "sh:rule for icddl:isControlledBy" ;
     rdfs:comment "Infers ICDD Link predicates for  instances of els:IsControlledBy as icddl:isControlledBy and inverse as icddl:controls." ;
     sh:construct """CONSTRUCT {
-      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#isControlledBy> ?rdfEntity2 .
-      ?rdfEntity2 <https://philhag.github.io/icdd-shacl-validation/icddl#controls> ?rdfEntity1 .
+      ?rdfEntity1 <https://w3id.org/icddl#isControlledBy> ?rdfEntity2 .
+      ?rdfEntity2 <https://w3id.org/icddl#controls> ?rdfEntity1 .
     }
     WHERE {
       $this ls:hasFromLinkElement ?elem1 .
@@ -419,8 +419,8 @@ icddl:isElaboratedBy
     rdfs:label "sh:rule for icddl:isElaboratedBy" ;
     rdfs:comment "Infers ICDD Link predicates for  instances of els:IsElaboratedBy as icddl:isElaboratedBy and inverse as icddl:elaborates." ;
     sh:construct """CONSTRUCT {
-      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#isElaboratedBy> ?rdfEntity2 .
-      ?rdfEntity2 <https://philhag.github.io/icdd-shacl-validation/icddl#elaborates> ?rdfEntity1 .
+      ?rdfEntity1 <https://w3id.org/icddl#isElaboratedBy> ?rdfEntity2 .
+      ?rdfEntity2 <https://w3id.org/icddl#elaborates> ?rdfEntity1 .
     }
     WHERE {
       $this ls:hasFromLinkElement ?elem1 .
@@ -470,7 +470,7 @@ icddl:isIdenticalTo
     rdfs:label "sh:rule for icddl:isIdenticalTo" ;
     rdfs:comment "Infers ICDD Link predicates for  instances of els:IsIdenticalTo as icddl:isIdenticalTo." ;
     sh:construct """CONSTRUCT {
-      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#isIdenticalTo> ?rdfEntity2 .
+      ?rdfEntity1 <https://w3id.org/icddl#isIdenticalTo> ?rdfEntity2 .
     }
     WHERE {
       $this ls:hasFromLinkElement ?elem1 .
@@ -521,8 +521,8 @@ icddl:isMemberOf
     rdfs:label "sh:rule for icddl:isMemberOf" ;
     rdfs:comment "Infers ICDD Link predicates for  instances of els:IsMemberOf as icddl:isMemberOf and inverse as icddl:hasMember." ;
     sh:construct """CONSTRUCT {
-      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#isMemberOf> ?rdfEntity2 .
-      ?rdfEntity2 <https://philhag.github.io/icdd-shacl-validation/icddl#hasMember> ?rdfEntity1 .
+      ?rdfEntity1 <https://w3id.org/icddl#isMemberOf> ?rdfEntity2 .
+      ?rdfEntity2 <https://w3id.org/icddl#hasMember> ?rdfEntity1 .
     }
     WHERE {
       $this ls:hasFromLinkElement ?elem1 .
@@ -573,8 +573,8 @@ icddl:isPartOf
     rdfs:label "sh:rule for icddl:isPartOf" ;    
     rdfs:comment "Infers ICDD Link predicates for  instances of els:IsPartOf as icddl:isPartOf and inverse as icddl:hasPart." ;
     sh:construct """CONSTRUCT {
-      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#isPartOf> ?rdfEntity2 .
-      ?rdfEntity2 <https://philhag.github.io/icdd-shacl-validation/icddl#hasPart> ?rdfEntity1 .
+      ?rdfEntity1 <https://w3id.org/icddl#isPartOf> ?rdfEntity2 .
+      ?rdfEntity2 <https://w3id.org/icddl#hasPart> ?rdfEntity1 .
     }
     WHERE {
       $this ls:hasFromLinkElement ?elem1 .
@@ -625,8 +625,8 @@ icddl:isSpecialisedAs
     rdfs:label "sh:rule for icddl:isSpecialisedAs" ;    
     rdfs:comment "Infers ICDD Link predicates for  instances of els:IsSpecialisedAs as icddl:isSpecialisedAs and inverse as icddl:specialises." ;
     sh:construct """CONSTRUCT {
-      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#isSpecialisedAs> ?rdfEntity2 .
-      ?rdfEntity2 <https://philhag.github.io/icdd-shacl-validation/icddl#specialises> ?rdfEntity1 .
+      ?rdfEntity1 <https://w3id.org/icddl#isSpecialisedAs> ?rdfEntity2 .
+      ?rdfEntity2 <https://w3id.org/icddl#specialises> ?rdfEntity1 .
     }
     WHERE {
       $this ls:hasFromLinkElement ?elem1 .
@@ -729,8 +729,8 @@ icddl:linked
     rdfs:comment "Infers ICDD Link predicates for  instances of ls:Link as icddl:linked and inverse as icddl:linked." ;
     sh:construct """
     CONSTRUCT {
-      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#linked> ?rdfEntity2 .
-      ?rdfEntity2 <https://philhag.github.io/icdd-shacl-validation/icddl#linked> ?rdfEntity1 .
+      ?rdfEntity1 <https://w3id.org/icddl#linked> ?rdfEntity2 .
+      ?rdfEntity2 <https://w3id.org/icddl#linked> ?rdfEntity1 .
     }
     WHERE {
      $this ls:hasLinkElement ?elem1 .
@@ -780,7 +780,7 @@ icddl:linkedBinary
     rdfs:comment "Infers ICDD Link predicates for  instances of ls:BinaryLink as icddl:linkedBinary and inverse as icddl:linkedBinary." ;
     sh:construct """
     PREFIX ls: <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#>
-    PREFIX icddl: <https://philhag.github.io/icdd-shacl-validation/icddl#>
+    PREFIX icddl: <https://w3id.org/icddl#>
     CONSTRUCT {
       ?rdfEntity1 icddl:linkedBinary ?rdfEntity2 .
       ?rdfEntity2 icddl:linkedBinary ?rdfEntity1 .
@@ -835,8 +835,8 @@ icddl:linkedDirected
     rdfs:label "sh:rule for icddl:linkedDirected" ; 
     rdfs:comment "Infers ICDD Link predicates for  instances of ls:DirectedLink as icddl:linkedDirected and inverse as icddl:linkedDirectedInverse." ;
     sh:construct """CONSTRUCT {
-      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#linkedDirected> ?rdfEntity2 .
-      ?rdfEntity2 <https://philhag.github.io/icdd-shacl-validation/icddl#linkedDirectedInverse> ?rdfEntity1 .
+      ?rdfEntity1 <https://w3id.org/icddl#linkedDirected> ?rdfEntity2 .
+      ?rdfEntity2 <https://w3id.org/icddl#linkedDirectedInverse> ?rdfEntity1 .
     }
     WHERE {
       $this ls:hasFromLinkElement ?elem1 .
@@ -889,7 +889,7 @@ icddl:linkedDirectedBinary
     rdfs:comment "Infers ICDD Link predicates for  instances of ls:DirectedBinaryLink as icddl:linkedDirectedBinary and inverse as icddl:linkedDirectedBinaryInverse." ;
     sh:construct """
     PREFIX ls: <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#>
-    PREFIX icddl: <https://philhag.github.io/icdd-shacl-validation/icddl#>
+    PREFIX icddl: <https://w3id.org/icddl#>
     CONSTRUCT {
       ?rdfEntity1 icddl:linkedDirectedBinary ?rdfEntity2 .
       ?rdfEntity2 icddl:linkedDirectedBinaryInverse ?rdfEntity1 .
@@ -961,7 +961,7 @@ icddl:linkedDirectedOneToMany
     rdfs:comment "Infers ICDD Link predicates for  instances of ls:Directed1toNLink as icddl:linkedDirectedOneToMany and inverse as icddl:linkedDirectedOneToManyInverse." ;
     sh:construct """
     PREFIX ls: <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#>
-    PREFIX icddl: <https://philhag.github.io/icdd-shacl-validation/icddl#>
+    PREFIX icddl: <https://w3id.org/icddl#>
     CONSTRUCT {
       ?rdfEntity1 icddl:linkedDirectedOneToMany ?rdfEntity2 .
       ?rdfEntity2 icddl:linkedDirectedOneToManyInverse ?rdfEntity1 .
@@ -1023,8 +1023,8 @@ icddl:linkedDirectedOneToManyInverse
     rdfs:label "sh:rule for icddl:specialises" ; 
     rdfs:comment "Infers ICDD Link predicates for  instances of els:Specialises as icddl:specialises and inverse as icddl:isSpecialisedAs." ;
     sh:construct """CONSTRUCT {
-      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#specialises> ?rdfEntity2 .
-      ?rdfEntity2 <https://philhag.github.io/icdd-shacl-validation/icddl#isSpecialisedAs> ?rdfEntity1 .
+      ?rdfEntity1 <https://w3id.org/icddl#specialises> ?rdfEntity2 .
+      ?rdfEntity2 <https://w3id.org/icddl#isSpecialisedAs> ?rdfEntity1 .
     }
     WHERE {
       $this ls:hasFromLinkElement ?elem1 .
@@ -1075,8 +1075,8 @@ icddl:supersedes
     rdfs:label "sh:rule for icddl:supersedes" ; 
     rdfs:comment "Infers ICDD Link predicates for  instances of els:Supersedes as icddl:supersedes and inverse as icddl:isSupersededBy." ;
     sh:construct """CONSTRUCT {
-      ?rdfEntity1 <https://philhag.github.io/icdd-shacl-validation/icddl#supersedes> ?rdfEntity2 .
-      ?rdfEntity2 <https://philhag.github.io/icdd-shacl-validation/icddl#isSupersededBy> ?rdfEntity1 .
+      ?rdfEntity1 <https://w3id.org/icddl#supersedes> ?rdfEntity2 .
+      ?rdfEntity2 <https://w3id.org/icddl#isSupersededBy> ?rdfEntity1 .
     }
     WHERE {
       $this ls:hasFromLinkElement ?elem1 .
